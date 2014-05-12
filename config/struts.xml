@@ -18,9 +18,18 @@
 			<result name="success">/test.jsp</result>
 		</action>
 		
-		<action name="role_*" class="roleAction" method="{1}">
-			<result name="list">/WEB-INF/role/role_list.jsp</result>
+		<action name="role_*" class="roleAction" method="{1}Role">
+			<result name="list_role">/WEB-INF/role/role_list.jsp</result>
 			<result name="toList" type="redirectAction">role_list</result>
+		</action>
+		
+		<action name="*Module" class="moduleAction" method="{1}Module">
+			<result name="list_module">/WEB-INF/back/module/list_module.jsp</result>
+			<result name="add_input_module">/WEB-INF/back/module/add_input_module.jsp</result>
+			<result name="add_module" type="redirectAction">listModule</result>
+			<result name="modify_input_module">/WEB-INF/back/module/modify_input_module.jsp</result>
+			<result name="modify_module" type="redirectAction">listModule</result>
+			<result name="delete_module" type="redirectAction">listModule</result>
 		</action>
 	</package>
 </struts> 
