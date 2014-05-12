@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+	 					http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- 自动扫描注释 -->
+	<context:component-scan base-package="com.portal" />
+
+	<bean id="propertyConfigurer" 
+   		 class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+    	<property name="locations">
+    		<list>
+    			<value>classpath:jdbc.properties</value>
+    			<value>classpath:hibernate.properties</value>
+    		</list>
+    	</property>
+	</bean>
+	<!-- c3p0数据源 -->
+	<!-- destroy-method="close" 是将用完的连接放回数据池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${driverClass}"/>
+	    <property name="jdbcUrl" value="${jdbcUrl}"/>
+	    <property name="user" value="${user}"/>
+	    <property name="password" value="${password}"/>
+	    
+	     <!-- 连接池中保留的最大连接数 default:15 -->
+		<property name="maxPoolSize" value="${maxPoolSize}"></property>
+		<!-- 连接池中保留的最小连接数 -->
+		<property name="minPoolSize" value="${minPoolSize}"></property>
+		<!-- 初始化时获取三个连接，取值应在minPoolSize和maxPoolSize之间 default:3 -->
+		<property name="initialPoolSize" value="${initialPoolSize}"></property>
+		<!-- 当连接池中的链接耗尽的时候，c3p0一次同时获取的连接数。 default:3 -->
+		<property name="acquireIncrement" value="${acquireIncrement}"></property>
+		<!-- 每60秒检查所有连接池中的空闲连接 default:0 -->
+		<property name="idleConnectionTestPeriod" value="${idleConnectionTestPeriod}"></property>
+		<!-- 最大空闲时间，60秒内未使用则连接被丢弃。若为0则永不丢弃 default:0 -->
+		<property name="maxIdleTime" value="${maxIdleTime}"></property>
+	</bean>
+	
+	<!-- dbcp数据源，需要dbcp的jar包 
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/sshTest"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+		
+		<property name="maxActive" value="100"></property>
+		<property name="maxIdle" value="30"></property>
+		<property name="maxWait" value="500"></property>
+		-->
+		<!-- 与事务有关，有事务需要设置成false 
+		<property name="defaultAutoCommit" value="true"></property>
+	</bean>-->
+	 
+	 <!-- 使用.hbm.xml文件 
+ 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+ 	-->
+ 	<!-- 使用注解 -->
+ 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+ 		<property name="dataSource" ref="dataSource"></property>
+ 		<!-- 替代hibernate.cfg.xml文件 -->
+ 		<property name="hibernateProperties">
+ 			<props>
+ 				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+ 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+ 				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+ 				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+ 				<prop key="javax.persistence.validation.mode">none</prop>
+ 			</props>
+ 		</property>
+ 		<!-- 配置需要扫描的model -->
+ 		<property name="packagesToScan" value="com.portal.model" />
+ 	</bean>
+ 	
+ 	<!-- 配置声明式事务管理（采用注解的方式） -->
+ 	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+ 		<property name="sessionFactory" ref="sessionFactory"></property>
+ 	</bean>
+ 	<tx:annotation-driven transaction-manager="txManager"/>
+</beans>
