@@ -26,4 +26,16 @@ public class ModuleServiceImpl implements ModuleService {
 	public void deleteModule(Long id) {
 		moduleDao.delete(id);
 	}
+	
+	public void saveModule(Module module) {
+		moduleDao.save(module);
+	}
+	
+	public Module getById(Long id) {
+		return moduleDao.getById(id);
+	}
+	
+	public void modifyModule(Module module) {
+		moduleDao.update(module);
+	}
 }

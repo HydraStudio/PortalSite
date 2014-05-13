@@ -10,4 +10,10 @@ public interface ModuleService {
 	List<Module> findAllModules();
 	
 	void deleteModule(Long id);
+	
+	void saveModule(Module module);
+
+	Module getById(Long id);
+
+	void modifyModule(Module module);
 }

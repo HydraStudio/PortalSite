@@ -8,21 +8,23 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
+import com.portal.base.BaseAction;
 import com.portal.model.Module;
 import com.portal.service.ModuleService;
 
 
 @Controller
 @Scope("prototype")
-public class ModuleAction extends ActionSupport {
+public class ModuleAction extends BaseAction<Module> {
 
 	private static final long serialVersionUID = 6801093180747513566L;
 	
 	@Resource
 	private ModuleService moduleService;
 	
-	private Long id;
+//	private Long id;
+//	private String name;
+//	
 	
 	public String listModule(){
 		List<Module> moduleList = moduleService.findAllModules();
@@ -31,32 +33,50 @@ public class ModuleAction extends ActionSupport {
 	}
 	
 	public String addInputModule(){
-		return "add_input_module";
+		return "input_module";
 	}
 	
 	public String addModule(){
+		
+		moduleService.saveModule(model);
 		return "add_module";
 	}
 	
 	public String deleteModule(){
-		moduleService.deleteModule(id);
+		moduleService.deleteModule(this.model.getId());
 		return "delete_module";
 	}
 	
 	public String modifyInputModule(){
-		return "modify_input_module";
+		Module module = moduleService.getById(this.model.getId());
+		ActionContext.getContext().getValueStack().push(module);
+		return "input_module";
 	}
 	
 	public String modifyModule(){
+		
+		Module module = moduleService.getById(this.model.getId());
+		module.setName(this.model.getName());
+		
+		moduleService.modifyModule(module);
 		return "modify_module";
 	}
 
-	public Long getId() {
-		return id;
-	}
+//	public Long getId() {
+//		return id;
+//	}
+//
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
+//
+//	public String getName() {
+//		return name;
+//	}
+//
+//	public void setName(String name) {
+//		this.name = name;
+//	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 	
 }
