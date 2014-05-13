@@ -9,6 +9,7 @@
 </head>
 <body>
 	<table>
+	<!--  
 		<s:iterator value="#moduleList">
 			<tr>
 				<td>
@@ -18,10 +19,28 @@
 					<s:property value="name"/>
 				</td>
 				<td>
+					<s:a action="modifyInputModule?id=%{id}">修改</s:a>
+					<s:a action="deleteModule?id=%{id}">删除</s:a>
+				</td>
+			</tr>
+		</s:iterator>
+		-->
+		<s:iterator value="#moduleList">
+			<tr>
+				<td>
+					${id}
+				</td>
+				<td>
+					${name}
+				</td>
+				<td>
+					<s:a action="modifyInputModule?id=%{id}">修改</s:a>
 					<s:a action="deleteModule?id=%{id}">删除</s:a>
 				</td>
 			</tr>
 		</s:iterator>
 	</table>
+	
+	<s:a action="addInputModule">添加</s:a>
 </body>
 </html>

@@ -5,11 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add Module</title>
+<title>Modify Module</title>
 </head>
 <body>
-	<s:form action="addModule">
-		<s:textfield name="name"></s:textfield>
+	<s:form action="%{id==null ? 'add':'modify'}Module">
+		<s:hidden name="id"></s:hidden>
+		姓名：<s:textfield name="name"></s:textfield>
+		<s:submit value="提交"></s:submit>
 	</s:form>
 </body>
 </html>
