@@ -11,6 +11,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.portal.base.BaseAction;
 import com.portal.model.Module;
 import com.portal.service.ModuleService;
+import com.portal.util.QueryHelper;
 
 
 @Controller
@@ -27,8 +28,9 @@ public class ModuleAction extends BaseAction<Module> {
 //	
 	
 	public String listModule(){
-		List<Module> moduleList = moduleService.findAllModules();
-		ActionContext.getContext().put("moduleList", moduleList);
+//		List<Module> moduleList = moduleService.findAllModules();
+//		ActionContext.getContext().put("moduleList", moduleList);
+		new QueryHelper (Module.class, "m").preparePageBean(pageNum, pageSize);
 		return "list_module";
 	}
 	

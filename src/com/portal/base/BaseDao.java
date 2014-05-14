@@ -2,6 +2,8 @@ package com.portal.base;
 
 import java.util.List;
 
+import com.portal.model.PageBean;
+
 public interface BaseDao<T> {
 
 	void save(T entity);
@@ -13,4 +15,5 @@ public interface BaseDao<T> {
 	T getById(Long id);
 	
 	List<T> findAll();
+	
 }

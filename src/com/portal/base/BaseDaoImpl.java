@@ -61,6 +61,5 @@ public abstract class BaseDaoImpl<E> implements BaseDao<E> {
 		return getSession().createQuery("from "+clazz.getSimpleName())
 							.list();
 	}
-
 	
 }
