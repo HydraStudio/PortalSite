@@ -1,5 +1,4 @@
-/* Credit: http://www.cssmoban.com */
-
+/* Clear All Affects */
 .site-header .main-navigation ul, .services #icons ul, .about #icons-about ul {
   padding: 0;
   margin: 0;
@@ -497,4 +496,42 @@ a.menu-toggle-btn {
 --------------------------------------------------------*/
 .content-options{
   
+}
+
+/*------------------------------------------------------
+  Search Box Styles 
+--------------------------------------------------------*/
+
+.search-box{
+  position: relative;
+  top: 7px;
+}
+
+.search-box .search-input-usr{
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+  -webkit-border-radius: 14px 0 0 14px;
+  -moz-border-radius: 14px 0 0 14px;
+  border-radius: 14px 0 0 14px;
+  height: 22px;
+  float: left;
+}
+
+.search-box .search-btn-usr{
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+  -webkit-border-radius: 0 14px 14px 0;
+  -moz-border-radius: 0 14px 14px 0;
+  border-radius: 0 14px 14px 0;
+  height: 22px;
+  float: left;
+  font-size: 2px;
+  border: 0px;
+  background-color: #FFFFFF;
 }
