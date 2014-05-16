@@ -4,6 +4,8 @@ import java.util.List;
 
 
 import com.portal.model.Module;
+import com.portal.model.PageBean;
+import com.portal.util.QueryHelper;
 
 public interface ModuleService {
 
@@ -16,4 +18,6 @@ public interface ModuleService {
 	Module getById(Long id);
 
 	void modifyModule(Module module);
+	
+	PageBean searchPagination(int pageNum, int pageSize, QueryHelper queryHelper);
 }

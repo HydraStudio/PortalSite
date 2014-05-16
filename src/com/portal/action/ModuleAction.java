@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
 import com.portal.base.BaseAction;
 import com.portal.model.Module;
+import com.portal.model.PageBean;
 import com.portal.service.ModuleService;
 import com.portal.util.QueryHelper;
 
@@ -30,7 +31,9 @@ public class ModuleAction extends BaseAction<Module> {
 	public String listModule(){
 //		List<Module> moduleList = moduleService.findAllModules();
 //		ActionContext.getContext().put("moduleList", moduleList);
-		new QueryHelper (Module.class, "m").preparePageBean(pageNum, pageSize);
+		QueryHelper queryHelper = new QueryHelper(Module.class, "m"); 
+		PageBean pageBean = moduleService.searchPagination(pageNum, pageSize, queryHelper);
+		ActionContext.getContext().getValueStack().push(pageBean);
 		return "list_module";
 	}
 	

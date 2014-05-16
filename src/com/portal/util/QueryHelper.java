@@ -3,14 +3,9 @@ package com.portal.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
 
-import org.hibernate.Query;
-
-import com.opensymphony.xwork2.ActionContext;
-import com.portal.base.BaseDaoImpl;
-import com.portal.model.PageBean;
-
-public class QueryHelper extends BaseDaoImpl{
+public class QueryHelper{
 
 	private String fromClause; // FROM子句
 	private String whereClause = ""; // Where子句
@@ -30,7 +25,7 @@ public class QueryHelper extends BaseDaoImpl{
 	public QueryHelper(Class clazz, String alias) {
 		fromClause = "FROM " + clazz.getSimpleName() + " " + alias;
 	}
-
+	
 	/**
 	 * 拼接Where子句
 	 * 
@@ -134,38 +129,8 @@ public class QueryHelper extends BaseDaoImpl{
 	 * @param pageNum
 	 * @param pageSize
 	 */
-	public void preparePageBean(int pageNum, int pageSize) {
-		PageBean pageBean = getPageBean(pageNum, pageSize, this);
-		ActionContext.getContext().getValueStack().push(pageBean);
-	}
-	
-	// 公共的查询分页信息的方法（最终版）
-	private PageBean getPageBean(int pageNum, int pageSize, QueryHelper queryHelper) {
-		System.out.println("-------> DaoSupportImpl.getPageBean( int pageNum, int pageSize, QueryHelper queryHelper )");
-
-		// 参数列表
-		List<Object> parameters = queryHelper.getParameters();
-
-		// 查询本页的数据列表
-		Query listQuery = getSession().createQuery(queryHelper.getListQueryHql()); // 创建查询对象
-		if (parameters != null) { // 设置参数
-			for (int i = 0; i < parameters.size(); i++) {
-				listQuery.setParameter(i, parameters.get(i));
-			}
-		}
-		listQuery.setFirstResult((pageNum - 1) * pageSize);
-		listQuery.setMaxResults(pageSize);
-		List list = listQuery.list(); // 执行查询
-
-		// 查询总记录数量
-		Query countQuery = getSession().createQuery(queryHelper.getCountQueryHql());
-		if (parameters != null) { // 设置参数
-			for (int i = 0; i < parameters.size(); i++) {
-				countQuery.setParameter(i, parameters.get(i));
-			}
-		}
-		Long count = (Long) countQuery.uniqueResult(); // 执行查询
-
-		return new PageBean(pageNum, pageSize, count.intValue(), list);
-	}
+//	public void preparePageBean(BaseService service, int pageNum, int pageSize) {
+//		PageBean pageBean = service.getPageBean(pageNum, pageSize, this);
+//		ActionContext.getContext().getValueStack().push(pageBean);
+//	}
 }
