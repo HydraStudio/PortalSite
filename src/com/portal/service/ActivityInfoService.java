@@ -1,5 +1,6 @@
 package com.portal.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.portal.model.ActivityInfo;
@@ -19,4 +20,6 @@ List<ActivityInfo> findAllModules();
 	void modifyActivityInfo(ActivityInfo activityInfo);
 	
 	PageBean searchPagination(int pageNum, int pageSize, QueryHelper queryHelper);
+	
+	List<ActivityInfo> findByDate(Date date);
 }

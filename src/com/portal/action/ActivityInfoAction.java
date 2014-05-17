@@ -1,5 +1,7 @@
 package com.portal.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
@@ -59,5 +61,11 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		activityInfo.setTitle(model.getTitle());
 		activityInfoService.modifyActivityInfo(activityInfo);
 		return "modify_activity_info";
+	}
+	
+	public String findByDate(){
+		List<ActivityInfo> activityInfos = activityInfoService.findByDate(model.getDate());
+		ActionContext.getContext().put("activities", activityInfos);
+		return "list_activity_index";
 	}
 }

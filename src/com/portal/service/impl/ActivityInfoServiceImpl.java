@@ -1,5 +1,6 @@
 package com.portal.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -45,5 +46,7 @@ public class ActivityInfoServiceImpl implements ActivityInfoService {
 		return activityInfoDao.searchPagination(pageNum, pageSize, queryHelper);
 	}
 	
-	
+	public List<ActivityInfo> findByDate(Date date) {
+		return activityInfoDao.findByDate(date);
+	}
 }
