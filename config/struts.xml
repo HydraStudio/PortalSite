@@ -38,5 +38,8 @@
 			<result name="modify_activity_info" type="redirectAction">listActivityInfo</result>
 			<result name="delete_activity_info" type="redirectAction">listActivityInfo</result>
 		</action>
+		
+		<action name="uploadFile" class="activityInfoAction" method="uploadFile">
+		</action>
 	</package>
 </struts> 
