@@ -1,8 +1,5 @@
 package com.portal.model;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,13 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="module")
-public class Module {
+@Table(name="resource")
+public class Resource {
 
 	@Id
 	@GeneratedValue
@@ -24,36 +19,43 @@ public class Module {
 	
 	@Column(name="name")
 	private String name;
+
+	@Column(name="url")
+	private String url;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="pid")
-	private Module module;
-	
-	@OneToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="module")
-	private Set<Module> subModule;
+	@JoinColumn(name="activity_id")
+	private ActivityInfo activityInfo;
 	
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Set<Module> getSubModule() {
-		return subModule;
+
+	public String getUrl() {
+		return url;
 	}
-	public void setSubModule(Set<Module> subModule) {
-		this.subModule = subModule;
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
-	public Module getModule() {
-		return module;
+
+	public ActivityInfo getActivityInfo() {
+		return activityInfo;
 	}
-	public void setModule(Module module) {
-		this.module = module;
+
+	public void setActivityInfo(ActivityInfo activityInfo) {
+		this.activityInfo = activityInfo;
 	}
 }

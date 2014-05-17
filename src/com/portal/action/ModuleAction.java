@@ -31,7 +31,12 @@ public class ModuleAction extends BaseAction<Module> {
 	public String listModule(){
 //		List<Module> moduleList = moduleService.findAllModules();
 //		ActionContext.getContext().put("moduleList", moduleList);
-		QueryHelper queryHelper = new QueryHelper(Module.class, "m"); 
+		QueryHelper queryHelper = new QueryHelper(Module.class, "m");
+		if(this.model.getId() !=null){
+			queryHelper.addCondition("m.module.id = ? ", this.model.getId());
+		}else{
+			queryHelper.addCondition("m.module is null ");
+		}
 		PageBean pageBean = moduleService.searchPagination(pageNum, pageSize, queryHelper);
 		ActionContext.getContext().getValueStack().push(pageBean);
 		return "list_module";
