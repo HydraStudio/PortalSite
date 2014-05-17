@@ -30,5 +30,13 @@
 			<result name="modify_module" type="redirectAction">listModule</result>
 			<result name="delete_module" type="redirectAction">listModule</result>
 		</action>
+		
+		<action name="*ActivityInfo" class="activityInfoAction" method="{1}ActivityInfo">
+			<result name="list_activity_info">/WEB-INF/back/activity/list_activity_info.jsp</result>
+			<result name="input_activity_info">/WEB-INF/back/activity/input_activity_info.jsp</result>
+			<result name="add_activity_info" type="redirectAction">listActivityInfo</result>
+			<result name="modify_activity_info" type="redirectAction">listActivityInfo</result>
+			<result name="delete_activity_info" type="redirectAction">listActivityInfo</result>
+		</action>
 	</package>
 </struts> 
