@@ -5,12 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Input Module</title>
+<script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
+<title>Input Activity</title>
 </head>
 <body>
-	<s:form action="%{id==null ? 'add':'modify'}Module">
+	<s:form action="%{id==null ? 'add':'modify'}ActivityInfo">
 		<s:hidden name="id"></s:hidden>
-		姓名：<s:textfield name="name"></s:textfield>
+		标题：<s:textfield name="title"></s:textfield>
+		描述：<s:textfield name="description"></s:textfield>
+		日期：<s:textfield name="date"></s:textfield>
 		<s:submit value="提交"></s:submit>
 	</s:form>
 </body>

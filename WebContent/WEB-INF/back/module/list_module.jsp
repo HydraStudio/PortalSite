@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <title>List</title>
 </head>
 <body>
@@ -25,13 +26,13 @@
 			</tr>
 		</s:iterator>
 		-->
-		<s:iterator value="#recordList">
+		<s:iterator value="recordList">
 			<tr>
 				<td>
 					${id}
 				</td>
 				<td>
-					${name}
+					<s:a action="listModule?id=%{id}">${name}</s:a>
 				</td>
 				<td>
 					<s:a action="modifyInputModule?id=%{id}">修改</s:a>
