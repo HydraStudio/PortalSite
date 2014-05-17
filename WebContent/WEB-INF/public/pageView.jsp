@@ -10,8 +10,8 @@
 	</div>
 	<div id=PageSelectorSelectorArea>
 	
-		<a href="javascript: gotoPage(1)" title="首页" style="cursor: hand;">
-			<img src="${pageContext.request.contextPath}/style/blue/images/pageSelector/firstPage.png"/>
+		<a href="javascript: gotoPage(1)" title="首页" style="cursor: pointer;">
+			首页
 		</a>
 		
 		<s:iterator begin="%{beginPageIndex}" end="%{endPageIndex}" var="num">
@@ -19,13 +19,13 @@
 				<span class="PageSelectorNum PageSelectorSelected">${num}</span>
 			</s:if>
 			<s:else> <%-- 非当前页 --%>
-				<span class="PageSelectorNum" style="cursor: hand;" onClick="gotoPage(${num});">${num}</span>
+				<span class="PageSelectorNum" style="cursor: pointer;" onClick="gotoPage(${num});">${num}</span>
 			</s:else>
 			
 		</s:iterator>
 		
-		<a href="javascript: gotoPage(${pageCount})" title="尾页" style="cursor: hand;">
-			<img src="${pageContext.request.contextPath}/style/blue/images/pageSelector/lastPage.png"/>
+		<a href="javascript: gotoPage(${pageCount})" title="尾页" style="cursor: pointer;">
+			尾页
 		</a>
 		
 		转到：
@@ -43,9 +43,8 @@
 
 
 <script type="text/javascript">
-	function gotoPage( pageNum ){
+	function gotoPage(pageNum){
 		// window.location.href = "forum_show.action?id=${id}&pageNum=" + pageNum;
-		
 		$(document.forms[0]).append("<input type='hidden' name='pageNum' value='" + pageNum +"'>");
 		document.forms[0].submit();
 	}
