@@ -9,7 +9,24 @@
 <title>List Activity</title>
 </head>
 <body>
-	<table>
+	<table style="border:1px red solid;" align="center">
+		<tr>
+			<td>
+				ID
+			</td>
+			<td>
+				标题
+			</td>
+			<td>
+				活动简介
+			</td>
+			<td>
+				活动日期
+			</td>
+			<td>
+				操作
+			</td>
+		</tr>
 		<s:iterator value="recordList">
 			<tr>
 				<td>
@@ -33,9 +50,11 @@
 	</table>
 	
 	<br/><br/><br/>
-	<%@ include file="/WEB-INF/public/pageView.jsp" %>
-	<s:form action="listActivityInfo"></s:form>
-
-	<s:a action="addInputActivityInfo">添加</s:a> <br/><br/><br/>
+	<div align="center">
+		<%@ include file="/WEB-INF/public/pageView.jsp" %>
+		<s:form action="listActivityInfo"></s:form>
+		<s:a action="addInputActivityInfo">添加</s:a> <br/><br/><br/>
+	</div>
+	
 </body>
 </html>

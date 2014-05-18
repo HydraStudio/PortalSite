@@ -7,32 +7,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/activity.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/ajaxfileupload.js"></script>
 <title>Input Activity</title>
-<script type="text/javascript">
-	$(function(){
-		CKEDITOR.replace('editor1', {
-		//	filebrowserImageUploadUrl: 'myImageUpload.ashx',
-			toolbar :[
-			          ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink'],
-					  ['FontSize', 'TextColor', 'BGColor'],
-					  ['Image']
-					],
-			filebrowserUploadUrl: 'uploadFile.action'
-		});
-	});
-
-	
-</script>
 
 </head>
 <body>
-	<s:form action="%{id==null ? 'add':'modify'}ActivityInfo">
+	
+	<s:form action="%{id==null ? 'add':'modify'}ActivityInfo" theme="simple" enctype="multipart/form-data" method="post" id="inputAction">
 		<s:hidden name="id"></s:hidden>
+		<s:hidden name="changeFlag" id="changeFlag"></s:hidden>
 		标题：<s:textfield name="title"></s:textfield> <br/>
-		描述：<s:textarea name="description" id="editor1" rows="10" cols="80"></s:textarea><br/>
-		日期：<s:textfield name="date"></s:textfield><br/>
-		
-		<s:submit value="提交"></s:submit>
+		封面：<s:file name="upload" onchange="changeSmallImage(this)" id="file"></s:file>
+		缩略图：<img src="${imageUrl}" id="indexImage" onclick="DrawImage(this)"/><br/>
+		简介：<s:textarea name="description" rows="10" cols="80"></s:textarea><br/>
+		活动日期：<s:textfield name="date"></s:textfield><br/>
+		详细介绍：<s:textarea name="detail" id="editor1" rows="10" cols="80"></s:textarea><br/>
+		<input type="button" value="提交" onclick="checkFile()"/>
 	</s:form>
+	
 </body>
 </html>
