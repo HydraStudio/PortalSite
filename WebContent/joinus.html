@@ -153,9 +153,9 @@
 
 				        <div class="form-group join-us-form-unit">
 				          	<fieldset>
-							    <label for="inputWorked" class="col-md-4 control-label">是否已工作</label>
+							    <label for="selectWorked" class="col-md-4 control-label">是否已工作</label>
 							    <div class="col-md-8">
-							        <select class="selectpicker text-left" >
+							        <select class="selectpicker text-left" id="selectWorked">
 								        <option>是</option>
 									    <option>否</option>
 								    </select>
@@ -165,9 +165,9 @@
 
 				        <div class="form-group join-us-form-unit">
 				          	<fieldset>
-							    <label for="inputWorked" class="col-md-4 control-label">GPA成绩</label>
+							    <label for="selectGPA" class="col-md-4 control-label">GPA成绩</label>
 							    <div class="col-md-8">
-							        <select class="selectpicker text-left" >
+							        <select class="selectpicker text-left" id="selectGPA">
 								        <option>是</option>
 									    <option>否</option>
 								    </select>
@@ -177,9 +177,9 @@
 
 				        <div class="form-group join-us-form-unit">
 				          	<fieldset>
-							    <label for="inputWorked" class="col-md-4 control-label">GRE成绩</label>
+							    <label for="selectGRE" class="col-md-4 control-label">GRE成绩</label>
 							    <div class="col-md-8">
-							        <select class="selectpicker text-left" >
+							        <select class="selectpicker text-left" id="selectGRE">
 								        <option>是</option>
 									    <option>否</option>
 								    </select>
@@ -189,9 +189,9 @@
 
 				        <div class="form-group join-us-form-unit">
 				          	<fieldset>
-							    <label for="inputWorked" class="col-md-4 control-label">GMAT成绩</label>
+							    <label for="selectGMAT" class="col-md-4 control-label">GMAT成绩</label>
 							    <div class="col-md-8">
-							        <select class="selectpicker text-left" >
+							        <select class="selectpicker text-left" id="selectGMAT">
 								        <option>是</option>
 									    <option>否</option>
 								    </select>
@@ -201,9 +201,9 @@
 
 				        <div class="form-group join-us-form-unit">
 				          	<fieldset>
-							    <label for="inputWorked" class="col-md-4 control-label">TOFEL成绩</label>
+							    <label for="selectTOFEL" class="col-md-4 control-label">TOFEL成绩</label>
 							    <div class="col-md-8">
-							        <select class="selectpicker text-left" >
+							        <select class="selectpicker text-left" id="selectTOFEL">
 								        <option>是</option>
 									    <option>否</option>
 								    </select>
@@ -213,9 +213,9 @@
 
 				        <div class="form-group join-us-form-unit">
 				          	<fieldset>
-							    <label for="inputWorked" class="col-md-4 control-label">IELTS成绩</label>
+							    <label for="selectIELTS" class="col-md-4 control-label">IELTS成绩</label>
 							    <div class="col-md-8">
-							        <select class="selectpicker text-left" >
+							        <select class="selectpicker text-left" id="selectIELTS">
 								        <option>是</option>
 									    <option>否</option>
 								    </select>
@@ -232,13 +232,22 @@
 			    <div id="join-us-form-agreement">
 				    <div class="form-group join-us-form-unit">
 			          	<fieldset>
-						    <label for="inputWorked" class="col-md-6 control-label">通过何种方式知道我们的</label>
+						    <label for="selectWayKnown" class="col-md-6 control-label">通过何种方式知道我们的</label>
 						    <div class="col-md-5 text-left">
-						        <select class="selectpicker text-left" >
-							        <option>是</option>
-								    <option>否</option>
+						        <select class="selectpicker text-left" id="selectWayKnown">
+							        <option>朋友</option>
+								    <option>同事</option>
+								    <option>上网</option>
+								    <option>邮件</option>
 							    </select>
 						    </div>
+					    </fieldset>
+			        </div>
+
+			        <div class="form-group join-us-form-unit">
+			          	<fieldset>
+			          		<input type="checkbox" id="chkReceiveMail"></input>
+						    <label class="col-md-6 control-label">我愿意收到来自METALL的Newsletter</label>
 					    </fieldset>
 			        </div>
 			    </div>
