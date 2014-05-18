@@ -41,5 +41,9 @@
 		
 		<action name="uploadFile" class="activityInfoAction" method="uploadFile">
 		</action>
+		
+		<!--  
+		<action name="ajaxUpload" class="activityInfoAction" method="ajaxUpload"> 
+        </action>  -->
 	</package>
 </struts> 
