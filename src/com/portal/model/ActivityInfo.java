@@ -3,13 +3,10 @@ package com.portal.model;
 import java.util.Date;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -24,8 +21,8 @@ public class ActivityInfo {
 	@Column(name="title")
 	private String title;
 	
-	@OneToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="activityInfo")
-	private Set<Resource> imageUrls;
+//	@OneToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="activityInfo")
+//	private Set<Resource> imageUrls;
 	
 	@Column(name="description")
 	private String description;
@@ -33,8 +30,11 @@ public class ActivityInfo {
 	@Column(name="date")
 	private Date date;
 	
-	@Column(name="like_count")
-	private Long likeCount;
+	@Column(name="detail")
+	private String detail;
+	
+	@Column(name="image_url")
+	private String imageUrl;
 	
 	public Long getId() {
 		return id;
@@ -60,14 +60,6 @@ public class ActivityInfo {
 		this.description = description;
 	}
 
-	public Set<Resource> getImageUrls() {
-		return imageUrls;
-	}
-
-	public void setImageUrls(Set<Resource> imageUrls) {
-		this.imageUrls = imageUrls;
-	}
-
 	public Date getDate() {
 		return date;
 	}
@@ -76,11 +68,19 @@ public class ActivityInfo {
 		this.date = date;
 	}
 
-	public Long getLikeCount() {
-		return likeCount;
+	public String getDetail() {
+		return detail;
 	}
 
-	public void setLikeCount(Long likeCount) {
-		this.likeCount = likeCount;
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 }
