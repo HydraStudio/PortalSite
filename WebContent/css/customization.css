@@ -1,0 +1,123 @@
+/*------------------------------------------------------
+  Index: Photo Galary - Styles 
+--------------------------------------------------------*/
+#index-carousel{
+	border: 20px solid;
+	border-color: #FFFFFF;
+	-webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+}
+
+#index-carousel img{
+	width: 100%;
+}
+
+#index-carousel .carousel-indicators .active{
+	background-color: #66CC99;
+}
+
+/*------------------------------------------------------
+  Index: Activity Dashboard - Styles 
+--------------------------------------------------------*/
+#activity-news-dashboard{
+	width: 400px;
+	height: 100px;
+	background-color: #FF6633;
+	position: absolute;
+	left: 0px;
+	top: 300px;
+	z-index:1;
+	opacity: 0.7; 
+	-moz-opacity:0.7;  
+    filter: alpha(opacity=70);
+}
+
+#activity-news-dashboard h3,h1{
+	color: #FFFFFF;
+	font-size: 150%;
+	opacity: 1; 
+	-moz-opacity:1;  
+    filter: alpha(opacity=100);
+}
+
+/*------------------------------------------------------
+  Join Us: Form - Styles 
+--------------------------------------------------------*/
+#join-us-form{
+	-webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+	background-color: #FFF;
+}
+
+#join-us-form-content{
+	padding-top: 60px;
+	padding-bottom: 30px;
+	border-bottom: 3px solid #CDECDD;
+}
+
+#join-us-form-agreement{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/*------------------------------------------------------
+  Join Us: Selecter - Styles 
+--------------------------------------------------------*/
+
+.bootstrap-select .btn-default,
+.bootstrap-select .btn-default:hover,
+.bootstrap-select .btn-default:focus, 
+.bootstrap-select .btn-default:active, 
+.open .dropdown-toggle.btn-default{
+	border-color:#FFF;
+	background-color: #FFF;
+	border-bottom: 1px solid #adadad;
+}
+
+
+
+.bootstrap-select .btn-default{
+	padding: 0px 24px 0 20px;
+}
+
+.bootstrap-select img{
+	position: relative;
+	right: 5px;
+}
+
+.bootstrap-select span{
+	padding-top: 2px;
+}
+
+.bootstrap-select{
+	font-weight: bold;
+	height: 25px;
+}
+
+/*------------------------------------------------------
+  Share Icons - Styles 
+--------------------------------------------------------*/
+.share-box{
+
+}
+
+.share-box div{
+	width: 30px;
+}
+
+.icon-weibo{
+	background-image: url('../images/icon_weibo.png');
+	background-repeat: no-repeat;
+	background-position: -40px -42px;
+	display: inline-block;
+}
+
+.icon-wechat{
+	background-image: url('../images/icon_wechat.png');
+	background-repeat: no-repeat;
+	background-position: -65px -42px;
+	display: inline-block;
+}
+

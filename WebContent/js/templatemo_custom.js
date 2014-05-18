@@ -15,10 +15,10 @@ jQuery(document).ready(function($){
 		return false;
 	});
 	*/
-	$( window ).load(function() {
+	/*$( window ).load(function() {
 	  $("#menu-container .products").hide();
-	});
-
+	});*/
+/*
 	$(".main_menu a.templatemo_home").addClass('active');
 
 	$(".main_menu a.templatemo_home, .responsive_menu a.templatemo_home").click(function(){
@@ -74,7 +74,7 @@ jQuery(document).ready(function($){
 		loadScript();
 		return false;
 	});
-
+*/
 
 	/************** Gallery Hover Effect *********************/
 	$(".overlay").hide();

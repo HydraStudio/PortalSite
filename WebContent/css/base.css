@@ -131,28 +131,30 @@ input, textarea {
 
 .site-header .main-navigation {
   display: block;
-  background-color: #339966;
+  background-color: #66CC99;
   text-align: center;
   padding: 15px 0;
   position:relative;
 }
 
 .site-header .banner{
-  background-color: #66CC99;
+  background-color: #339966;
+  height: 12px;
 }
 
 .site-header .main-navigation ul li {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 .site-header .main-navigation ul li:last-child {
   margin-right: 0px !important;
 }
 .site-header .main-navigation ul li a {
-  padding: 10px 20px;
+  padding: 10px 16px;
   display: inline-block;
   color: white;
   font-size: 12px;
+  font-weight: bolder;
 }
 .site-header .main-navigation ul li a.active {
   background-color: #eeeeee;
@@ -162,11 +164,22 @@ input, textarea {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
-.site-header .templatemo_logo {
-  margin-top: 60px;
+
+.site-header .main_menu{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.site-header .logo {
+  height: 60px;
+  line-height: 2;
   display: inline-block;
+  position: relative;
+  right: 8s0px;
   font-size: 36px;
-  font-weight: 700;
+  padding-right: 350px;
+  background-repeat: no-repeat;
+  background-image: url('../images/index-logo.jpg')
 }
 
 .navigation-bg {
@@ -189,16 +202,17 @@ a.menu-toggle-btn {
 
 .responsive_menu {
   display: none;
-  background-color: #2a2a2a;
+  background-color: #66CC99;
 }
 .responsive_menu ul li {
   display: block !important;
   margin: 0 !important;
-  border-bottom: 1px solid #444444;
+  border-bottom: 1px solid #FFFFFF;
 }
 .responsive_menu ul li a {
   padding: 20px 0 !important;
   display: block !important;
+  font-weight: bold;
 }
 
 /*------------------------------------------------------
@@ -440,11 +454,105 @@ a.menu-toggle-btn {
 	margin-bottom: 10px;
 }
 
-#templatemo_footer {
-  margin-top: 60px;
-  border-top: 3px solid #b10021;
+/*------------------------------------------------------
+  iVote Styles 
+--------------------------------------------------------*/
+.content-options{
+  
+}
+
+/*------------------------------------------------------
+  Search Box Styles 
+--------------------------------------------------------*/
+
+.search-box{
+  position: relative;
+  top: 7px;
+}
+
+.search-box .search-input-usr{
+  width: 60%;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+  -webkit-border-radius: 14px 0 0 14px;
+  -moz-border-radius: 14px 0 0 14px;
+  border-radius: 14px 0 0 14px;
+  height: 22px;
+  float: left;
+  border: 0px solid #cfcfcf !important;
+}
+
+.search-box .search-btn-usr{
+  padding-left: 13px;
+  padding-right: 14px;
+  padding-top: 1px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+  -webkit-border-radius: 0 14px 14px 0;
+  -moz-border-radius: 0 14px 14px 0;
+  border-radius: 0 14px 14px 0;
+  height: 22px;
+  float: left;
+  font-size: 1px;
+  border: 0px;
+  background-color: #FFFFFF;
+}
+
+.search-box .search-btn-usr:hover{
+  color: #66CC99
+}
+
+/*------------------------------------------------------
+  Site Content Styles 
+--------------------------------------------------------*/
+.site-content{
+  height: 860px;
+  margin-left：0 auto;
+  margin-right：0 auto;
+  text-align: center;
+  background-image: url('../images/index-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.blank{
+  height: 60px;
+}
+
+/*------------------------------------------------------
+  Footer Styles 
+--------------------------------------------------------*/
+#site-footer {
+ 
+  border-top: 1px solid #343535;
   padding: 20px 0;
   position: relative;
+  background-color: #343535;
+  color: #FFF;
+}
+
+#site-footer #footer_focus_us{
+  border-right: 1px solid white;
+  padding-left: 60px;
+}
+
+#site-footer #footer_about_us{
+  
+}
+
+/*------------------------------------------------------
+  Form Styles 
+--------------------------------------------------------*/
+.control-label{
+  text-align: right;
+  font-weight: bold;
+}
+
+.join-us-form-unit{
+  padding-top: 10px;
 }
 
 /*------------------------------------------------------
@@ -470,8 +578,20 @@ a.menu-toggle-btn {
   .about #icons-about .icon-item span {
     display: none;
   }
+
+  #site-footer #footer_focus_us{
+    text-align: left;
+    border-right: 0px solid white;
+    padding-left: 16px;
+  }
+
+  #site-footer #footer_about_us{
+    text-align: left;
+    padding-left: 16px;
+  }
+
 }
-@media only screen and (max-width: 760px) {
+/*@media only screen and (max-width: 760px) {
   .services #icons {
     margin-top: 50px;
   }
@@ -489,49 +609,4 @@ a.menu-toggle-btn {
     display: inline-block;
     margin: 0 0 0 20px;
   }
-}
-
-/*------------------------------------------------------
-  iVote Styles 
---------------------------------------------------------*/
-.content-options{
-  
-}
-
-/*------------------------------------------------------
-  Search Box Styles 
---------------------------------------------------------*/
-
-.search-box{
-  position: relative;
-  top: 7px;
-}
-
-.search-box .search-input-usr{
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-bottom: 0;
-  -webkit-border-radius: 14px 0 0 14px;
-  -moz-border-radius: 14px 0 0 14px;
-  border-radius: 14px 0 0 14px;
-  height: 22px;
-  float: left;
-}
-
-.search-box .search-btn-usr{
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-bottom: 0;
-  -webkit-border-radius: 0 14px 14px 0;
-  -moz-border-radius: 0 14px 14px 0;
-  border-radius: 0 14px 14px 0;
-  height: 22px;
-  float: left;
-  font-size: 2px;
-  border: 0px;
-  background-color: #FFFFFF;
-}
+}*/
