@@ -41,6 +41,7 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
     private String CKEditor;  
     private String langCode;
 	
+    private String message;
 	
 	public String listActivityInfo(){
 		QueryHelper queryHelper = new QueryHelper(ActivityInfo.class, "a");
@@ -53,7 +54,12 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		return "input_activity_info";
 	}
 	
-	public String addActivityInfo(){
+	public String addActivityInfo() throws Exception{
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String fileName = uploadActivityInfo();
+        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+        String imageUrl = URL+"upload/" + fileName;
+        model.setImageUrl(imageUrl);
 		activityInfoService.saveActivityInfo(model);
 		return "add_activity_info";
 	}
@@ -71,12 +77,23 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	}
 	
 	//need to modify
-	public String modifyActivityInfo(){
+	public String modifyActivityInfo() throws Exception{
 		ActivityInfo activityInfo = activityInfoService.getById(model.getId());
 		activityInfo.setDate(model.getDate());
 		activityInfo.setDescription(model.getDescription());
-		activityInfo.setLikeCount(model.getLikeCount());
 		activityInfo.setTitle(model.getTitle());
+		activityInfo.setDetail(model.getDetail());
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String changeFlag = request.getParameter("changeFlag");
+		//check if change the picture
+		if(changeFlag != null && !changeFlag.equals("")){
+			String fileName = uploadActivityInfo();
+	        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+	        String imageUrl = URL+"upload/" + fileName;
+	        activityInfo.setImageUrl(imageUrl);
+		}
+		
 		activityInfoService.modifyActivityInfo(activityInfo);
 		return "modify_activity_info";
 	}
@@ -90,38 +107,17 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	//upload File
 	public String uploadFile() throws Exception{
 		
-//		String strPath = ServletActionContext.getServletContext().getRealPath("/uploads");  
-//        File path = new File(strPath);  
-//        if(!path.exists()){  
-//            path.mkdirs();  
-//        }  
-//        InputStream is = new FileInputStream(this.upload);  
-//        OutputStream os = new FileOutputStream(new File(strPath + File.separator + this.uploadFileName));  
-//          
-//        int len;  
-//        byte[] buffer = new byte[1024];  
-//        while ((len=is.read(buffer)) > 0) {  
-//            os.write(buffer,0,len);  
-//        }  
-//        if(is!=null){  
-//            is.close();  
-//        }  
-//        if(os!=null){  
-//            os.close();  
-//        }  
-//        
-//        PrintWriter out = ServletActionContext.getResponse().getWriter();  
-//        //返回给ckeditor  
-//        out.write("<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction("+this.CKEditorFuncNum+", 'uploads/" + this.uploadFileName+"', '');</script>");
-        
 		HttpServletResponse response = ServletActionContext.getResponse();  
         response.setCharacterEncoding("UTF-8");  
         PrintWriter out = response.getWriter();  
   
+        HttpServletRequest request = ServletActionContext.getRequest();
+		String callback = request.getParameter("CKEditorFuncNum");
   
         //对文件进行校验  
         if(upload==null || uploadContentType==null || uploadFileName==null){  
-            out.print("<font color=\"red\" size=\"2\">*请选择上传文件</font>");  
+//            out.print("<font color=\"red\" size=\"2\">*请选择上传文件</font>"); 
+            out.println("window.parent.CKEDITOR.tools.callFunction(" + callback + ",''," + "'<font color=\"red\" size=\"2\">*请选择上传文件</font></font>');");
             return null;  
         }  
           
@@ -135,16 +131,32 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
         }else if(uploadContentType.equals("image/bmp") && uploadFileName.substring(uploadFileName.length() - 4).toLowerCase().equals(".bmp")){  
               
         }else{  
-            out.print("<font color=\"red\" size=\"2\">*文件格式不正确（必须为.jpg/.gif/.bmp/.png文件）</font>");  
+//            out.print("<font color=\"red\" size=\"2\">*文件格式不正确（必须为.jpg/.gif/.bmp/.png文件）</font>");  
+            out.println("window.parent.CKEDITOR.tools.callFunction(" + callback + ",''," + "'<font color=\"red\" size=\"2\">*文件格式不正确（必须为.jpg/.gif/.bmp/.png文件）</font>');"); 
             return null;  
         }  
           
         if(upload.length() > 600*1024){  
-            out.print("<font color=\"red\" size=\"2\">*文件大小不得大于600k</font>");  
+//            out.print("<font color=\"red\" size=\"2\">*文件大小不得大于600k</font>");  
+            out.println("window.parent.CKEDITOR.tools.callFunction(" + callback + ",''," + "'<font color=\"red\" size=\"2\">*文件大小不得大于600k</font>');");
             return null;  
         }  
           
-        //将文件保存到项目目录下  
+        String fileName = uploadActivityInfo();
+        
+        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+        
+        //设置返回“图像”选项卡  
+        out.println("<script type=\"text/javascript\">");    
+        out.println("window.parent.CKEDITOR.tools.callFunction("+ callback + ",\'" +URL+"upload/"+fileName+ "\',\'\');");
+//        out.println("window.parent.CKEDITOR.tools.callFunction(" + callback + ",'" + "upload/" + fileName + "','')");    
+        out.println("</script>");
+		
+		return "upload_success";
+	}
+	
+	private String uploadActivityInfo() throws Exception{
+		//将文件保存到项目目录下  
         InputStream is = new FileInputStream(upload);  
         String uploadPath = ServletActionContext.getServletContext()     
                 .getRealPath("/upload");   //设置保存目录  
@@ -158,21 +170,20 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
             os.write(buffer, 0, length);     
         }     
         is.close();  
-        os.close();  
-          
-        HttpServletRequest request = ServletActionContext.getRequest();
-        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-        
-        //设置返回“图像”选项卡  
-        String callback = request.getParameter("CKEditorFuncNum");    
-        out.println("<script type=\"text/javascript\">");    
-        out.println("window.parent.CKEDITOR.tools.callFunction("+ callback + ",\'" +URL+"upload/"+fileName+ "\',\'\');");
-//        out.println("window.parent.CKEDITOR.tools.callFunction(" + callback + ",'" + "upload/" + fileName + "','')");    
-        out.println("</script>");
-		
-		return "upload_success";
+        os.close();
+        return fileName;
 	}
 
+	
+//	public void ajaxUpload() throws Exception{
+//		
+//		HttpServletRequest request = ServletActionContext.getRequest();
+//		String fileName = uploadActivityInfo();
+//        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+//        String imageUrl = URL+"upload/" + fileName;
+//        ServletActionContext.getResponse().getWriter().print(imageUrl);
+//	}
+	
 	public ActivityInfoService getActivityInfoService() {
 		return activityInfoService;
 	}
@@ -227,5 +238,13 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 
 	public void setLangCode(String langCode) {
 		this.langCode = langCode;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 }
