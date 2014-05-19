@@ -76,8 +76,6 @@
 	border-bottom: 1px solid #adadad;
 }
 
-
-
 .bootstrap-select .btn-default{
 	padding: 0px 24px 0 20px;
 }
@@ -94,6 +92,28 @@
 .bootstrap-select{
 	font-weight: bold;
 	height: 25px;
+}
+
+/*------------------------------------------------------
+  Activity News: Calendar - Styles 
+--------------------------------------------------------*/
+#activity-news-calender .datepicker{
+	background-color: #FFF
+}
+
+#calendar-title{
+	cursor: default;
+}
+
+.activity-news-unit{
+	display: inline-block;
+	margin: 0px 30px 30px 30px;
+	height: 200px;
+}
+
+.activity-news-unit h1{
+	color: #FF8B00;
+	font-weight: bold;
 }
 
 /*------------------------------------------------------

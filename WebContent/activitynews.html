@@ -15,13 +15,18 @@
     <meta charset="UTF-8">
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/templatemo_misc.css">
+	
 
 	<!-- Flat -->
-	<link href="css/flat-ui.css" rel="stylesheet">
+	<!-- <link href="css/flat-ui.css" rel="stylesheet"> -->
+
+	<!-- DatePicker -->
+	<link href="css/datepicker3.css" rel="stylesheet">
 
 	<!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'>
@@ -88,47 +93,43 @@
 	<div class="site-content">
 	    <div class="blank"></div>
 	    <div class=""></div>
-		<div id="photo-galary-wrapper" class="container">
-			<!-- <div class="col-md-1"></div> -->
-			<div id="activity-news-dashboard" class="col-md-3">
-				<h1>重点推荐XX活动</h1><br/>
-				<h3>你准备好了么</h3>
-			</div>
-			<div id="photo-galary" class="col-md-12 col-sm-12">
-				<div id="index-carousel" class="carousel slide" data-ride="carousel">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-				    <li data-target="#index-carousel" data-slide-to="0" class="active"></li>
-				    <li data-target="#index-carousel" data-slide-to="1"></li>
-				    <li data-target="#index-carousel" data-slide-to="2"></li>
-				    <li data-target="#index-carousel" data-slide-to="3"></li>
-				  </ol>
 
-				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner">
-				    <div class="item active">
-				      <img src="./images/index_01.jpg" alt="...">
-				      <!-- <div class="carousel-caption">
-				        Test Picture
-				      </div> -->
-				    </div>
-				    <div class="item">
-				      <img src="./images/index_01.jpg" alt="...">
-				    </div>
-				  </div>
+		<div id="activity-news-wrapper" class="container">
+			<div class="row">
 
-				  <!-- Controls -->
-				  <a class="left carousel-control" href="#index-carousel" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left"></span>
-				  </a>
-				  <a class="right carousel-control" href="#index-carousel" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right"></span>
-				  </a>
+				<div  class="col-md-1 col-sm-12"></div>
+
+				<div id="activity-news-calender" class="col-md-3 col-sm-12 text-center">
+					
+					<div></div>
+
 				</div>
+
+				<div id="activity-news-overview" class="col-md-8 col-sm-12">
+
+					<div class="activity-news-unit well col-md-5 col-sm-12">
+						<h1>活动标题</h1>
+					</div>
+					<div class="activity-news-unit well col-md-5 col-sm-12">
+						<h1>活动标题</h1>
+					</div>
+					<div class="activity-news-unit well col-md-5 col-sm-12">
+						<h1>活动标题</h1>
+					</div>
+					<div class="activity-news-unit well col-md-5 col-sm-12">
+						<h1>活动标题</h1>
+					</div>
+					<div class="activity-news-unit well col-md-5 col-sm-12">
+						<h1>活动标题</h1>
+					</div>
+					<div class="activity-news-unit well col-md-5 col-sm-12">
+						<h1>活动标题</h1>
+					</div>
+
+				</div>
+
 			</div>
 		</div>
-
-		<div id="course-service"></div>
 	</div><!-- site-content -->
 	
 	</div> <!-- /#menu-container -->
@@ -169,8 +170,33 @@
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script type='text/javascript' src='js/logging.js'></script>
+    <script type="text/javascript" src="js/bootstrap-select.js"></script>
     <!-- Flat-UI Components -->
     <script src="js/flatui-checkbox.js"></script>
     <script src="js/flatui-radio.js"></script>
+    <!-- Date Picker -->
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/locales/bootstrap-datepicker.zh-CN.js" charset="UTF-8"></script>
+
+    <script type="text/javascript">
+		$('#activity-news-calender div').datepicker({
+		    keyboardNavigation: false,
+		    todayHighlight: true,
+		    beforeShowDay: function (date){
+		      if (date.getMonth() == (new Date()).getMonth())
+		        switch (date.getDate()){
+		          case 4:
+		            return {
+		              tooltip: 'Example tooltip',
+		              classes: 'active'
+		            };
+		          case 8:
+		            return false;
+		          case 12:
+		            return "green";
+		        }
+		    }
+		});
+    </script>
 </body>
 </html>
