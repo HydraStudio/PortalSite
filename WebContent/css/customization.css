@@ -98,11 +98,18 @@
   Activity News: Calendar - Styles 
 --------------------------------------------------------*/
 #activity-news-calender .datepicker{
-	background-color: #FFF
+	background-color: #FFF;
 }
 
 #calendar-title{
 	cursor: default;
+}
+
+#activity-news-tasklist{
+	width: 220px;
+	margin-top: 10px;
+	margin-left: 15px;
+	background-color: #FFF;
 }
 
 .activity-news-unit{
