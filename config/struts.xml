@@ -47,6 +47,14 @@
 			<result name="delete_order" type="redirectAction">listOrder</result>
 		</action>
 		
+		<action name="*Portal" class="portalAction" method="{1}Portal">
+			<result name="list_portal">/WEB-INF/back/portal/list_portal.jsp</result>
+			<result name="input_portal">/WEB-INF/back/portal/input_portal.jsp</result>
+			<result name="add_portal" type="redirectAction">listPortal</result>
+			<result name="modify_portal" type="redirectAction">listPortal</result>
+			<result name="delete_portal" type="redirectAction">listPortal</result>
+		</action>
+		
 		<action name="uploadFile" class="activityInfoAction" method="uploadFile">
 		</action>
 		
