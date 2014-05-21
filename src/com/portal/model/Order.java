@@ -7,12 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="order")
+@Table(name="order_t")
 public class Order {
 
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	@Column(name="name")
+	private String name;
 	
 	@Column(name="email")
 	private String email;
@@ -29,7 +32,7 @@ public class Order {
 	@Column(name="phone")
 	private String phone;
 	
-	@Column(name="isWork")
+	@Column(name="is_work")
 	private Boolean isWork;
 	
 	@Column(name="gpa")
@@ -47,11 +50,11 @@ public class Order {
 	@Column(name="ielts")
 	private String ielts;
 	
-	@Column(name="wayKnowUs")
+	@Column(name="way_know_us")
 	private String wayKnowUs;
 	
-	@Column(name="receiveLetter")
-	private boolean receiveLetter;
+	@Column(name="receive_letter")
+	private Boolean receiveLetter;
 
 	public Long getId() {
 		return id;
@@ -157,11 +160,19 @@ public class Order {
 		this.wayKnowUs = wayKnowUs;
 	}
 
-	public boolean isReceiveLetter() {
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Boolean getReceiveLetter() {
 		return receiveLetter;
 	}
 
-	public void setReceiveLetter(boolean receiveLetter) {
+	public void setReceiveLetter(Boolean receiveLetter) {
 		this.receiveLetter = receiveLetter;
 	}
 }

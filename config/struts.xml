@@ -39,6 +39,14 @@
 			<result name="delete_activity_info" type="redirectAction">listActivityInfo</result>
 		</action>
 		
+		<action name="*Order" class="orderAction" method="{1}Order">
+			<result name="list_order">/WEB-INF/back/order/list_order.jsp</result>
+			<result name="input_order">/WEB-INF/back/order/input_order.jsp</result>
+			<result name="add_order" type="redirectAction">listOrder</result>
+			<result name="modify_order" type="redirectAction">listOrder</result>
+			<result name="delete_order" type="redirectAction">listOrder</result>
+		</action>
+		
 		<action name="uploadFile" class="activityInfoAction" method="uploadFile">
 		</action>
 		
