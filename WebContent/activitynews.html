@@ -112,11 +112,29 @@
 						<table>
 							<thead>
 							    <tr>
-							        <th colspan="2">16</th>
-							        <th colspan="4">当日活动</th>
-							        <th >»</th>
-							     </tr>
+							        <th id="activity-day">16</th>
+							       
+							        <th id="activity-title">当日活动</th>
+							    </tr>
 							</thead>
+							<tbody id="activity-tasklist-content">
+								<tr>
+									<td colspan="2">Activity 1</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td colspan="2">Activity 2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td colspan="2">Activity 3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td colspan="2">Activity 4</td>
+									<td></td>
+								</tr>
+							</tbody>
 						</table>
 
 					</div>
@@ -216,6 +234,11 @@
 		        }
 		    }
 		});
+
+		{activities:[
+			{day:4,title:'Meeting',time:'20:00',location:'Shanghai'},
+			{day:6,title:'Meeting',time:'20:00',location:'Shanghai'}
+		]}
     </script>
 </body>
 </html>

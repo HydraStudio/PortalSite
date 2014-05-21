@@ -110,6 +110,35 @@
 	margin-top: 10px;
 	margin-left: 15px;
 	background-color: #FFF;
+	padding: 0px;
+}
+
+#activity-news-tasklist table{
+	width: 100%;
+}
+
+#activity-news-tasklist thead tr{
+	vertical-align: middle;
+}
+
+#activity-tasklist-content tr{
+	border-bottom: 1px solid #CCC;
+}
+
+#activity-tasklist-content tr td{
+	height: 45px;
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 5px;
+}
+
+#activity-day{
+	width: 40px;
+	padding-left: 5px;
+}
+
+#activity-title{
+	width: 150px;
 }
 
 .activity-news-unit{
@@ -122,6 +151,7 @@
 	color: #FF8B00;
 	font-weight: bold;
 }
+
 
 /*------------------------------------------------------
   Share Icons - Styles 
