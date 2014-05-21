@@ -33,15 +33,13 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	@Resource
 	private ActivityInfoService activityInfoService;
 	
-	private File upload;  
-    private String uploadContentType;  
-    private String uploadFileName;
+//	private File upload;  
+//    private String uploadContentType;  
+//    private String uploadFileName;
     
     private String CKEditorFuncNum;  
     private String CKEditor;  
     private String langCode;
-	
-    private String message;
 	
 	public String listActivityInfo(){
 		QueryHelper queryHelper = new QueryHelper(ActivityInfo.class, "a");
@@ -56,7 +54,7 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	
 	public String addActivityInfo() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest();
-		String fileName = uploadActivityInfo();
+		String fileName = uploadCommon();
         String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
         String imageUrl = URL+"upload/" + fileName;
         model.setImageUrl(imageUrl);
@@ -88,7 +86,7 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		String changeFlag = request.getParameter("changeFlag");
 		//check if change the picture
 		if(changeFlag != null && !changeFlag.equals("")){
-			String fileName = uploadActivityInfo();
+			String fileName = uploadCommon();
 	        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
 	        String imageUrl = URL+"upload/" + fileName;
 	        activityInfo.setImageUrl(imageUrl);
@@ -142,7 +140,7 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
             return null;  
         }  
           
-        String fileName = uploadActivityInfo();
+        String fileName = uploadCommon();
         
         String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
         
@@ -155,24 +153,10 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		return "upload_success";
 	}
 	
-	private String uploadActivityInfo() throws Exception{
-		//将文件保存到项目目录下  
-        InputStream is = new FileInputStream(upload);  
-        String uploadPath = ServletActionContext.getServletContext()     
-                .getRealPath("/upload");   //设置保存目录  
-        String fileName = UUID.randomUUID().toString();  //采用UUID的方式随机命名 
-        fileName += uploadFileName.substring(uploadFileName.length() - 4);  
-        File toFile = new File(uploadPath, fileName);  
-        OutputStream os = new FileOutputStream(toFile);     
-        byte[] buffer = new byte[1024];     
-        int length = 0;  
-        while ((length = is.read(buffer)) > 0) {     
-            os.write(buffer, 0, length);     
-        }     
-        is.close();  
-        os.close();
-        return fileName;
-	}
+//	private String uploadActivityInfo() throws Exception{
+//		//将文件保存到项目目录下  
+//        return super.uploadCommon();
+//	}
 
 	
 //	public void ajaxUpload() throws Exception{
@@ -192,29 +176,29 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		this.activityInfoService = activityInfoService;
 	}
 
-	public File getUpload() {
-		return upload;
-	}
-
-	public void setUpload(File upload) {
-		this.upload = upload;
-	}
-
-	public String getUploadContentType() {
-		return uploadContentType;
-	}
-
-	public void setUploadContentType(String uploadContentType) {
-		this.uploadContentType = uploadContentType;
-	}
-
-	public String getUploadFileName() {
-		return uploadFileName;
-	}
-
-	public void setUploadFileName(String uploadFileName) {
-		this.uploadFileName = uploadFileName;
-	}
+//	public File getUpload() {
+//		return upload;
+//	}
+//
+//	public void setUpload(File upload) {
+//		this.upload = upload;
+//	}
+//
+//	public String getUploadContentType() {
+//		return uploadContentType;
+//	}
+//
+//	public void setUploadContentType(String uploadContentType) {
+//		this.uploadContentType = uploadContentType;
+//	}
+//
+//	public String getUploadFileName() {
+//		return uploadFileName;
+//	}
+//
+//	public void setUploadFileName(String uploadFileName) {
+//		this.uploadFileName = uploadFileName;
+//	}
 
 	public String getCKEditorFuncNum() {
 		return CKEditorFuncNum;
@@ -238,13 +222,5 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 
 	public void setLangCode(String langCode) {
 		this.langCode = langCode;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 }

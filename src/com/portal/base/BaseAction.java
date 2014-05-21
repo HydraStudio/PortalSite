@@ -1,6 +1,14 @@
 package com.portal.base;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.ParameterizedType;
+import java.util.UUID;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -50,5 +58,52 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
+	}
+	
+	//=======上传文件========
+	protected File upload;  
+	protected String uploadContentType;  
+	protected String uploadFileName;
+
+	protected String uploadCommon() throws Exception{
+		InputStream is = new FileInputStream(upload);  
+        String uploadPath = ServletActionContext.getServletContext()     
+                .getRealPath("/upload");   //设置保存目录  
+        String fileName = UUID.randomUUID().toString();  //采用UUID的方式随机命名 
+        fileName += uploadFileName.substring(uploadFileName.length() - 4);  
+        File toFile = new File(uploadPath, fileName);  
+        OutputStream os = new FileOutputStream(toFile);     
+        byte[] buffer = new byte[1024];     
+        int length = 0;  
+        while ((length = is.read(buffer)) > 0) {     
+            os.write(buffer, 0, length);     
+        }     
+        is.close();  
+        os.close();
+        return fileName;
+	}
+	
+	public File getUpload() {
+		return upload;
+	}
+
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+
+	public String getUploadContentType() {
+		return uploadContentType;
+	}
+
+	public void setUploadContentType(String uploadContentType) {
+		this.uploadContentType = uploadContentType;
+	}
+
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
 	}
 }
