@@ -6,55 +6,49 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
-<title>List Activity</title>
+<title>List User</title>
 </head>
 <body>
 	<table style="border:1px red solid;" align="center">
-		<tr>
-			<th>
-				ID
-			</th>
-			<th>
-				标题
-			</th>
-			<th>
-				活动简介
-			</th>
-			<th>
-				活动日期
-			</th>
-			<th>
-				操作
-			</th>
-		</tr>
 		<s:iterator value="recordList">
+			<tr>
+				<th>
+					ID
+				</th>
+				<th>
+					标题
+				</th>
+				<th>
+					活动简介
+				</th>
+				<th>
+					活动日期
+				</th>
+				<th>
+					操作
+				</th>
+			</tr>
 			<tr>
 				<td>
 					${id}
 				</td>
 				<td>
-					${title}
+					${username}
 				</td>
 				<td>
-					${description}
+					${password}
 				</td>
 				<td>
-					${date}
-				</td>
-				<td>
-					<s:a action="modifyInputActivityInfo?id=%{id}">修改</s:a>
-					<s:a action="deleteActivityInfo?id=%{id}">删除</s:a>
+					<s:a action="modifyInputUser?id=%{id}">修改</s:a>
+					<s:a action="deleteUser?id=%{id}">删除</s:a>
 				</td>
 			</tr>
 		</s:iterator>
 	</table>
-	
-	<br/><br/><br/>
-	<div align="center">
-		<%@ include file="/WEB-INF/public/pageView.jsp" %>
-		<s:form action="listActivityInfo"></s:form>
-		<s:a action="addInputActivityInfo">添加</s:a> <br/><br/><br/>
-	</div>
+	<br/>
+	<center>
+		<s:a action="addInputUser">添加</s:a> <br/><br/><br/>
+	</center>
 	
 </body>
 </html>
