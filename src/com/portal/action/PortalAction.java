@@ -42,12 +42,12 @@ public class PortalAction extends BaseAction<Portal> {
 		String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
         String imageUrl = URL+"upload/" + fileName;
         model.setImageUrl(imageUrl);
-        portalService.saveIndex(model);
+        portalService.savePortal(model);
 		return "add_portal";
 	}
 	
 	public String deletePortal(){
-		portalService.deleteIndex(model.getId());
+		portalService.deletePortal(model.getId());
 		return "delete_portal";
 	}
 	
@@ -70,7 +70,7 @@ public class PortalAction extends BaseAction<Portal> {
         
         portal.setImageUrl(imageUrl);
         
-        portalService.modifyIndex(portal);
+        portalService.modifyPortal(portal);
 		return "modify_portal";
 	}
 }

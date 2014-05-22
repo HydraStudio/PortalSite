@@ -8,15 +8,15 @@ import com.portal.util.QueryHelper;
 
 public interface PortalService {
 
-	List<Portal> findAllIndexs();
+	List<Portal> findAllPortals();
 	
-	void deleteIndex(Long id);
+	void deletePortal(Long id);
 	
-	void saveIndex(Portal portal);
+	void savePortal(Portal portal);
 
 	Portal getById(Long id);
 
-	void modifyIndex(Portal portal);
+	void modifyPortal(Portal portal);
 	
 	PageBean searchPagination(int pageNum, int pageSize, QueryHelper queryHelper);
 }

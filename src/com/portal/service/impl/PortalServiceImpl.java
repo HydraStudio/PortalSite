@@ -20,15 +20,15 @@ public class PortalServiceImpl implements PortalService {
 	@Resource
 	private PortalDao portalDao;
 
-	public List<Portal> findAllIndexs() {
+	public List<Portal> findAllPortals() {
 		return portalDao.findAll();
 	}
 
-	public void deleteIndex(Long id) {
+	public void deletePortal(Long id) {
 		portalDao.delete(id);
 	}
 
-	public void saveIndex(Portal portal) {
+	public void savePortal(Portal portal) {
 		portalDao.save(portal);
 	}
 
@@ -36,7 +36,7 @@ public class PortalServiceImpl implements PortalService {
 		return portalDao.getById(id);
 	}
 
-	public void modifyIndex(Portal portal) {
+	public void modifyPortal(Portal portal) {
 		portalDao.update(portal);
 	}
 
