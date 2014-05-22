@@ -103,7 +103,7 @@
 					
 					<div id="activity-news-calender" class="col-md-3 col-sm-12 text-center">
 					
-							<div></div>
+							<div id="activity-news-calender-content"></div>
 
 					</div>
 
@@ -216,12 +216,28 @@
     <script src="js/locales/bootstrap-datepicker.zh-CN.js" charset="UTF-8"></script>
 
     <script type="text/javascript">
-		$('#activity-news-calender div').datepicker({
-		    keyboardNavigation: false,
-		    todayHighlight: true,
-		    beforeShowDay: function (date){
-		      if (date.getMonth() == (new Date()).getMonth())
-		        switch (date.getDate()){
+
+    //Data receive from server
+    //Mocked
+    var acts = [
+			{day:4,title:'Meeting',time:'20:00',location:'Shanghai'},
+			{day:6,title:'Meeting',time:'20:00',location:'Shanghai'}
+			]
+
+	//alert(acts[1]['day']);
+
+	$('#activity-news-calender div').datepicker({
+	    keyboardNavigation: false,
+	    todayHighlight: true,
+	    beforeShowDay: function (date){
+	        if (date.getMonth() == (new Date()).getMonth())
+	        {
+	        	for(var i in acts){
+	        		if(date.getDate() == acts[i]['day']){
+	        			return "red";
+	        		}
+	        	}
+		        /*switch (date.getDate()){
 		          case 4:
 		            return {
 		              tooltip: 'Example tooltip',
@@ -230,15 +246,11 @@
 		          case 8:
 		            return false;
 		          case 12:
-		            return "green";
-		        }
-		    }
-		});
-
-		{activities:[
-			{day:4,title:'Meeting',time:'20:00',location:'Shanghai'},
-			{day:6,title:'Meeting',time:'20:00',location:'Shanghai'}
-		]}
+		            return "red";
+		        }*/
+	        }
+	    }
+	});
     </script>
 </body>
 </html>

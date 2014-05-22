@@ -97,6 +97,8 @@
 /*------------------------------------------------------
   Activity News: Calendar - Styles 
 --------------------------------------------------------*/
+
+/* Calendar */
 #activity-news-calender .datepicker{
 	background-color: #FFF;
 }
@@ -105,6 +107,13 @@
 	cursor: default;
 }
 
+#activity-news-calender .red{
+	background-color: red;
+	color: white;
+}
+
+
+/* ActivityList */
 #activity-news-tasklist{
 	width: 220px;
 	margin-top: 10px;
@@ -141,6 +150,7 @@
 	width: 150px;
 }
 
+/* ActivityBlock */
 .activity-news-unit{
 	display: inline-block;
 	margin: 0px 30px 30px 30px;
