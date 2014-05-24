@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="join-us-form-wrapper" class="container">
 			<!-- <div class="col-md-1"></div> -->
 
-			<form id="join-us-form" class="col-md-12 col-sm-12">
+			<form id="join-us-form" class="col-md-12 col-sm-12" action="addOrder.action">
 				<div id="join-us-form-content" >
 					<div class="row" >
 					  <div class="col-md-1">&nbsp;</div>

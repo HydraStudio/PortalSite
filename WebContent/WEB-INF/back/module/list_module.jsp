@@ -15,10 +15,12 @@
 				<td>
 					<s:a action="%{moduleUrl}">${name}</s:a>
 				</td>
+				<!--  
 				<td>
 					<s:a action="modifyInputModule?id=%{id}">修改</s:a>
 					<s:a action="deleteModule?id=%{id}">删除</s:a>
 				</td>
+				-->
 			</tr>
 		</s:iterator>
 	</table>

@@ -3,11 +3,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <div id=PageSelectorBar>
-	<div id=PageSelectorMemo>
-		页次：${currentPage}/${pageCount }页 &nbsp;
-		每页显示：${pageSize }条 &nbsp;
-		总记录数：${recordCount }条
-	</div>
 	<div id=PageSelectorSelectorArea>
 	
 		<a href="javascript: gotoPage(1)" title="首页" style="cursor: pointer;">
@@ -38,6 +33,11 @@
 			$("#_pn").val("${currentPage}");
 		</script>
 		
+	</div>
+	<div id=PageSelectorMemo>
+		页次：${currentPage}/${pageCount }页 &nbsp;
+		每页显示：${pageSize }条 &nbsp;
+		总记录数：${recordCount }条
 	</div>
 </div>
 

@@ -49,14 +49,6 @@ function DrawImage(ImgD){
 	} 
 } 
 
-function checkFile(){
-	if(($("#file").val() != null && $.trim($("#file").val()) != "")){
-		$("#changeFlag").val("true");
-	}
-	alert($("#changeFlag").val());
-	$("#inputAction").submit();
-}
-
 
 function changeSmallImage(file){
 	var img = $("#indexImage"); 

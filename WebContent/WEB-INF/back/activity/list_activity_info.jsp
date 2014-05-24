@@ -6,55 +6,69 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/pageCommon.js" charset="utf-8"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/PageUtils.js" charset="utf-8"></script>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
+
 <title>List Activity</title>
 </head>
 <body>
-	<table style="border:1px red solid;" align="center">
-		<tr>
-			<th>
-				ID
-			</th>
-			<th>
-				标题
-			</th>
-			<th>
-				活动简介
-			</th>
-			<th>
-				活动日期
-			</th>
-			<th>
-				操作
-			</th>
-		</tr>
-		<s:iterator value="recordList">
-			<tr>
-				<td>
-					${id}
+	<div>
+		<%@ include file="/WEB-INF/public/back_head.jsp" %>
+	</div>
+	<table cellspacing="0" cellpadding="0" class="TableStyle">
+		<thead>
+			<tr align=center valign=middle id=TableTitle>
+				<td width="10%" align="center">
+					ID
 				</td>
-				<td>
-					${title}
+				<td width="25%">
+					标题
 				</td>
-				<td>
-					${description}
+				<td width="30%">
+					活动简介
 				</td>
-				<td>
-					${date}
+				<td width="20" align="center">
+					活动日期
 				</td>
-				<td>
-					<s:a action="modifyInputActivityInfo?id=%{id}">修改</s:a>
-					<s:a action="addToIndexInputActivityInfo?id=%{id}">添加到首页</s:a>
-					<s:a action="deleteActivityInfo?id=%{id}">删除</s:a>
+				<td width="15%" align="center">
+					操作
 				</td>
 			</tr>
-		</s:iterator>
+		<thead>
+		<tbody id="TableData" class="dataContainer">
+			<s:iterator value="recordList">
+				<tr class="TableDetail1 template">
+					<td>
+						${id}
+					</td>
+					<td>
+						${title}
+					</td>
+					<td>
+						${description}
+					</td>
+					<td>
+						${date}
+					</td>
+					<td>
+						<s:a action="modifyInputActivityInfo?id=%{id}">修改</s:a>
+						<s:a action="addToIndexInputActivityInfo?id=%{id}">添加到首页</s:a>
+						<s:a action="deleteActivityInfo?id=%{id}">删除</s:a>
+					</td>
+				</tr>
+			</s:iterator>
+		</tbody>
 	</table>
+	<div id="TableTail">
+        <div id="TableTail_inside">
+            <a href="addInputActivityInfo.action"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a>
+        </div>
+    </div>
 	
-	<br/><br/><br/>
-	<div align="center">
+	<div>
 		<%@ include file="/WEB-INF/public/pageView.jsp" %>
 		<s:form action="listActivityInfo"></s:form>
-		<s:a action="addInputActivityInfo">添加</s:a> <br/><br/><br/>
 	</div>
 	
 </body>

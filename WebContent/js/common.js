@@ -11,6 +11,9 @@ function checkFile(){
 		}
 	}else{
 		if(file != null && $.trim(file) != ""){
+			if( !checkFileType(file)){
+				return;
+			}
 			$("#changeFlag").val("true");
 		}
 	}
