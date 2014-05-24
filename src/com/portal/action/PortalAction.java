@@ -31,7 +31,7 @@ public class PortalAction extends BaseAction<Portal> {
 	
 	public String listPortal(){
 		QueryHelper queryHelper = new QueryHelper(Portal.class, "p");
-		queryHelper.addOrderProperty(true, "p.useFlag",true);
+		queryHelper.addOrderProperty(true, "p.useFlag",false);
 		PageBean pageBean = portalService.searchPagination(pageNum, pageSize, queryHelper);
 		ActionContext.getContext().getValueStack().push(pageBean);
 		return "list_portal";
@@ -47,6 +47,8 @@ public class PortalAction extends BaseAction<Portal> {
 		String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
         String imageUrl = URL+"upload/" + fileName;
         model.setImageUrl(imageUrl);
+        
+        model.setUseFlag(false);
         
         String activityId = request.getParameter("activityId");
         if(activityId !=null && !activityId.equals("")){
@@ -91,6 +93,18 @@ public class PortalAction extends BaseAction<Portal> {
         portalService.modifyPortal(portal);
 		return "modify_portal";
 	}
+	
+	public String setToIndexPortal(){
+		Portal portal = portalService.getById(model.getId());
+		if(portal.getUseFlag()){
+			portal.setUseFlag(false);
+		}else{
+			portal.setUseFlag(true);
+		}
+		portalService.modifyPortal(portal);
+		return "set_to_index";
+	}
+	
 	
 	@SuppressWarnings("unchecked")
 	public String indexShowPortal(){
