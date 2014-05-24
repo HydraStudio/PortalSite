@@ -1,7 +1,7 @@
 /*------------------------------------------------------
   Base  Customization
 --------------------------------------------------------*/
-function open(html){
+function openPage(html){
   alert("click");
   window.open(html,'_self');
 }

@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -46,8 +46,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="photo-galary-wrapper" class="container">
 			<!-- <div class="col-md-1"></div> -->
 			<div id="activity-news-dashboard" class="col-md-4">
-				<h1>重点推荐XX活动</h1><br/>
-				<h3>你准备好了吗？</h3>
+				<s:iterator value="portals" status="u">
+				<div id="activity-news-dashboard-${u.index}" style="display:none">
+					<h1 onclick="openPage('#')">${title}</h1><br/>
+					<h3>${subTitle}</h3>
+				</div>
+				</s:iterator>
 			</div>
 			<div id="photo-galary" class="col-md-12 col-sm-12">
 				<div id="index-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
@@ -60,15 +64,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner">
-				    <div class="item active">
+				  	<s:iterator value="portals" status="u">
+						<div class="item">
+					      <img src="${imageUrl}" alt="...">
+					    </div>
+					</s:iterator>
+				    <!-- <div class="item">
 				      <img src="./images/index_01.jpg" alt="...">
-				      <!-- <div class="carousel-caption">
+				      <div class="carousel-caption">
 				        Test Picture
-				      </div> -->
+				      </div>
 				    </div>
 				    <div class="item">
 				      <img src="./images/index_01.jpg" alt="...">
-				    </div>
+				    </div> -->
 				  </div>
 
 				  <!-- Controls -->
@@ -99,12 +108,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script type='text/javascript' src='js/logging.js'></script>
-    <script src="js/customization.js"></script>
+
     <script type="text/javascript">
-    	function open(html){
+    	function openPage(html){
 		  alert("click");
 		  window.open(html,'_self');
 		}
+		
+
+		//Make photo&news active
+		$(function(){
+			$($(".carousel-inner .item")[0]).addClass("active");
+			$($("#activity-news-dashboard div")[0]).addClass("active");
+			$($("#activity-news-dashboard div")[0]).show("slow");
+		});
+
     </script>
     <!-- Flat-UI Components -->
     <script src="js/flatui-checkbox.js"></script>

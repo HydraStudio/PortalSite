@@ -350,6 +350,26 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     var fallback  = type == 'next' ? 'first' : 'last'
     var that      = this
 
+
+    //Metall Customization - START
+    var act_id = $($("#activity-news-dashboard .active")[0]).attr("id");
+    var act_no = parseInt(act_id.substring(act_id.length-1));
+    if(direction == 'left'){
+      act_no = (act_no+1)%3;
+    }else{
+      act_no = act_no-1;
+      if(act_no<0){
+        act_no=act_no+3;
+      }
+    }
+    var act_nxt_id = "activity-news-dashboard-"+act_no;
+    $($("#activity-news-dashboard .active")[0]).hide("fast",function(){
+      $($("#activity-news-dashboard .active")[0]).removeClass("active");
+      $("#"+act_nxt_id).show("fast");
+      $("#"+act_nxt_id).addClass("active");
+    });
+    //Metall Customization - END
+
     if (!$next.length) {
       if (!this.options.wrap) return
       $next = this.$element.find('.item')[fallback]()
