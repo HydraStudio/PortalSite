@@ -27,7 +27,7 @@
 				图片活动链接
 			</td>
 		</tr>
-		<s:if test="%{#recordList ==null}">
+		<s:if test="%{recordList ==null}">
 			没有数据
 		</s:if>
 		<s:else>
