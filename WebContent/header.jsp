@@ -22,7 +22,7 @@
 				</div> <!-- /.col-md-12 -->
 				<div class="col-md-12 main_menu">
 					<ul>
-					    <li class="logo">&nbsp;</li>
+					    <li class="logo" onclick="openPortal()">&nbsp;</li>
 						<li><a class="show-1 templatemo_page1" href="#">产品介绍</a></li>
 						<li><a class="show-2 templatemo_page2" href="#">师资介绍</a></li>
 						<li><a class="show-3 templatemo_page3" href="#">成绩展示</a></li>
@@ -45,5 +45,12 @@
     	
     </div>
 </div> <!-- /.site-header -->
+<form action="indexShowPortal.action" id="indexForm"></form>
+<script type="text/javascript">
+function openPortal(){
+	
+	$("#indexForm").submit();
+}
+</script>
 
 	
