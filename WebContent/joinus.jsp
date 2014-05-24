@@ -251,7 +251,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             // $('.selectpicker').selectpicker('hide');
             $('#chkReceiveMail').iCheck({
-			   checkboxClass: 'checkbox-green'
+			    checkboxClass: 'checkbox-green'
 			});
         });
     </script>
