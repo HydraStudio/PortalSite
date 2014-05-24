@@ -75,6 +75,7 @@
 			<result name="add_portal" type="redirectAction">listPortal</result>
 			<result name="modify_portal" type="redirectAction">listPortal</result>
 			<result name="delete_portal" type="redirectAction">listPortal</result>
+			<result name="set_to_index" type="redirectAction">listPortal</result>
 			
 			<result name="index_show_portal">/index.jsp</result>
 		</action>
