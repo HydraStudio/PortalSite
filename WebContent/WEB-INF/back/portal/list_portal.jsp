@@ -27,29 +27,35 @@
 				图片活动链接
 			</td>
 		</tr>
-		<s:iterator value="recordList">
-			<tr>
-				<td>
-					${id}
-				</td>
-				<td>
-					<s:a href="%{imageUrl}">${name}</s:a>
-				</td>
-				<td>
-					${title}
-				</td>
-				<td>
-					${subTitle}
-				</td>
-				<td>
-					${url}
-				</td>
-				<td>
-					<s:a action="modifyInputPortal?id=%{id}">修改</s:a>
-					<s:a action="deletePortal?id=%{id}">删除</s:a>
-				</td>
-			</tr>
-		</s:iterator>
+		<s:if test="%{#recordList ==null}">
+			没有数据
+		</s:if>
+		<s:else>
+			<s:iterator value="recordList">
+				<tr>
+					<td>
+						${id}
+					</td>
+					<td>
+						<s:a href="%{imageUrl}">${name}</s:a>
+					</td>
+					<td>
+						${title}
+					</td>
+					<td>
+						${subTitle}
+					</td>
+					<td>
+						${url}
+					</td>
+					<td>
+						<s:a action="modifyInputPortal?id=%{id}">修改</s:a>
+						<s:a action="setAsIndexPortal?id=%{id}">设为首页图片</s:a>
+						<s:a action="deletePortal?id=%{id}">删除</s:a>
+					</td>
+				</tr>
+			</s:iterator>
+		</s:else>
 	</table>
 	
 	<br/>
