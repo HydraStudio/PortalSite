@@ -19,7 +19,7 @@ public class CheckLoginInterceptor extends AbstractInterceptor{
 
 		// 如果未登录
 		if (user == null) {
-			if (privUrl.startsWith("/loginUser")) { // "/user_loginUI", "/user_login"
+			if (privUrl.startsWith("/loginUser") || privUrl.startsWith("/index")) { // "/user_loginUI", "/user_login"
 				// 如果是去登录，就放行
 				return invocation.invoke();
 			} else {

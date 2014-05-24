@@ -1,17 +1,17 @@
 package com.portal.action;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.portal.base.BaseAction;
-import com.portal.model.ActivityInfo;
 import com.portal.model.PageBean;
 import com.portal.model.Portal;
 import com.portal.service.ActivityInfoService;
@@ -31,6 +31,7 @@ public class PortalAction extends BaseAction<Portal> {
 	
 	public String listPortal(){
 		QueryHelper queryHelper = new QueryHelper(Portal.class, "p");
+		queryHelper.addOrderProperty(true, "p.useFlag",true);
 		PageBean pageBean = portalService.searchPagination(pageNum, pageSize, queryHelper);
 		ActionContext.getContext().getValueStack().push(pageBean);
 		return "list_portal";
@@ -89,5 +90,15 @@ public class PortalAction extends BaseAction<Portal> {
 		}
         portalService.modifyPortal(portal);
 		return "modify_portal";
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String indexShowPortal(){
+		QueryHelper queryHelper = new QueryHelper(Portal.class, "p");
+		queryHelper.addCondition(true,"p.useFlag=? ",true);
+		PageBean pageBean = portalService.searchPagination(pageNum, pageSize, queryHelper);
+		List<Portal> portals = pageBean.getRecordList();
+		ActionContext.getContext().getValueStack().push(portals);
+		return "index_show_portal";
 	}
 }

@@ -28,6 +28,9 @@ public class Portal {
 	
 	@Column(name="image_url")
 	private String imageUrl;
+
+	@Column(name="use_flag")
+	private Boolean useFlag;
 	
 	public Long getId() {
 		return id;
@@ -75,5 +78,13 @@ public class Portal {
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	public Boolean getUseFlag() {
+		return useFlag;
+	}
+
+	public void setUseFlag(Boolean useFlag) {
+		this.useFlag = useFlag;
 	}
 }
