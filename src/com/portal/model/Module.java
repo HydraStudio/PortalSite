@@ -32,6 +32,9 @@ public class Module {
 	@OneToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="module")
 	private Set<Module> subModule;
 	
+	@Column(name="module_url")
+	private String moduleUrl;
+	
 	public Long getId() {
 		return id;
 	}
@@ -55,5 +58,11 @@ public class Module {
 	}
 	public void setModule(Module module) {
 		this.module = module;
+	}
+	public String getModuleUrl() {
+		return moduleUrl;
+	}
+	public void setModuleUrl(String moduleUrl) {
+		this.moduleUrl = moduleUrl;
 	}
 }

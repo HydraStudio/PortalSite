@@ -1,13 +1,7 @@
 package com.portal.action;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.List;
-import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -33,10 +27,6 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	@Resource
 	private ActivityInfoService activityInfoService;
 	
-//	private File upload;  
-//    private String uploadContentType;  
-//    private String uploadFileName;
-    
     private String CKEditorFuncNum;  
     private String CKEditor;  
     private String langCode;
@@ -153,11 +143,19 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		return "upload_success";
 	}
 	
-//	private String uploadActivityInfo() throws Exception{
-//		//将文件保存到项目目录下  
-//        return super.uploadCommon();
-//	}
-
+	public String addToIndexInputActivityInfo(){
+		ActivityInfo activityInfo = activityInfoService.getById(model.getId());
+		ActionContext.getContext().getValueStack().push(activityInfo);
+//		ActionContext.getContext().put("activityId", model.getId());
+		return "add_to_index_input";
+	}
+	
+	
+	public String indexShowActivityInfo(){
+		ActivityInfo activityInfo = activityInfoService.getById(model.getId());
+		ActionContext.getContext().getValueStack().push(activityInfo);
+		return "show_activity_info";
+	}
 	
 //	public void ajaxUpload() throws Exception{
 //		
@@ -168,38 +166,7 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 //        ServletActionContext.getResponse().getWriter().print(imageUrl);
 //	}
 	
-	public ActivityInfoService getActivityInfoService() {
-		return activityInfoService;
-	}
-
-	public void setActivityInfoService(ActivityInfoService activityInfoService) {
-		this.activityInfoService = activityInfoService;
-	}
-
-//	public File getUpload() {
-//		return upload;
-//	}
-//
-//	public void setUpload(File upload) {
-//		this.upload = upload;
-//	}
-//
-//	public String getUploadContentType() {
-//		return uploadContentType;
-//	}
-//
-//	public void setUploadContentType(String uploadContentType) {
-//		this.uploadContentType = uploadContentType;
-//	}
-//
-//	public String getUploadFileName() {
-//		return uploadFileName;
-//	}
-//
-//	public void setUploadFileName(String uploadFileName) {
-//		this.uploadFileName = uploadFileName;
-//	}
-
+	
 	public String getCKEditorFuncNum() {
 		return CKEditorFuncNum;
 	}

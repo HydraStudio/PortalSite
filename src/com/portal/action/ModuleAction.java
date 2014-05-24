@@ -1,7 +1,5 @@
 package com.portal.action;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
@@ -23,10 +21,6 @@ public class ModuleAction extends BaseAction<Module> {
 	
 	@Resource
 	private ModuleService moduleService;
-	
-//	private Long id;
-//	private String name;
-//	
 	
 	public String listModule(){
 //		List<Module> moduleList = moduleService.findAllModules();
@@ -67,26 +61,10 @@ public class ModuleAction extends BaseAction<Module> {
 		
 		Module module = moduleService.getById(this.model.getId());
 		module.setName(this.model.getName());
+		module.setModuleUrl(model.getModuleUrl());
 		
 		moduleService.modifyModule(module);
 		return "modify_module";
 	}
 
-//	public Long getId() {
-//		return id;
-//	}
-//
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
-//
-//	public String getName() {
-//		return name;
-//	}
-//
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-
-	
 }
