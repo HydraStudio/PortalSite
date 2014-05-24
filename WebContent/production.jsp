@@ -89,7 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </a>
 				</div>
 			</div>
-			<div id="activity-service" class="col-md-1"  onclick="window.open('joinus.jsp','_blank')">
+			<div id="activity-service" class="col-md-1"  onclick="window.open('joinus.html','_blank')">
 				<h1>&nbsp;</h1><br/>
 			</div>
 		</div>
@@ -110,6 +110,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type='text/javascript' src='js/logging.js'></script>
 
     <script type="text/javascript">
+    	function openPage(html){
+		  alert("click");
+		  window.open(html,'_self');
+		}
+		
+
 		//Make photo&news active
 		$(function(){
 			$($(".carousel-inner .item")[0]).addClass("active");
