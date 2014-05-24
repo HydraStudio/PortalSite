@@ -114,7 +114,7 @@
 							    <tr>
 							        <th id="activity-day">16</th>
 							       
-							        <th id="activity-title" class="text-center">当日活动</th>
+							        <th id="activity-title">当日活动</th>
 							    </tr>
 							</thead>
 							<tbody id="activity-tasklist-content">
@@ -144,27 +144,9 @@
 
 				<div id="activity-news-overview" class="col-md-8 col-sm-12">
 
-					<div class="activity-news-unit well col-md-5 col-sm-12" data-toggle="modal" data-target="#detailModal-1">
+					<div class="activity-news-unit well col-md-5 col-sm-12">
 						<h1>活动标题</h1>
 					</div>
-					<!-- News Detail Model -->
-					<div class="modal fade" id="detailModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					  <div class="modal-dialog">
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					        <h4 class="modal-title" id="myModalLabel">活动标题</h4>
-					      </div>
-					      <div class="modal-body">
-					        活动内容
-					      </div>
-					      <div class="modal-footer">
-					        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
-					      </div>
-					    </div><!-- /.modal-content -->
-					  </div><!-- /.modal-dialog -->
-					</div><!-- /.modal -->
-
 					<div class="activity-news-unit well col-md-5 col-sm-12">
 						<h1>活动标题</h1>
 					</div>
@@ -185,8 +167,9 @@
 
 			</div>
 		</div>
-
 	</div><!-- site-content -->
+	
+	</div> <!-- /#menu-container -->
 
 	<div id="site-footer">
 		<div class="container">
@@ -212,7 +195,7 @@
 					</div>
 				</div> <!-- /.col-md-2 -->
 			</div> <!-- /.row -->
-		</div> <!-- /.cdontainer -->
+		</div> <!-- /.container -->
 	</div> <!-- /.templatemo_footer -->
 
 	<!-- Scripts -->
@@ -241,8 +224,9 @@
 			{day:6,title:'Meeting',time:'20:00',location:'Shanghai'}
 			]
 
-	//Build Calender
-	$('#activity-news-calender-content').datepicker({
+	//alert(acts[1]['day']);
+
+	$('#activity-news-calender div').datepicker({
 	    keyboardNavigation: false,
 	    todayHighlight: true,
 	    beforeShowDay: function (date){
@@ -267,29 +251,6 @@
 	        }
 	    }
 	});
-
-	$('#activity-news-calender-content').datepicker().on('changeDate', function(e){
-        //alert(e.date.getDate());
-
-        //Change Activity List
-
-        $('#activity-news-tasklist').animate({
-        	opacity: 0,
-        	top:'20px'}, 
-  			function(){
-  			//Data Manupate
-
-  			//Show
-		    $('#activity-news-tasklist').animate({
-        	opacity: 1,
-        	top:'0px'});
-	  		
-		});
-
-    });
-
-
-
     </script>
 </body>
 </html>
