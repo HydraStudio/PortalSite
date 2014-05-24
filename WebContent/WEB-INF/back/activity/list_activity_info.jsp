@@ -43,6 +43,7 @@
 				</td>
 				<td>
 					<s:a action="modifyInputActivityInfo?id=%{id}">修改</s:a>
+					<s:a action="addToIndexInputActivityInfo?id=%{id}">添加到首页</s:a>
 					<s:a action="deleteActivityInfo?id=%{id}">删除</s:a>
 				</td>
 			</tr>

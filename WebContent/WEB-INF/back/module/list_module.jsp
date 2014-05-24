@@ -9,30 +9,11 @@
 <title>List</title>
 </head>
 <body>
-	<table>
-	<!--  
-		<s:iterator value="#moduleList">
-			<tr>
-				<td>
-					<s:property value="id"/>
-				</td>
-				<td>
-					<s:property value="name"/>
-				</td>
-				<td>
-					<s:a action="modifyInputModule?id=%{id}">修改</s:a>
-					<s:a action="deleteModule?id=%{id}">删除</s:a>
-				</td>
-			</tr>
-		</s:iterator>
-		-->
+	<table align="center">
 		<s:iterator value="recordList">
 			<tr>
 				<td>
-					${id}
-				</td>
-				<td>
-					<s:a action="listModule?id=%{id}">${name}</s:a>
+					<s:a action="%{moduleUrl}">${name}</s:a>
 				</td>
 				<td>
 					<s:a action="modifyInputModule?id=%{id}">修改</s:a>
@@ -42,12 +23,10 @@
 		</s:iterator>
 	</table>
 <!--  	-->	
-<br/><br/><br/>
-	<%@ include file="/WEB-INF/public/pageView.jsp" %>
-	<s:form action="listModule"></s:form>
-
-	<s:a action="addInputModule">添加</s:a> <br/><br/><br/>
-	
+<br/>
+	<center>
+		<s:a action="addInputModule">添加</s:a> <br/><br/><br/>
+	</center>
 	<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=155471638&amp;site=qq&amp;menu=yes" class="guide_link" title="欢迎在线咨询“QQ推广客服”，在线时间为工作日9点-17点。" target="_blank" data-report="12058">&gt;&gt; QQ在线咨询</a>
 	
 	<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=155471638&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:136254674:51" alt="联系我" title="联系我"/></a>

@@ -10,7 +10,8 @@
 <body>
 	<s:form action="%{id==null ? 'add':'modify'}Module">
 		<s:hidden name="id"></s:hidden>
-		姓名：<s:textfield name="name"></s:textfield>
+		模块名：<s:textfield name="name"></s:textfield>
+		模块URL：<s:textfield name="moduleUrl"></s:textfield>
 		<s:submit value="提交"></s:submit>
 	</s:form>
 </body>

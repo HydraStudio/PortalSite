@@ -7,13 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <script language="javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
-<title>Input Index</title>
+<title>Add Activity To Index</title>
 
 </head>
 <body>
 	
-	<s:form action="%{id==null ? 'add':'modify'}Portal" theme="simple" enctype="multipart/form-data" method="post" id="inputAction">
-		<s:hidden name="id" id="id"></s:hidden>
+	<s:form action="addPortal" theme="simple" enctype="multipart/form-data" method="post" id="inputAction">
+		<s:hidden name="activityId" value="%{id}" id="id"></s:hidden>
 		<s:hidden name="changeFlag" id="changeFlag"></s:hidden>
 		图片：<s:file name="upload" id="file"></s:file><br/>
 		图片名字：<s:textfield name="name"></s:textfield> <br/>

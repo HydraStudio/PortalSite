@@ -10,21 +10,21 @@
 </head>
 <body>
 	<table style="border:1px red solid;" align="center">
+		<tr>
+			<th>
+				ID
+			</th>
+			<th>
+				用户名
+			</th>
+			<th>
+				密码
+			</th>
+			<th>
+				操作
+			</th>
+		</tr>
 		<s:iterator value="recordList">
-			<tr>
-				<th>
-					ID
-				</th>
-				<th>
-					用户名
-				</th>
-				<th>
-					密码
-				</th>
-				<th>
-					操作
-				</th>
-			</tr>
 			<tr>
 				<td>
 					${id}
