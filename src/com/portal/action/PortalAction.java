@@ -98,7 +98,7 @@ public class PortalAction extends BaseAction<Portal> {
 		queryHelper.addCondition(true,"p.useFlag=? ",true);
 		PageBean pageBean = portalService.searchPagination(pageNum, pageSize, queryHelper);
 		List<Portal> portals = pageBean.getRecordList();
-		ActionContext.getContext().getValueStack().push(portals);
+		ActionContext.getContext().put("portals", portals);
 		return "index_show_portal";
 	}
 }
