@@ -99,6 +99,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script type='text/javascript' src='js/logging.js'></script>
+    <script src="js/customization.js"></script>
+    <script type="text/javascript">
+    	function open(html){
+		  alert("click");
+		  window.open(html,'_self');
+		}
+    </script>
     <!-- Flat-UI Components -->
     <script src="js/flatui-checkbox.js"></script>
     <script src="js/flatui-radio.js"></script>

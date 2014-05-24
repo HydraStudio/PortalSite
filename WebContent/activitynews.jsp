@@ -155,6 +155,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="js/templatemo_custom.js"></script>
     <script type='text/javascript' src='js/logging.js'></script>
     <script type="text/javascript" src="js/bootstrap-select.js"></script>
+    <script src="js/customization.js"></script>
     <!-- Flat-UI Components -->
     <script src="js/flatui-checkbox.js"></script>
     <script src="js/flatui-radio.js"></script>

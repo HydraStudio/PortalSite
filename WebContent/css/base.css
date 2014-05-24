@@ -175,6 +175,7 @@ input, textarea {
   line-height: 2;
   display: inline-block;
   position: relative;
+  cursor: pointer;
   right: 8s0px;
   font-size: 36px;
   padding-right: 350px;
