@@ -41,6 +41,18 @@
     filter: alpha(opacity=100);
 }
 
+#activity-service{
+	background-image: url('../images/icon_service.jpg');
+	width: 46px;
+	height: 41px;
+	z-index: 1;
+	display:block;
+	bottom:0px;
+	right:1px!important;
+	right:18px;
+	position:fixed;
+}
+
 /*------------------------------------------------------
   Join Us: Form - Styles 
 --------------------------------------------------------*/
