@@ -75,6 +75,8 @@
 			<result name="add_portal" type="redirectAction">listPortal</result>
 			<result name="modify_portal" type="redirectAction">listPortal</result>
 			<result name="delete_portal" type="redirectAction">listPortal</result>
+			
+			<result name="index_show_portal">/index.jsp</result>
 		</action>
 		
 		<action name="*User" class="userAction" method="{1}User">
