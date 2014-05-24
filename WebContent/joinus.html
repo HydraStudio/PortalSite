@@ -34,6 +34,11 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/customization.css">
 
+	<style type="text/css">
+
+	
+
+	</style>
 
 </head>
 <body>
@@ -244,21 +249,31 @@
 					    </fieldset>
 			        </div>
 
-			        <div class="form-group join-us-form-unit">
-			          	<fieldset>
-			          		<input type="checkbox" id="chkReceiveMail"></input>
-						    <label class="col-md-6 control-label">我愿意收到来自METALL的Newsletter</label>
-					    </fieldset>
+			        <div class="col-md-12 text-center">
+						<input type="checkbox" id="chkReceiveMail"></input>
+						<label for="chkReceiveMail">我愿意收到来自METALL的Newsletter</label>
+			        </div>
+
+			        <div class="col-md-12 text-center">
+			        	<br/>
+						<label id="order-prompt">预约提交后,我们将在3个工作日内通过电话，短信或者邮件的方式与您联系，请保持联络通畅</label>
+			        </div>
+
+			        <div class="col-md-12 text-center">
+						<input type="submit" class="join-us-form-confirm-btn" value="我要预约"></input>
 			        </div>
 			    </div>
 
 				
 			</form>
 		</div>
+
+		<div id="activity-service" class="col-md-1">
+			<h1>&nbsp;</h1><br/>
+		</div>
 	</div><!-- site-content -->
 	
 	</div> <!-- /#menu-container -->
-
 	<div id="site-footer">
 		<div class="container">
 			<div class="row">
@@ -293,6 +308,7 @@
 	<script src="js/bootstrap.js"></script>
 	<script src="js/tabs.js"></script>
 	<script src="js/jquery.lightbox.js"></script>
+	<script src="js/icheck.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script type='text/javascript' src='js/logging.js'></script>
     <script type="text/javascript" src="js/bootstrap-select.js"></script>
@@ -307,6 +323,10 @@
             });
 
             // $('.selectpicker').selectpicker('hide');
+
+            $('#chkReceiveMail').iCheck({
+			    checkboxClass: 'checkbox-green'
+			 });
         });
     </script>
 </body>

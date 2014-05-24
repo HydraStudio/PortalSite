@@ -190,26 +190,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						    <label for="selectWayKnown" class="col-md-6 control-label">通过何种方式知道我们的</label>
 						    <div class="col-md-5 text-left">
 						        <select class="selectpicker text-left" id="selectWayKnown">
-							        <option>朋友</option>
-								    <option>同事</option>
-								    <option>上网</option>
-								    <option>邮件</option>
+							        <option>同学推荐</option>
+								    <option>活动宣传</option>
+								    <option>校园BBS</option>
+								    <option>微信微博</option>
+								    <option>其他</option>
 							    </select>
 						    </div>
 					    </fieldset>
 			        </div>
 
-			        <div class="form-group join-us-form-unit">
-			          	<fieldset>
-			          		<input type="checkbox" id="chkReceiveMail"></input>
-						    <label class="col-md-6 control-label">我愿意收到来自METALL的Newsletter</label>
-					    </fieldset>
+			        <div class="col-md-12 text-center">
+						<input type="checkbox" id="chkReceiveMail"></input>
+						<label for="chkReceiveMail">我愿意收到来自METALL的Newsletter</label>
+			        </div>
+
+			        <div class="col-md-12 text-center">
+			        	<br/>
+						<label id="order-prompt">预约提交后,我们将在3个工作日内通过电话，短信或者邮件的方式与您联系，请保持联络通畅</label>
+			        </div>
+
+			        <div class="col-md-12 text-center">
+						<input type="submit" class="join-us-form-confirm-btn" value="我要预约"></input>
 			        </div>
 			    </div>
 
 				
 			</form>
 		</div>
+
+		<div id="activity-service" class="col-md-1">
+			<h1>&nbsp;</h1><br/>
+		</div>
+
 	</div><!-- site-content -->
 	
 	<%@include file="/footer.jsp" %>
@@ -221,6 +234,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="js/bootstrap.js"></script>
 	<script src="js/tabs.js"></script>
 	<script src="js/jquery.lightbox.js"></script>
+	<script src="js/icheck.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script type='text/javascript' src='js/logging.js'></script>
     <script type="text/javascript" src="js/bootstrap-select.js"></script>
@@ -236,6 +250,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             });
 
             // $('.selectpicker').selectpicker('hide');
+            $('#chkReceiveMail').iCheck({
+			   checkboxClass: 'checkbox-green'
+			});
         });
     </script>
     
