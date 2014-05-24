@@ -57,16 +57,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="index-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
 				  <!-- Indicators -->
 				  <ol class="carousel-indicators">
-				    <li data-target="#index-carousel" data-slide-to="0" class="active"></li>
-				    <li data-target="#index-carousel" data-slide-to="1"></li>
-				    <li data-target="#index-carousel" data-slide-to="2"></li>
+				    <s:iterator value="portals" status="u">
+				    	<li data-target="#index-carousel" data-slide-to="${u.index}"></li>
+					</s:iterator>
 				  </ol>
 
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner">
 				  	<s:iterator value="portals" status="u">
 						<div class="item">
-					      <img src="${imageUrl}" alt="...">
+					      <img src="${imageUrl}" alt="..."  onclick="window.open('${url}','_blank')" >
 					    </div>
 					</s:iterator>
 				    <!-- <div class="item">
@@ -112,6 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
 		//Make photo&news active
 		$(function(){
+			$($(".carousel-indicators li")[0]).addClass("active");
 			$($(".carousel-inner .item")[0]).addClass("active");
 			$($("#activity-news-dashboard div")[0]).addClass("active");
 			$($("#activity-news-dashboard div")[0]).show("slow");
