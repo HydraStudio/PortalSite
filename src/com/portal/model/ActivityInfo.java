@@ -36,6 +36,9 @@ public class ActivityInfo {
 	@Column(name="image_url")
 	private String imageUrl;
 	
+	@Column(name="location")
+	private String location;
+	
 	public Long getId() {
 		return id;
 	}
@@ -82,5 +85,13 @@ public class ActivityInfo {
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 }

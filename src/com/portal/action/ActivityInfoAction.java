@@ -1,5 +1,6 @@
 package com.portal.action;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -75,6 +76,7 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		activityInfo.setDescription(model.getDescription());
 		activityInfo.setTitle(model.getTitle());
 		activityInfo.setDetail(model.getDetail());
+		activityInfo.setLocation(model.getLocation());
 		
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String changeFlag = request.getParameter("changeFlag");
@@ -161,7 +163,7 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		return "show_activity_info";
 	}
 	
-	public String indexGetMonthActivityInfo(){
+	public void indexGetMonthActivityInfo() throws IOException{
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
@@ -189,10 +191,49 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		Date beginDate = begin.getTime();
 		Date endDate = end.getTime();
 		
-		List<ActivityInfo> activityInfos = activityInfoService.getPeriodActivities(beginDate, endDate);
-		ActionContext.getContext().put("activities", activityInfos);
+	/*	[
+			{day:4,activities:[{title:'交流会议',time:'15:00',location:'Beijing'},{title:'Meeting',time:'15:00',location:'Beijing'}]},
+			{day:6,activities:[{title:'宣讲会',time:'20:00',location:'上海'}]}
+		]*/
+	
 		
-		return "index_get_month_activity";
+		List<ActivityInfo> activityInfos = activityInfoService.getPeriodActivities(beginDate, endDate);
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		
+		for(int i=1;i<=31;i++){
+			sb.append("{'day':"+i+",'activities':[");
+			int count = 0;
+			for(ActivityInfo act : activityInfos){
+				if(act.getDate().getDay()==i){
+					if(count>0){
+						sb.append(",");
+					}
+					//Date Format
+					String time = act.getDate().getHours()+":"+act.getDate().getMinutes();
+					sb.append("{'title':'"+act.getTitle()+"'"+
+				              " ,'time':'"+time+"'"+
+				          " ,'location':'"+act.getLocation()+"'"+
+				              "}");
+				}
+				count++;
+			}
+			if(i==31){
+				sb.append("]}");
+			}else{
+				sb.append("]},");
+			}
+			
+		}
+		sb.append("]");
+		
+		ActionContext.getContext().put("activities", activityInfos);
+		//String nString = new String(sb.toString().getBytes("GBK"), "UTF-8");
+		ServletActionContext.getResponse().setHeader("Charset","UTF-8");
+		ServletActionContext.getResponse().getWriter().write(sb.toString());
+
+//		return "index_get_month_activity";
 	}
 	
 //	public void ajaxUpload() throws Exception{
