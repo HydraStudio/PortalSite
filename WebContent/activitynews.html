@@ -144,9 +144,26 @@
 
 				<div id="activity-news-overview" class="col-md-8 col-sm-12">
 
-					<div class="activity-news-unit well col-md-5 col-sm-12">
+					<div class="activity-news-unit well col-md-5 col-sm-12" data-toggle="modal" data-target="#detailModal-1">
 						<h1>活动标题</h1>
 					</div>
+					<!-- News Detail Model -->
+					<div class="modal fade" id="detailModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					        <h4 class="modal-title" id="myModalLabel">活动标题</h4>
+					      </div>
+					      <div class="modal-body">
+					        活动内容
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
+					      </div>
+					    </div><!-- /.modal-content -->
+					  </div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
 					<div class="activity-news-unit well col-md-5 col-sm-12">
 						<h1>活动标题</h1>
 					</div>
@@ -219,21 +236,38 @@
 
     //Data receive from server
     //Mocked
-    var acts = [
-			{day:4,title:'Meeting',time:'20:00',location:'Shanghai'},
-			{day:6,title:'Meeting',time:'20:00',location:'Shanghai'}
-			]
+    var monthActs = [
+			{day:4,activities:[{title:'Meeting',time:'15:00',location:'Beijing'},{title:'Meeting',time:'15:00',location:'Beijing'}]},
+			{day:6,activities:[{title:'Party',time:'20:00',location:'Shanghai'}]}
+		]
 
-	//alert(acts[1]['day']);
+	var today = new Date();
+	var todayMonth = today.getMonth()+1;
+	if(todayMonth<10){
+		todayMonth = "0"+todayMonth;
+	}
+	var todayString = today.getFullYear()+"-"+todayMonth+"-"+today.getDate();
+	//alert(todayString);
 
-	$('#activity-news-calender div').datepicker({
+	//Retrieve act data
+	$.ajax({
+		  url: "/indexGetMonthActivityInfo.action",
+		  data: "year="+today.getFullYear()+"&month="+todayMonth,
+		  success: function(data){
+		    alert(data);
+		    //monthActs = ...
+		  }
+	});
+
+	//Build Calender
+	$('#activity-news-calender-content').datepicker({
 	    keyboardNavigation: false,
 	    todayHighlight: true,
 	    beforeShowDay: function (date){
 	        if (date.getMonth() == (new Date()).getMonth())
 	        {
-	        	for(var i in acts){
-	        		if(date.getDate() == acts[i]['day']){
+	        	for(var i in monthActs){
+	        		if(date.getDate() == monthActs[i]['day']){
 	        			return "red";
 	        		}
 	        	}
@@ -251,6 +285,44 @@
 	        }
 	    }
 	});
+
+	$('#activity-news-calender-content').datepicker().on('changeDate', function(e){
+        //alert(e.date.getDate());
+
+        //Change Activity List
+
+        $('#activity-news-tasklist').animate({
+        	opacity: 0,
+        	top:'20px'}, 
+  			function(){
+	  			//Data Manupate
+	  			$('#activity-tasklist-content').empty();
+
+	  			//Check if activities exist
+	  			for(var i in monthActs){
+	  				if(e.date.getDate() == monthActs[i]['day']){
+	        			for(var j in monthActs[i]['activities']){
+	        				//Load the activities
+	  						$('#activity-tasklist-content').append(
+	  							'<tr style="cursor:pointer"><td>'+
+	  							monthActs[i]['activities'][j]['title']+" "+
+	  							monthActs[i]['activities'][j]['location']+
+	  							'</td><td style="text-align:right;padding-right:15px;">'+
+	  							monthActs[i]['activities'][j]['time']+
+	  							'</td></tr>');
+	  					}
+	        		}
+	  			}
+
+
+	  			//Show
+			    $('#activity-news-tasklist').animate({
+	        	opacity: 1,
+	        	top:'0px'});
+		});
+
+    });
+
     </script>
 </body>
 </html>

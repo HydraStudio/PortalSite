@@ -168,8 +168,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     //Data receive from server
     //Mocked
     var monthActs = [
-			{day:4,title:'Meeting',time:'20:00',location:'Shanghai',activities:['','']},
-			{day:6,title:'Meeting',time:'20:00',location:'Shanghai',activities:['','']}
+			{day:4,activities:[{title:'Meeting',time:'15:00',location:'Beijing'}]},
+			{day:6,activities:[{title:'Party',time:'20:00',location:'Shanghai'}]}
 		]
 
 	var today = new Date();
@@ -178,12 +178,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		todayMonth = "0"+todayMonth;
 	}
 	var todayString = today.getFullYear()+"-"+todayMonth+"-"+today.getDate();
-	alert(todayString);
+	//alert(todayString);
 
 	//Retrieve act data
 	$.ajax({
-		  url: "test.html",
-		  data: "actDate="+todayString,
+		  url: "/indexGetMonthActivityInfo.action",
+		  data: "year="+today.getFullYear()+"&month="+todayMonth,
 		  success: function(data){
 		    alert(data);
 		    //monthActs = ...
@@ -226,13 +226,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	opacity: 0,
         	top:'20px'}, 
   			function(){
-  			//Data Manupate
-  			
-  			//Show
-		    $('#activity-news-tasklist').animate({
-        	opacity: 1,
-        	top:'0px'});
-	  		
+	  			//Data Manupate
+	  			$('#activity-tasklist-content').empty();
+
+	  			//Check if activities exist
+	  			for(var i in monthActs){
+	  				if(e.date.getDate() == monthActs[i]['day']){
+	        			for(var j in monthActs[i]['activities']){
+	        				//Load the activities
+	  						$('#activity-tasklist-content').append(
+	  							'<tr style="cursor:pointer"><td>'+
+	  							monthActs[i]['activities'][j]['title']+" "+
+	  							monthActs[i]['activities'][j]['location']+
+	  							'</td><td style="text-align:right;padding-right:15px;">'+
+	  							monthActs[i]['activities'][j]['time']+
+	  							'</td></tr>');
+	  					}
+	        		}
+	  			}
+
+	  			//Show
+			    $('#activity-news-tasklist').animate({
+	        	opacity: 1,
+	        	top:'0px'});
 		});
 
     });
