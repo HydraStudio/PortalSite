@@ -229,10 +229,11 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		sb.append("]");
 		
 		ActionContext.getContext().put("activities", activityInfos);
-		//String nString = new String(sb.toString().getBytes("GBK"), "UTF-8");
-		ServletActionContext.getResponse().setHeader("Charset","UTF-8");
+		//ServletActionContext.getResponse().setHeader("Charset","UTF-8");
+		ServletActionContext.getResponse().setContentType( "text/xml" );
+		ServletActionContext.getResponse().setCharacterEncoding( "UTF-8" );
 		ServletActionContext.getResponse().getWriter().write(sb.toString());
-
+		//ServletActionContext.getResponse().getWriter().write("无语");
 //		return "index_get_month_activity";
 	}
 	

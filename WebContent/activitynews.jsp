@@ -225,6 +225,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  }
 	});
 
+	/*var myRequest = new XMLHttpRequest();
+	var get= "year="+today.getFullYear()+"&month="+(today.getMonth()+1); 
+	alert(get);
+	myRequest.open("GET","indexGetMonthActivityInfo.action?"+get,false); 
+	//myRequest.setRequestHeader("contentLength",post.length); 
+	myRequest.setRequestHeader("Content-Type","text/html;charset=UTF-8" );
+	myRequest.send(null); 
+	var res=myRequest.responseText;//接收返回的数据 
+	alert(res);*/
+
 	//Build Calender
 	$('#activity-news-calender-content').datepicker({
 	    keyboardNavigation: false,
