@@ -1,6 +1,9 @@
 package com.portal.action;
 
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -44,8 +47,8 @@ public class PortalAction extends BaseAction<Portal> {
 	public String addPortal() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String fileName = uploadCommon();
-		String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-        String imageUrl = URL+"upload/" + fileName;
+//		String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+        String imageUrl = "upload/" + fileName;
         model.setImageUrl(imageUrl);
         
         model.setUseFlag(false);
@@ -53,7 +56,7 @@ public class PortalAction extends BaseAction<Portal> {
         String activityId = request.getParameter("activityId");
         if(activityId !=null && !activityId.equals("")){
 //          ActivityInfo activityInfo = activityInfoService.getById(Long.valueOf(activityId));
-            String activityUrl = URL + "indexShowActivityInfo.action?id=" + activityId;
+            String activityUrl = "indexShowActivityInfo.action?id=" + activityId;
             model.setUrl(activityUrl);
         }
         portalService.savePortal(model);
@@ -86,8 +89,8 @@ public class PortalAction extends BaseAction<Portal> {
 		//check if change the picture
 		if(changeFlag != null && !changeFlag.equals("")){
 			String fileName = uploadCommon();
-			String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-	        String imageUrl = URL+"upload/" + fileName;
+//			String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+	        String imageUrl = "upload/" + fileName;
 	        portal.setImageUrl(imageUrl);
 		}
         portalService.modifyPortal(portal);
@@ -114,5 +117,23 @@ public class PortalAction extends BaseAction<Portal> {
 		List<Portal> portals = pageBean.getRecordList();
 		ActionContext.getContext().put("portals", portals);
 		return "index_show_portal";
+	}
+	
+	public static void main(String []args){
+		try {  
+            Runtime rt = Runtime.getRuntime();  
+                        String cmd ="mysqldump -h localhost -uroot -proot oa user> sql\\asdfgaaaf.sql"; //一定要加 -h localhost(或是服务器IP地址)  
+            Process process =rt.exec("cmd /c " + cmd);  
+            InputStreamReader isr = new InputStreamReader(process.getErrorStream(),"GBK");  
+            LineNumberReader input = new LineNumberReader(isr);  
+            String line;  
+            while((line = input.readLine())!= null){  
+                System.out.println(line+"~~~~~~~~~~");  
+            }  
+            System.out.println("备份成功!");  
+        } catch (IOException e) {  
+            System.out.println("备份失败!");  
+            e.printStackTrace();  
+        } 
 	}
 }

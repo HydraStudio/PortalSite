@@ -24,13 +24,13 @@ public class ActivityInfo {
 //	@OneToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="activityInfo")
 //	private Set<Resource> imageUrls;
 	
-	@Column(name="description")
+	@Column(name="description", length=1000)
 	private String description;
 
 	@Column(name="date")
 	private Date date;
 	
-	@Column(name="detail")
+	@Column(name="detail", length=20000)
 	private String detail;
 	
 	@Column(name="image_url")

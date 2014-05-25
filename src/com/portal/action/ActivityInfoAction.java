@@ -1,6 +1,10 @@
 package com.portal.action;
 
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -43,10 +47,10 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	}
 	
 	public String addActivityInfo() throws Exception{
-		HttpServletRequest request = ServletActionContext.getRequest();
+//		HttpServletRequest request = ServletActionContext.getRequest();
 		String fileName = uploadCommon();
-        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-        String imageUrl = URL+"upload/" + fileName;
+//        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+        String imageUrl = "upload/" + fileName;
         model.setImageUrl(imageUrl);
 		activityInfoService.saveActivityInfo(model);
 		return "add_activity_info";
@@ -77,8 +81,8 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		//check if change the picture
 		if(changeFlag != null && !changeFlag.equals("")){
 			String fileName = uploadCommon();
-	        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-	        String imageUrl = URL+"upload/" + fileName;
+//	        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+	        String imageUrl = "upload/" + fileName;
 	        activityInfo.setImageUrl(imageUrl);
 		}
 		
@@ -132,11 +136,11 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
           
         String fileName = uploadCommon();
         
-        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+//        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
         
         //设置返回“图像”选项卡  
         out.println("<script type=\"text/javascript\">");    
-        out.println("window.parent.CKEDITOR.tools.callFunction("+ callback + ",\'" +URL+"upload/"+fileName+ "\',\'\');");
+        out.println("window.parent.CKEDITOR.tools.callFunction("+ callback + ",\'" +"upload/"+fileName+ "\',\'\');");
 //        out.println("window.parent.CKEDITOR.tools.callFunction(" + callback + ",'" + "upload/" + fileName + "','')");    
         out.println("</script>");
 		
@@ -155,6 +159,40 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		ActivityInfo activityInfo = activityInfoService.getById(model.getId());
 		ActionContext.getContext().getValueStack().push(activityInfo);
 		return "show_activity_info";
+	}
+	
+	public String indexGetMonthActivityInfo(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String year = request.getParameter("year");
+		String month = request.getParameter("month");
+
+		//		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+		
+		Calendar begin = Calendar.getInstance();
+		Calendar end = Calendar.getInstance();
+		
+		begin.set(Calendar.YEAR, Integer.valueOf(year));
+		begin.set(Calendar.MONTH, Integer.valueOf(month)-1);
+		begin.set(Calendar.DAY_OF_MONTH, 1);
+		begin.set(Calendar.HOUR_OF_DAY, 0);
+		begin.set(Calendar.MINUTE, 0);
+		begin.set(Calendar.SECOND, 0);
+		
+		end.set(Calendar.YEAR, Integer.valueOf(year));
+		end.set(Calendar.MONTH, Integer.valueOf(month));
+		end.set(Calendar.DAY_OF_MONTH, 1);
+		end.set(Calendar.HOUR_OF_DAY, 23);
+		end.set(Calendar.MINUTE, 59);
+		end.set(Calendar.SECOND, 59);
+		end.add(Calendar.DAY_OF_MONTH, -1);
+		
+		Date beginDate = begin.getTime();
+		Date endDate = end.getTime();
+		
+		List<ActivityInfo> activityInfos = activityInfoService.getPeriodActivities(beginDate, endDate);
+		ActionContext.getContext().put("activities", activityInfos);
+		
+		return "index_get_month_activity";
 	}
 	
 //	public void ajaxUpload() throws Exception{

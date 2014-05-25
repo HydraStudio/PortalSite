@@ -22,4 +22,6 @@ List<ActivityInfo> findAllModules();
 	PageBean searchPagination(int pageNum, int pageSize, QueryHelper queryHelper);
 	
 	List<ActivityInfo> findByDate(Date date);
+	
+	List<ActivityInfo> getPeriodActivities(Date beginDate, Date endDate);
 }

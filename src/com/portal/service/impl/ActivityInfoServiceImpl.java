@@ -49,4 +49,8 @@ public class ActivityInfoServiceImpl implements ActivityInfoService {
 	public List<ActivityInfo> findByDate(Date date) {
 		return activityInfoDao.findByDate(date);
 	}
+	
+	public List<ActivityInfo> getPeriodActivities(Date beginDate, Date endDate) {
+		return activityInfoDao.getPeriodActivities(beginDate, endDate);
+	}
 }

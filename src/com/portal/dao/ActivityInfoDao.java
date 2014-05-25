@@ -9,4 +9,6 @@ import com.portal.model.ActivityInfo;
 public interface ActivityInfoDao extends BaseDao<ActivityInfo> {
 
 	List<ActivityInfo> findByDate(Date date);
+	
+	List<ActivityInfo> getPeriodActivities(Date beginDate, Date endDate);
 }

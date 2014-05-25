@@ -78,8 +78,8 @@ public class UserAction extends BaseAction<User> {
 	}
 	
 	/** 注销 */
-	public String logout() throws Exception {
+	public String logoutUser() throws Exception {
 		ActionContext.getContext().getSession().remove("user");
-		return "logout";
+		return "logout_user";
 	}
 }
