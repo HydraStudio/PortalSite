@@ -350,16 +350,24 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     var fallback  = type == 'next' ? 'first' : 'last'
     var that      = this
 
+    if (!$next.length) {
+      if (!this.options.wrap) return
+      $next = this.$element.find('.item')[fallback]()
+    }
+
+    //Return if just have one pic
+    if ($next.hasClass('active')) return this.sliding = false
 
     //Metall Customization - START
+    var slide_count = this.$element.find('.item').length;
     var act_id = $($("#activity-news-dashboard .active")[0]).attr("id");
     var act_no = parseInt(act_id.substring(act_id.length-1));
     if(direction == 'left'){
-      act_no = (act_no+1)%3;
+      act_no = (act_no+1)%slide_count;
     }else{
       act_no = act_no-1;
       if(act_no<0){
-        act_no=act_no+3;
+        act_no=act_no+slide_count;
       }
     }
     var act_nxt_id = "activity-news-dashboard-"+act_no;
@@ -369,13 +377,6 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       $("#"+act_nxt_id).addClass("active");
     });
     //Metall Customization - END
-
-    if (!$next.length) {
-      if (!this.options.wrap) return
-      $next = this.$element.find('.item')[fallback]()
-    }
-
-    if ($next.hasClass('active')) return this.sliding = false
 
     var e = $.Event('slide.bs.carousel', { relatedTarget: $next[0], direction: direction })
     this.$element.trigger(e)

@@ -172,6 +172,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			{day:6,title:'Meeting',time:'20:00',location:'Shanghai'}
 			]
 
+	var today = new Date();
+	var todayMonth = today.getMonth()+1;
+	if(todayMonth<10){
+		todayMonth = "0"+todayMonth;
+	}
+	var todayString = today.getFullYear()+"-"+todayMonth+"-"+today.getDate();
+	alert(todayString);
+
+	//Retrieve act data
+	$.ajax({
+		  url: "test.html",
+		  data: "actDate="+todayString,
+		  success: function(data){
+		    //$(this).addClass("done");
+		    alert(data);
+		  }
+	});
+
 	//Build Calender
 	$('#activity-news-calender-content').datepicker({
 	    keyboardNavigation: false,
