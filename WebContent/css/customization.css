@@ -211,12 +211,13 @@
 }
 
 #activity-day{
-	width: 40px;
+	width: 60px;
 	padding-left: 5px;
 }
 
 #activity-title{
-	width: 150px;
+	width: 130px;
+	text-align: left;
 }
 
 /* ActivityBlock */

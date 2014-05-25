@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							    </tr>
 							</thead>
 							<tbody id="activity-tasklist-content">
-								<tr>
+								<!-- <tr>
 									<td colspan="2">Activity 1</td>
 									<td></td>
 								</tr>
@@ -88,7 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<tr>
 									<td colspan="2">Activity 4</td>
 									<td></td>
-								</tr>
+								</tr> -->
 							</tbody>
 						</table>
 
@@ -100,7 +100,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="activity-news-overview" class="col-md-8 col-sm-12">
 
 					<div class="activity-news-unit well col-md-5 col-sm-12" data-toggle="modal" data-target="#detailModal-1">
-						<h1>活动标题</h1>
+						<h1>活动标题</h1><br/>
+						<div class="row">
+							<div class='col-md-6'><img src="images/img_activity.png"/></div>
+							<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">软件架构平台创新大会，是由普元、InfoQ联合主办的全国顶级技术盛会</p></div><!--30字-->
+						</div>
 					</div>
 					<!-- News Detail Model -->
 					<div class="modal fade" id="detailModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -121,19 +125,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div><!-- /.modal -->
 
 					<div class="activity-news-unit well col-md-5 col-sm-12">
-						<h1>活动标题</h1>
+						<h1>活动标题</h1><br/>
+						<div class="row">
+							<div class='col-md-6'><img src="images/img_activity.png"/></div>
+							<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">软件架构平台创新大会，是由普元、InfoQ联合主办的全国顶级技术盛会</p></div><!--30字-->
+						</div>
 					</div>
 					<div class="activity-news-unit well col-md-5 col-sm-12">
-						<h1>活动标题</h1>
+						<h1>活动标题</h1><br/>
+						<div class="row">
+							<div class='col-md-6'><img src="images/img_activity.png"/></div>
+							<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">软件架构平台创新大会，是由普元、InfoQ联合主办的全国顶级技术盛会</p></div><!--30字-->
+						</div>
 					</div>
 					<div class="activity-news-unit well col-md-5 col-sm-12">
-						<h1>活动标题</h1>
+						<h1>活动标题</h1><br/>
+						<div class="row">
+							<div class='col-md-6'><img src="images/img_activity.png"/></div>
+							<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">软件架构平台创新大会，是由普元、InfoQ联合主办的全国顶级技术盛会</p></div><!--30字-->
+						</div>
 					</div>
 					<div class="activity-news-unit well col-md-5 col-sm-12">
-						<h1>活动标题</h1>
+						<h1>活动标题</h1><br/>
+						<div class="row">
+							<div class='col-md-6'><img src="images/img_activity.png"/></div>
+							<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">软件架构平台创新大会，是由普元、InfoQ联合主办的全国顶级技术盛会</p></div><!--30字-->
+						</div>
 					</div>
 					<div class="activity-news-unit well col-md-5 col-sm-12">
-						<h1>活动标题</h1>
+						<h1>活动标题</h1><br/>
+						<div class="row">
+							<div class='col-md-6'><img src="images/img_activity.png"/></div>
+							<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">软件架构平台创新大会，是由普元、InfoQ联合主办的全国顶级技术盛会</p></div><!--30字-->
+						</div>
 					</div>
 
 				</div>
@@ -168,8 +192,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     //Data receive from server
     //Mocked
     var monthActs = [
-			{day:4,activities:[{title:'Meeting',time:'15:00',location:'Beijing'}]},
-			{day:6,activities:[{title:'Party',time:'20:00',location:'Shanghai'}]}
+			{day:4,activities:[{title:'交流会议',time:'15:00',location:'Beijing'},{title:'Meeting',time:'15:00',location:'Beijing'}]},
+			{day:6,activities:[{title:'宣讲会',time:'20:00',location:'上海'}]}
 		]
 
 	var today = new Date();
@@ -182,7 +206,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	//Retrieve act data
 	$.ajax({
-		  url: "/indexGetMonthActivityInfo.action",
+		  url: "indexGetMonthActivityInfo.action",
 		  data: "year="+today.getFullYear()+"&month="+todayMonth,
 		  success: function(data){
 		    alert(data);
@@ -236,7 +260,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        				//Load the activities
 	  						$('#activity-tasklist-content').append(
 	  							'<tr style="cursor:pointer"><td>'+
-	  							monthActs[i]['activities'][j]['title']+" "+
+	  							monthActs[i]['activities'][j]['title']+"<br/>"+
 	  							monthActs[i]['activities'][j]['location']+
 	  							'</td><td style="text-align:right;padding-right:15px;">'+
 	  							monthActs[i]['activities'][j]['time']+
