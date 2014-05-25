@@ -217,6 +217,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    }
 	});
 
+	$('#activity-news-calender-content').datepicker({ beforeShowDay: $.datepicker.noWeekends });
+
 	$('#activity-news-calender-content').datepicker().on('changeDate', function(e){
         //alert(e.date.getDate());
 

@@ -140,6 +140,15 @@
 	padding: 0px 24px 0 20px;
 }
 
+.btn-metall,
+.btn-metall:hover,
+.btn-metall:focus, 
+.btn-metall:active{
+	border:1px solid #339966;
+	background-color: #66CC99;
+	color: #FFF;
+}
+
 .bootstrap-select img{
 	position: relative;
 	right: 5px;
