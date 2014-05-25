@@ -13,6 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="keywords" content="Teaching" />
 	<meta name="description" content="Metall" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta charset="UTF-8">
 
     <!-- Bootstrap -->
@@ -169,6 +170,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<%@include file="/footer.jsp" %>
 	
+	<!-- JiaThis Button BEGIN -->
+    <div id="ckepop">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_weixin">微信</a> 
+		<a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+		<a class="jiathis_counter_style"></a> 
+		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
+	</div> <!-- JiaThis Button END -->
+	
 	<!-- Scripts -->
 	<script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -208,9 +218,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	$.ajax({
 		  url: "indexGetMonthActivityInfo.action",
 		  data: "year="+today.getFullYear()+"&month="+todayMonth,
+		  async : false,
 		  success: function(data){
-		    alert(data);
-		    //monthActs = ...
+		    monthActs = eval("("+data+")");
+		    //monthActs = eval("("+"{'day':1,'activities':[]}"+")");
 		  }
 	});
 
@@ -223,7 +234,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        {
 	        	for(var i in monthActs){
 	        		if(date.getDate() == monthActs[i]['day']){
-	        			return "red";
+	        			if(monthActs[i]['activities'].length>0){
+		        			return "red";
+	        			}
 	        		}
 	        	}
 		        /*switch (date.getDate()){
@@ -280,6 +293,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
     </script>
-    
+    <div style="display:none;">
+		<script language="javascript" type="text/javascript" src="http://js.users.51.la/17059421.js"></script>
+		<noscript><a href="http://www.51.la/?17059421" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/17059421.asp" style="border:none" /></a></noscript>
+	</div>
   </body>
 </html>

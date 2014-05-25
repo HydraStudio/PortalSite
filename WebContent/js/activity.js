@@ -2,12 +2,18 @@ $(function(){
 		CKEDITOR.replace('editor1', {
 		//	filebrowserImageUploadUrl: 'myImageUpload.ashx',
 			toolbar :[
-			          ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink'],
-					  ['FontSize', 'TextColor', 'BGColor'],
-					  ['Image']
+			          ['Bold','Italic','Underline'],
+			          ['NumberedList','BulletedList','-','Outdent','Indent'],
+			          ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+			          ['Link'],
+			          ['Image','Table'],
+			          ['Styles','Format','Font','FontSize'],
+			          ['TextColor','BGColor'],
+			          ['Maximize', '-','Undo','Redo']
 					],
 			filebrowserUploadUrl: 'uploadFile.action'
 		});
+		
 });
 
 window.onload = function(){ 

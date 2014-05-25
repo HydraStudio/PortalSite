@@ -1,6 +1,5 @@
 function checkFile(){
 	var file = $("#file").val();
-	alert($("#id").val());
 	if($("#id").val() == null || $.trim($("#id").val()) == ""){
 		if(file == null || $.trim(file) == ""){
 			alert("图片不能为空，请选择上传图片！");
@@ -40,6 +39,19 @@ $(function(){
 		timeFormat: 'HH:mm:ss'//格式化时间
 	});
 });
+
+function checkSqlFile(){
+	var file = $("#file").val();
+	var fileType = file.substr(file.indexOf("."));
+	if(file == null || $.trim(file) == ""){
+		alert("请选择还原的数据库脚本！");
+		return;
+	}else if(fileType != ".sql"){
+		alert("文件格式不正确，请选择.sql文件！");
+	}else{
+		$("#form").submit();
+	}
+}
 
 
 /*! jQuery Timepicker Addon 

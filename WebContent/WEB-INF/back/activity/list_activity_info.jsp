@@ -22,14 +22,17 @@
 				<td width="10%" align="center">
 					ID
 				</td>
-				<td width="25%">
+				<td width="15%">
 					标题
 				</td>
 				<td width="30%">
 					活动简介
 				</td>
-				<td width="20" align="center">
+				<td width="15%" align="center">
 					活动日期
+				</td>
+				<td width="15%" align="center">
+					活动地点
 				</td>
 				<td width="15%" align="center">
 					操作
@@ -49,7 +52,10 @@
 						${description}
 					</td>
 					<td>
-						${date}
+						<s:date name="date" format="yyyy-MM-dd HH:mm:ss"/>
+					</td>
+					<td>
+						${location}
 					</td>
 					<td>
 						<s:a action="modifyInputActivityInfo?id=%{id}">修改</s:a>
@@ -65,7 +71,6 @@
             <a href="addInputActivityInfo.action"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a>
         </div>
     </div>
-	
 	<div>
 		<%@ include file="/WEB-INF/public/pageView.jsp" %>
 		<s:form action="listActivityInfo"></s:form>

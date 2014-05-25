@@ -6,83 +6,108 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/pageCommon.js" charset="utf-8"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/PageUtils.js" charset="utf-8"></script>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
 <title>List Order</title>
 </head>
 <body>
-	<table style="border:1px red solid;" align="center">
-		<tr>
-			<th>
-				姓名
-			</th>
-			<th>
-				电子邮件
-			</th>
-			<th>
-				毕业/所在院校
-			</th>
-			<th>
-				年级
-			</th>
-			<th>
-				专业
-			</th>
-			<th>
-				手机号码
-			</th>
-			<th>
-				是否已工作
-			</th>
-			<th>
-				GPA成绩
-			</th>
-			<th>
-				GRE成绩
-			</th>
-			<th>
-				GMAT成绩
-			</th>
-			<th>
-				TOEFL成绩
-			</th>
-			<th>
-				IELTS成绩
-			</th>
-			<th>
-				通过何种方式知道我们
-			</th>
-			<th>
-				是否愿意接收NewsLetter
-			</th>
-		</tr>
-		<s:iterator value="recordList">
-			<tr>
-				<td>${name}</td>
-				<td>${email}</td>
-				<td>${school}</td>
-				<td>${grade}</td>
-				<td>${speciality}</td>
-				<td>${phone}</td>
-				<td>${isWork}</td>
-				<td>${gpa}</td>
-				<td>${gre}</td>
-				<td>${gmat}</td>
-				<td>${toefl}</td>
-				<td>${ielts}</td>
-				<td>${wayKnowUs}</td>
-				<td>${receiveLetter}</td>
-				<td>
-					<s:a action="modifyInputOrder?id=%{id}">修改</s:a>
-					<s:a action="deleteOrder?id=%{id}">删除</s:a>
+
+	<div>
+		<%@ include file="/WEB-INF/public/back_head.jsp" %>
+	</div>
+	<table cellspacing="0" cellpadding="0" class="TableStyle">
+		<thead>
+			<tr align=center valign=middle id=TableTitle>
+				<td width="8%">
+					姓名
+				</td>
+				<td width="9%">
+					电子邮件
+				</td>
+				<td width="8%">
+					毕业/所在院校
+				</td>
+				<td width="8%">
+					年级
+				</td>
+				<td width="8%">
+					专业
+				</td>
+				<td width="8%">
+					手机号码
+				</td>
+				<td width="5%">
+					是否已工作
+				</td>
+				<td width="5%">
+					GPA成绩
+				</td>
+				<td width="5%">
+					GRE成绩
+				</td>
+				<td width="5%">
+					GMAT成绩
+				</td>
+				<td width="5%">
+					TOEFL成绩
+				</td>
+				<td width="5%">
+					IELTS成绩
+				</td>
+				<td width="8%">
+					通过何种方式知道我们
+				</td>
+				<td width="5%">
+					是否愿意接收NewsLetter
+				</td>
+				<td width="8%">
+					操作
 				</td>
 			</tr>
-		</s:iterator>
+		</thead>
+		<tbody id="TableData" class="dataContainer">
+			<s:iterator value="recordList">
+				<tr class="TableDetail1 template">
+					<td>${name}</td>
+					<td>${email}</td>
+					<td>${school}</td>
+					<td>${grade}</td>
+					<td>${speciality}</td>
+					<td>${phone}</td>
+					<s:if test="%{isWork == true}">
+						<td>是</td>
+					</s:if>
+					<s:else>
+						<td>否</td>
+					</s:else>
+					<td>${gpa}</td>
+					<td>${gre}</td>
+					<td>${gmat}</td>
+					<td>${toefl}</td>
+					<td>${ielts}</td>
+					<td>${wayKnowUs}</td>
+					<s:if test="%{receiveLetter == true}">
+						<td>是</td>
+					</s:if>
+					<s:else>
+						<td>否</td>
+					</s:else>
+					<td>
+						<s:a action="modifyInputOrder?id=%{id}">修改</s:a>
+						<s:a action="deleteOrder?id=%{id}">删除</s:a>
+					</td>
+				</tr>
+			</s:iterator>
 	</table>
-	
-	<br/><br/><br/>
+	<div id="TableTail">
+        <div id="TableTail_inside">
+            <a href="addInputOrder.action"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a>
+        </div>
+    </div>
 	<div align="center">
 		<%@ include file="/WEB-INF/public/pageView.jsp" %>
 		<s:form action="listOrder"></s:form>
-		<s:a action="addInputOrder">添加</s:a> <br/><br/><br/>
 	</div>
 	
 </body>

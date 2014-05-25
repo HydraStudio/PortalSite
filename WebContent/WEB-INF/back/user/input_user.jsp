@@ -5,14 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script language="javascript" src="${pageContext.request.contextPath}/js/pageCommon.js" charset="utf-8"></script>
-<script language="javascript" src="${pageContext.request.contextPath}/js/PageUtils.js" charset="utf-8"></script>
-<script language="javascript" src="${pageContext.request.contextPath}/js/common.js" charset="utf-8"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
 <title>Input User</title>
 <script type="text/javascript">
 function checkUser(){
-	alert($("#username").val());
 	if($("#username").val()== null || $.trim($("#username").val())=="" ){
 		alert("用户名不能为空！");
 		return;
@@ -27,7 +24,7 @@ function checkUser(){
 </head>
 <body>
 
-<div>
+	<div>
 		<%@ include file="/WEB-INF/public/back_head.jsp" %>
 	</div>
 
