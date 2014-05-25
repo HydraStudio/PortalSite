@@ -167,10 +167,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     //Data receive from server
     //Mocked
-    var acts = [
-			{day:4,title:'Meeting',time:'20:00',location:'Shanghai'},
-			{day:6,title:'Meeting',time:'20:00',location:'Shanghai'}
-			]
+    var monthActs = [
+			{day:4,title:'Meeting',time:'20:00',location:'Shanghai',activities:['','']},
+			{day:6,title:'Meeting',time:'20:00',location:'Shanghai',activities:['','']}
+		]
 
 	var today = new Date();
 	var todayMonth = today.getMonth()+1;
@@ -185,8 +185,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  url: "test.html",
 		  data: "actDate="+todayString,
 		  success: function(data){
-		    //$(this).addClass("done");
 		    alert(data);
+		    //monthActs = ...
 		  }
 	});
 
@@ -197,8 +197,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    beforeShowDay: function (date){
 	        if (date.getMonth() == (new Date()).getMonth())
 	        {
-	        	for(var i in acts){
-	        		if(date.getDate() == acts[i]['day']){
+	        	for(var i in monthActs){
+	        		if(date.getDate() == monthActs[i]['day']){
 	        			return "red";
 	        		}
 	        	}
@@ -217,8 +217,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    }
 	});
 
-	$('#activity-news-calender-content').datepicker({ beforeShowDay: $.datepicker.noWeekends });
-
 	$('#activity-news-calender-content').datepicker().on('changeDate', function(e){
         //alert(e.date.getDate());
 
@@ -229,7 +227,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	top:'20px'}, 
   			function(){
   			//Data Manupate
-
+  			
   			//Show
 		    $('#activity-news-tasklist').animate({
         	opacity: 1,
