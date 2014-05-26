@@ -60,4 +60,14 @@ public class OrderAction extends BaseAction<Order> {
 		orderService.deleteOrder(model.getId());
 		return "delete_order";
 	}
+	
+	public String indexAddInputOrder(){
+		
+		return "index_add_input_order";
+	}
+	
+	public String indexAddOrder(){
+		orderService.saveOrder(model);
+		return "index_add_order";
+	}
 }
