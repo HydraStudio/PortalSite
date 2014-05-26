@@ -103,29 +103,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<s:iterator value="activities" status="u">
 				    	<!-- <li data-target="#index-carousel" data-slide-to="${u.index}"></li> -->
 				    	<div class="activity-news-unit well col-md-5 col-sm-12" data-toggle="modal" data-target="#detailModal-${u.index}">
-						<h1>${title}</h1><br/>
-						<div class="row">
-							<div class='col-md-6'><img src="images/img_activity.png"/></div>
-							<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">软件架构平台创新大会，是由普元、InfoQ联合主办的全国顶级技术盛会</p></div><!--30字-->
+							<h1>${title}</h1><br/>
+							<div class="row">
+								<div class='col-md-6'><img src="${imageUrl}"/></div>
+								<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">${description}</p></div><!--30字-->
+							</div>
+							<!-- News Detail Model -->
+							<div class="modal fade" id="detailModal-${u.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							        <h4 class="modal-title" id="myModalLabel-${u.index}">${title}</h4>
+							      </div>
+							      <div class="modal-body">
+							        ${detail}
+							      </div>
+							      <!-- <div class="modal-footer">
+							        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
+							      </div> -->
+							    </div><!-- /.modal-content -->
+							  </div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
 						</div>
-						<!-- News Detail Model -->
-						<div class="modal fade" id="detailModal-${u.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						  <div class="modal-dialog">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						        <h4 class="modal-title" id="myModalLabel-${u.index}">${title}</h4>
-						      </div>
-						      <div class="modal-body">
-						        活动内容
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
-						      </div>
-						    </div><!-- /.modal-content -->
-						  </div><!-- /.modal-dialog -->
-						</div><!-- /.modal -->
-					</div>
 					</s:iterator>
 
 				</div>
