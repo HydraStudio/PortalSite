@@ -21,8 +21,7 @@ public class DataBaseAction extends BaseAction<Object> {
 		String root = ServletActionContext.getServletContext().getRealPath("/upload");
 		Runtime rt = Runtime.getRuntime();  
 		String serverName = ServletActionContext.getRequest().getServerName();
-		int serverPort = ServletActionContext.getRequest().getServerPort();
-		System.out.println(serverName+":"+serverPort);
+//		int serverPort = ServletActionContext.getRequest().getServerPort();
 		String cmd ="mysqldump -h "+ serverName + " -uroot -proot oa > "+ root +"\\metall.sql";  
 		rt.exec("cmd /c " + cmd);
 		

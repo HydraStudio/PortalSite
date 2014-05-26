@@ -228,13 +228,23 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		}
 		sb.append("]");
 		
-		ActionContext.getContext().put("activities", activityInfos);
+//		ActionContext.getContext().put("activities", activityInfos);
 		//ServletActionContext.getResponse().setHeader("Charset","UTF-8");
 		ServletActionContext.getResponse().setContentType( "text/xml" );
 		ServletActionContext.getResponse().setCharacterEncoding( "UTF-8" );
 		ServletActionContext.getResponse().getWriter().write(sb.toString());
 		//ServletActionContext.getResponse().getWriter().write("无语");
 //		return "index_get_month_activity";
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String indexGetRightActivityInfo(){
+		QueryHelper queryHelper = new QueryHelper(ActivityInfo.class, "a");
+		queryHelper.addOrderProperty(true,"a.date", false);
+		PageBean pageBean = activityInfoService.searchPagination(pageNum, 6, queryHelper);
+		List<ActivityInfo> activityInfos = pageBean.getRecordList();
+		ActionContext.getContext().put("activities", activityInfos);
+		return "index_get_right_activity";
 	}
 	
 //	public void ajaxUpload() throws Exception{
