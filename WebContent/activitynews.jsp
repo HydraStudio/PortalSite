@@ -168,11 +168,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     //Data receive from server
     //Mocked
-    var monthActs = [
+    /*var monthActs = [
 			{day:4,activities:[{title:'交流会议',time:'15:00',location:'Beijing'},{title:'Meeting',time:'15:00',location:'Beijing'}]},
 			{day:6,activities:[{title:'宣讲会',time:'20:00',location:'上海'}]}
-		]
-
+		]*/
+    var monthActs;
 	var today = new Date();
 	var todayMonth = today.getMonth()+1;
 	if(todayMonth<10){
