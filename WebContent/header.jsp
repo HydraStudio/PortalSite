@@ -7,7 +7,7 @@
 				<li><a class="show-1 templatemo_home" href="production.jsp">产品介绍</a></li>
 				<li><a class="show-2 templatemo_page2" href="teachers.jsp">师资介绍</a></li>
 				<li><a class="show-3 templatemo_page3" href="achievements.jsp">成绩展示</a></li>
-				<li><a class="show-4 templatemo_page4" href="activitynews.jsp">活动资讯</a></li>
+				<li><a class="show-4 templatemo_page4" href="indexGetRightActivityInfo.action">活动资讯</a></li>
 				<li><a class="show-5 templatemo_page5" href="joinus.jsp">加入我们</a></li>
 				<li><a class="show-6 templatemo_page6" href="contactus.jsp">联系我们</a></li>     
 			</ul>
@@ -26,7 +26,7 @@
 						<li><a class="show-1 templatemo_page1" href="production.jsp">产品介绍</a></li>
 						<li><a class="show-2 templatemo_page2" href="teachers.jsp">师资介绍</a></li>
 						<li><a class="show-3 templatemo_page3" href="achievements.jsp">成绩展示</a></li>
-						<li><a class="show-4 templatemo_page4" href="activitynews.jsp">活动资讯</a></li>
+						<li><a class="show-4 templatemo_page4" href="indexGetRightActivityInfo.action">活动资讯</a></li>
 						<li><a class="show-5 templatemo_page5" href="joinus.jsp">加入我们</a></li>
 						<li><a class="show-6 templatemo_page6" href="contactus.jsp">联系我们</a></li>
 						<!-- <li>
