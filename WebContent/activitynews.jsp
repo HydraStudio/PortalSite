@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -103,29 +104,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<s:iterator value="activities" status="u">
 				    	<!-- <li data-target="#index-carousel" data-slide-to="${u.index}"></li> -->
 				    	<div class="activity-news-unit well col-md-5 col-sm-12" data-toggle="modal" data-target="#detailModal-${u.index}">
-							<h1>${title}</h1><br/>
+							<h1>${title}</h1>
 							<div class="row">
-								<div class='col-md-6'><img src="${imageUrl}"/></div>
+								<div class='col-md-6'><img width="120px" height="140px" src="${imageUrl}"/></div>
 								<div class='col-md-6'><p class="text-left" style="text-overflow:ellipsis;">${description}</p></div><!--30字-->
 							</div>
-							<!-- News Detail Model -->
-							<div class="modal fade" id="detailModal-${u.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							  <div class="modal-dialog">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							        <h4 class="modal-title" id="myModalLabel-${u.index}">${title}</h4>
-							      </div>
-							      <div class="modal-body">
-							        ${detail}
-							      </div>
-							      <!-- <div class="modal-footer">
-							        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
-							      </div> -->
-							    </div><!-- /.modal-content -->
-							  </div><!-- /.modal-dialog -->
-							</div><!-- /.modal -->
 						</div>
+						
+						<!-- News Detail Model -->
+						<div class="modal fade" id="detailModal-${u.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" style="width:800px;">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						        <h4 class="modal-title" id="myModalLabel-${u.index}">${title}</h4>
+						      </div>
+						      <div class="modal-body">
+						        ${detail}
+						      </div>
+						      <!-- <div class="modal-footer">
+						        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
+						      </div> -->
+						    </div><!-- /.modal-content -->
+						  </div><!-- /.modal-dialog -->
+						</div><!-- /.modal -->
+						
 					</s:iterator>
 
 				</div>
@@ -136,15 +139,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div><!-- site-content -->
 	
 	<%@include file="/footer.jsp" %>
-	
-	<!-- JiaThis Button BEGIN -->
-    <div id="ckepop">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_weixin">微信</a> 
-		<a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-		<a class="jiathis_counter_style"></a> 
-		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
-	</div> <!-- JiaThis Button END -->
 	
 	<!-- Scripts -->
 	<script src="js/jquery-1.10.2.min.js"></script>
@@ -172,7 +166,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			{day:4,activities:[{title:'交流会议',time:'15:00',location:'Beijing'},{title:'Meeting',time:'15:00',location:'Beijing'}]},
 			{day:6,activities:[{title:'宣讲会',time:'20:00',location:'上海'}]}
 		]*/
-    var monthActs;
+
 	var today = new Date();
 	var todayMonth = today.getMonth()+1;
 	if(todayMonth<10){
@@ -182,17 +176,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	//alert(todayString);
 
 	//Retrieve act data
-	$.ajax({
+	/* $.ajax({
 		  url: "indexGetMonthActivityInfo.action",
 		  data: "year="+today.getFullYear()+"&month="+todayMonth,
 		  async : false,
 		  success: function(data){
+			  alert(data);
 		    monthActs = eval("("+data+")");
 		    //monthActs = eval("("+"{'day':1,'activities':[]}"+")");
 		  }
-	});
+	}); */
 
-	/*var myRequest = new XMLHttpRequest();
+	var myRequest = new XMLHttpRequest();
 	var get= "year="+today.getFullYear()+"&month="+(today.getMonth()+1); 
 	alert(get);
 	myRequest.open("GET","indexGetMonthActivityInfo.action?"+get,false); 
@@ -200,7 +195,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	myRequest.setRequestHeader("Content-Type","text/html;charset=UTF-8" );
 	myRequest.send(null); 
 	var res=myRequest.responseText;//接收返回的数据 
-	alert(res);*/
+	var monthActs = eval("("+res+")");
 
 	//Build Calender
 	$('#activity-news-calender-content').datepicker({
