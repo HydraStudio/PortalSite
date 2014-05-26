@@ -31,11 +31,6 @@
 		</global-results>	
 	
 	
-	
-		<action name="test" class="testAction">
-			<result name="success">/test.jsp</result>
-		</action>
-		
 		<action name="role_*" class="roleAction" method="{1}Role">
 			<result name="list_role">/WEB-INF/role/role_list.jsp</result>
 			<result name="toList" type="redirectAction">role_list</result>
@@ -67,6 +62,9 @@
 			<result name="add_order" type="redirectAction">listOrder</result>
 			<result name="modify_order" type="redirectAction">listOrder</result>
 			<result name="delete_order" type="redirectAction">listOrder</result>
+			
+			<result name="index_add_input_order">/order.jsp</result>
+			<result name="index_add_order">/success.jsp</result>
 		</action>
 		
 		<action name="*Portal" class="portalAction" method="{1}Portal">
@@ -115,6 +113,46 @@
 		
 		<action name="systemManager" class="dataBaseAction" method="systemManager">
        		<result name="success">/WEB-INF/back/database/system_operation.jsp</result>
+		</action>
+		
+		<action name="*Achievement" class="achievementAction" method="{1}Achievement">
+			<result name="list_all">/WEB-INF/back/achievement/list_achievement.jsp</result>
+			<result name="input">/WEB-INF/back/achievement/input_achievement.jsp</result>
+			<result name="add" type="redirectAction">listAchievement</result>
+			<result name="modify" type="redirectAction">listAchievement</result>
+			<result name="delete" type="redirectAction">listAchievement</result>
+		</action>
+		
+		<action name="*Contact" class="contactAction" method="{1}Contact">
+			<result name="list_all">/WEB-INF/back/contact/list_contact.jsp</result>
+			<result name="input">/WEB-INF/back/contact/input_contact.jsp</result>
+			<result name="add" type="redirectAction">listContact</result>
+			<result name="modify" type="redirectAction">listContact</result>
+			<result name="delete" type="redirectAction">listContact</result>
+		</action>
+		
+		<action name="*JoinUs" class="joinUsAction" method="{1}JoinUs">
+			<result name="list_all">/WEB-INF/back/joinUs/list_join_us.jsp</result>
+			<result name="input">/WEB-INF/back/joinUs/input_join_us.jsp</result>
+			<result name="add" type="redirectAction">listJoinUs</result>
+			<result name="modify" type="redirectAction">listJoinUs</result>
+			<result name="delete" type="redirectAction">listJoinUs</result>
+		</action>
+		
+		<action name="*Production" class="productionAction" method="{1}Production">
+			<result name="list_all">/WEB-INF/back/production/list_production.jsp</result>
+			<result name="input">/WEB-INF/back/production/input_production.jsp</result>
+			<result name="add" type="redirectAction">listProduction</result>
+			<result name="modify" type="redirectAction">listProduction</result>
+			<result name="delete" type="redirectAction">listProduction</result>
+		</action>
+		
+		<action name="*Teacher" class="teacherAction" method="{1}Teacher">
+			<result name="list_all">/WEB-INF/back/teacher/list_teacher.jsp</result>
+			<result name="input">/WEB-INF/back/teacher/input_teacher.jsp</result>
+			<result name="add" type="redirectAction">listTeacher</result>
+			<result name="modify" type="redirectAction">listTeacher</result>
+			<result name="delete" type="redirectAction">listTeacher</result>
 		</action>
 		
 		<!--  
