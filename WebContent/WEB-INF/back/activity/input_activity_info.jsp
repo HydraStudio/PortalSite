@@ -42,7 +42,7 @@
 			</tr>
 			<tr>
 				<td>缩略图：</td>
-				<td><img src="${imageUrl}" id="indexImage" onclick="DrawImage(this)"/></td>
+				<td><img src="${imageUrl}" width="125px" height="140px" id="indexImage" /></td>
 			</tr>
 			<tr>
 				<td>简介：</td>
