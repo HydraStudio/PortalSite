@@ -198,20 +198,25 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	
 		
 		List<ActivityInfo> activityInfos = activityInfoService.getPeriodActivities(beginDate, endDate);
-		
+		System.out.println(activityInfos.get(0).getDate().getDate());
 		StringBuilder sb = new StringBuilder();
 		sb.append("[");
-		
 		for(int i=1;i<=31;i++){
 			sb.append("{'day':"+i+",'activities':[");
 			int count = 0;
 			for(ActivityInfo act : activityInfos){
-				if(act.getDate().getDay()==i){
+				if(act.getDate().getDate()==i){
 					if(count>0){
 						sb.append(",");
 					}
+					String tmpMin = "";
 					//Date Format
-					String time = act.getDate().getHours()+":"+act.getDate().getMinutes();
+					if(act.getDate().getMinutes()<10){
+						tmpMin = "0"+act.getDate().getMinutes();
+					}else{
+						tmpMin = act.getDate().getMinutes()+"";
+					}
+					String time = act.getDate().getHours()+":"+tmpMin;
 					sb.append("{'title':'"+act.getTitle()+"'"+
 				              " ,'time':'"+time+"'"+
 				          " ,'location':'"+act.getLocation()+"'"+
