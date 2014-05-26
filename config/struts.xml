@@ -25,7 +25,6 @@
     			<interceptor-ref name="defaultStack"></interceptor-ref>
     		</interceptor-stack>
     	</interceptors>
-		
 		<!-- 全局的Result配置 -->
 		<global-results>
 			<result name="login_input">/WEB-INF/back/user/login_user.jsp</result>
@@ -58,8 +57,8 @@
 			<result name="delete_activity_info" type="redirectAction">listActivityInfo</result>
 			<result name="add_to_index_input">/WEB-INF/back/activity/add_to_index_input_activity_info.jsp</result>
 			
-			
 			<result name="show_activity_info">/WEB-INF/back/activity/input_activity_info.jsp</result>
+			<result name="index_get_right_activity">/activitynews.jsp</result>
 		</action>
 		
 		<action name="*Order" class="orderAction" method="{1}Order">
