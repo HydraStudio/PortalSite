@@ -173,6 +173,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		todayMonth = "0"+todayMonth;
 	}
 	var todayString = today.getFullYear()+"-"+todayMonth+"-"+today.getDate();
+	
 	//alert(todayString);
 
 	//Retrieve act data
@@ -189,13 +190,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	var myRequest = new XMLHttpRequest();
 	var get= "year="+today.getFullYear()+"&month="+(today.getMonth()+1); 
-	alert(get);
+	//alert(get);
 	myRequest.open("GET","indexGetMonthActivityInfo.action?"+get,false); 
 	//myRequest.setRequestHeader("contentLength",post.length); 
 	myRequest.setRequestHeader("Content-Type","text/html;charset=UTF-8" );
 	myRequest.send(null); 
 	var res=myRequest.responseText;//接收返回的数据 
 	var monthActs = eval("("+res+")");
+	
+	//initialize date
+	var tod = today.getDate();
+	$('#activity-day').html(tod);
+	tod=tod-1;
+	var td_act =  monthActs[tod]['activities'];
+	for(var j in td_act){
+		//Load the activities
+		$('#activity-tasklist-content').append(
+			'<tr style="cursor:pointer"><td>'+
+			td_act[j]['title']+"<br/>"+
+			td_act[j]['location']+
+			'</td><td style="text-align:right;padding-right:15px;">'+
+			td_act[j]['time']+
+			'</td></tr>');
+	}
+
 
 	//Build Calender
 	$('#activity-news-calender-content').datepicker({
