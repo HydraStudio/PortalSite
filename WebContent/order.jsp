@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  	<fieldset>
 							    <label for="inputEmail" class="col-md-4 control-label">电子邮件</label>
 							    <div class="col-sm-8">
-							      <input required type="text" name="email" class="form-control" id="inputEmail" placeholder="">
+							      <input required type="email" name="email" class="form-control" id="inputEmail" placeholder="">
 							    </div>
 						    </fieldset>
 						  </div>
