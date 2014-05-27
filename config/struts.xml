@@ -121,6 +121,8 @@
 			<result name="add" type="redirectAction">listAchievement</result>
 			<result name="modify" type="redirectAction">listAchievement</result>
 			<result name="delete" type="redirectAction">listAchievement</result>
+			
+			<result name="index_get_achievement">/achievements.jsp</result>
 		</action>
 		
 		<action name="*Contact" class="contactAction" method="{1}Contact">
@@ -129,6 +131,8 @@
 			<result name="add" type="redirectAction">listContact</result>
 			<result name="modify" type="redirectAction">listContact</result>
 			<result name="delete" type="redirectAction">listContact</result>
+			
+			<result name="index_get_contact">/contactus.jsp</result>
 		</action>
 		
 		<action name="*JoinUs" class="joinUsAction" method="{1}JoinUs">
@@ -137,6 +141,8 @@
 			<result name="add" type="redirectAction">listJoinUs</result>
 			<result name="modify" type="redirectAction">listJoinUs</result>
 			<result name="delete" type="redirectAction">listJoinUs</result>
+			
+			<result name="index_get_join_us">/joinus.jsp</result>
 		</action>
 		
 		<action name="*Production" class="productionAction" method="{1}Production">
@@ -145,6 +151,8 @@
 			<result name="add" type="redirectAction">listProduction</result>
 			<result name="modify" type="redirectAction">listProduction</result>
 			<result name="delete" type="redirectAction">listProduction</result>
+			
+			<result name="index_get_production">/production.jsp</result>
 		</action>
 		
 		<action name="*Teacher" class="teacherAction" method="{1}Teacher">
@@ -153,6 +161,8 @@
 			<result name="add" type="redirectAction">listTeacher</result>
 			<result name="modify" type="redirectAction">listTeacher</result>
 			<result name="delete" type="redirectAction">listTeacher</result>
+			
+			<result name="index_get_teacher">/teachers.jsp</result>
 		</action>
 		
 		<!--  
