@@ -142,15 +142,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		//Ajax Get Activity
 		var imgs = $("#index-carousel .carousel-inner img");
-		for(var i in imgs){
+		for(var i=0;i<imgs.length;i++){
 			var dataAddr = $(imgs[i]).attr("alt");
-			if(!dataAddr or dataAddr!=""){
-				$.get(dataAddr,function(data){
+			if(dataAddr && dataAddr!=""){
+				var myRequest = new XMLHttpRequest();; 
+				myRequest.open("GET",dataAddr,false); 
+				myRequest.setRequestHeader("Content-Type","text/html;charset=UTF-8" );
+				myRequest.send(null); 
+				var res=myRequest.responseText;//接收返回的数据 
+			//	var dataObj = eval("("+res+")");
+				var splitPls = res.indexOf("_");
+				var myTitle = res.substring(0,splitPls);
+				var myDetail = res.substring(splitPls+1,res.length);
+				//res = split("_");
+				$("#myModalLabel-"+i).html(myTitle);
+				$("#myModalDetail-"+i).html(myDetail);
+			
+				/* $.get(dataAddr,function(data){
 					var dataObj = eval("("+data+")");
 					//Push Data
 					$("#myModalLabel-"+i).html(dataObj['title']);
 					$("#myModalDetail-"+i).html(dataObj['detail']);
-				});
+				}); */
 			}else{
 				$("#detailModal-"+i).remove();
 			}
