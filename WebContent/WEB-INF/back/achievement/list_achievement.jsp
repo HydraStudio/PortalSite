@@ -19,49 +19,16 @@
 	<table cellspacing="0" cellpadding="0" class="TableStyle">
 		<thead>
 			<tr align=center valign=middle id=TableTitle>
-				<td width="8%">
-					姓名
+				<td width="20%">
+					ID
 				</td>
-				<td width="9%">
-					电子邮件
+				<td width="20%">
+					图片名字
 				</td>
-				<td width="8%">
-					毕业/所在院校
+				<td width="30%">
+					图片地址
 				</td>
-				<td width="8%">
-					年级
-				</td>
-				<td width="8%">
-					专业
-				</td>
-				<td width="8%">
-					手机号码
-				</td>
-				<td width="5%">
-					是否已工作
-				</td>
-				<td width="5%">
-					GPA成绩
-				</td>
-				<td width="5%">
-					GRE成绩
-				</td>
-				<td width="5%">
-					GMAT成绩
-				</td>
-				<td width="5%">
-					TOEFL成绩
-				</td>
-				<td width="5%">
-					IELTS成绩
-				</td>
-				<td width="8%">
-					通过何种方式知道我们
-				</td>
-				<td width="5%">
-					是否愿意接收NewsLetter
-				</td>
-				<td width="8%">
+				<td width="30%">
 					操作
 				</td>
 			</tr>
@@ -69,30 +36,9 @@
 		<tbody id="TableData" class="dataContainer">
 			<s:iterator value="recordList">
 				<tr class="TableDetail1 template">
-					<td>${name}</td>
-					<td>${email}</td>
-					<td>${school}</td>
-					<td>${grade}</td>
-					<td>${speciality}</td>
-					<td>${phone}</td>
-					<s:if test="%{isWork == true}">
-						<td>是</td>
-					</s:if>
-					<s:else>
-						<td>否</td>
-					</s:else>
-					<td>${gpa}</td>
-					<td>${gre}</td>
-					<td>${gmat}</td>
-					<td>${toefl}</td>
-					<td>${ielts}</td>
-					<td>${wayKnowUs}</td>
-					<s:if test="%{receiveLetter == true}">
-						<td>是</td>
-					</s:if>
-					<s:else>
-						<td>否</td>
-					</s:else>
+					<td>${id}</td>
+					<td><s:a href="%{imageUrl}">${imageName}</s:a></td>
+					<td>${imageUrl}</td>
 					<td>
 						<s:a action="modifyInputAchievement?id=%{id}">修改</s:a>
 						<s:a action="deleteAchievement?id=%{id}">删除</s:a>

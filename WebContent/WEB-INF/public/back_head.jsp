@@ -9,22 +9,22 @@
 						<a href="listPortal.action">首页管理</a>
 					</td>
 					<td width="8%">
-						<a href="javascript:void(0)">产品介绍</a>
+						<a href="listProduction.action">产品介绍</a>
 					</td>
 					<td width="8%">
-						<a href="javascript:void(0)">师资介绍</a>
+						<a href="listTeacher.action">师资介绍</a>
 					</td>
 					<td width="8%">
-						<a href="javascript:void(0)">成绩展示</a>
+						<a href="listAchievement.action">成绩展示</a>
 					</td>
 					<td width="8%">
 						<a href="listActivityInfo.action">活动资讯</a>
 					</td>
 					<td width="8%">
-						<a href="javascript:void(0)">加入我们</a>
+						<a href="listJoinUs.action">加入我们</a>
 					</td>
 					<td width="8%">
-						<a href="javascript:void(0)">联系我们</a>
+						<a href="listContact.action">联系我们</a>
 					</td>
 					<td width="8">
 						<a href="listOrder.action">预约咨询</a>
