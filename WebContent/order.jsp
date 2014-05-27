@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				      <div class="col-md-5">
 				          <div class="form-group join-us-form-unit">
 				          	<fieldset>
-							    <label for="inputName" class="col-md-4 control-label">姓名</label>
+							    <label for="inputName" class="col-md-4 control-label">姓名<span style="color:red">*</span></label>
 							    <div class="col-md-8">
 							      <input required type="text" name="name" class="form-control" id="inputName" placeholder="">
 							    </div>
@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </div>
 						  <div class="form-group join-us-form-unit">
 						  	<fieldset>
-							    <label for="inputEmail" class="col-md-4 control-label">电子邮件</label>
+							    <label for="inputEmail" class="col-md-4 control-label">电子邮件<span style="color:red">*</span></label>
 							    <div class="col-sm-8">
 							      <input required type="email" name="email" class="form-control" id="inputEmail" placeholder="">
 							    </div>
@@ -96,7 +96,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </div>
 						  <div class="form-group join-us-form-unit">
 						  	<fieldset>
-							    <label for="inputTelephone" class="col-md-4 control-label">手机号码</label>
+							    <label for="inputTelephone" class="col-md-4 control-label">手机号码<span style="color:red">*</span></label>
 							    <div class="col-sm-8">
 							      <input required type="text" name="phone" class="form-control" id="inputTelephone" placeholder="">
 							    </div>
