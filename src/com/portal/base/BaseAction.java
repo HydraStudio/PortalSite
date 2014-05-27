@@ -10,6 +10,7 @@ import java.util.UUID;
 
 import org.apache.struts2.ServletActionContext;
 
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -44,7 +45,7 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	protected int pageNum = 1; // 当前页
 	protected int pageSize = 10; // 每页显示多少条记录
 
-	public int getPageNum() {
+	public int getPageNum() { 
 		return pageNum;
 	}
 
@@ -66,9 +67,8 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	protected String uploadFileName;
 
 	protected String uploadCommon() throws Exception{
-		InputStream is = new FileInputStream(upload);  
-        String uploadPath = ServletActionContext.getServletContext()     
-                .getRealPath("/upload");   //设置保存目录  
+		InputStream is = new FileInputStream(upload); 
+        String uploadPath  = ServletActionContext.getServletContext().getRealPath("/upload");   //设置保存目录  
         String fileName = UUID.randomUUID().toString();  //采用UUID的方式随机命名 
         fileName += uploadFileName.substring(uploadFileName.length() - 4);  
         File toFile = new File(uploadPath, fileName);  
