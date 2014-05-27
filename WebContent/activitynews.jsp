@@ -122,9 +122,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							      <div class="modal-body">
 							        ${detail}
 							      </div>
-							      <!-- <div class="modal-footer">
-							        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
-							      </div> -->
+							      <div class="modal-footer">
+							        <!-- JiaThis Button BEGIN -->
+								    <div id="ckepop">
+										<span class="jiathis_txt">分享到：</span>
+										<a class="jiathis_button_weixin">微信</a> 
+										<a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+										<a class="jiathis_counter_style"></a> 
+										<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
+									</div> <!-- JiaThis Button END -->
+							        <!-- <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button> -->
+							      </div>
 							    </div><!-- /.modal-content -->
 							</div><!-- /.modal-dialog -->
 						</div><!-- /.modal -->
