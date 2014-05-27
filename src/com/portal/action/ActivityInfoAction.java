@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -157,10 +158,23 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	}
 	
 	
-	public String indexShowActivityInfo(){
+	public void indexShowActivityInfo() throws IOException{
 		ActivityInfo activityInfo = activityInfoService.getById(model.getId());
-		ActionContext.getContext().getValueStack().push(activityInfo);
-		return "show_activity_info";
+		
+		StringBuilder sb = new StringBuilder();
+		//sb.append("{'title':'"+activityInfo.getTitle()+"','detail':'"+activityInfo.getDetail()+"'}");
+		sb.append(activityInfo.getTitle()+"_"+activityInfo.getDetail());
+		String ss = sb.toString();
+//		ss.replace("\\s", "</br>");
+//		ActionContext.getContext().put("activities", activityInfos);
+		//ServletActionContext.getResponse().setHeader("Charset","UTF-8");
+		ServletActionContext.getResponse().setContentType( "text/xml" );
+		ServletActionContext.getResponse().setCharacterEncoding( "UTF-8" );
+		ServletActionContext.getResponse().getWriter().write(ss);
+		
+		
+		
+//		ActionContext.getContext().getValueStack().push(activityInfo);
 	}
 	
 	public void indexGetMonthActivityInfo() throws IOException{
@@ -198,7 +212,6 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 	
 		
 		List<ActivityInfo> activityInfos = activityInfoService.getPeriodActivities(beginDate, endDate);
-		System.out.println(activityInfos.get(0).getDate().getDate());
 		StringBuilder sb = new StringBuilder();
 		sb.append("[");
 		for(int i=1;i<=31;i++){
@@ -232,7 +245,7 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 			
 		}
 		sb.append("]");
-		
+		String ss = sb.toString();
 //		ActionContext.getContext().put("activities", activityInfos);
 		//ServletActionContext.getResponse().setHeader("Charset","UTF-8");
 		ServletActionContext.getResponse().setContentType( "text/xml" );
