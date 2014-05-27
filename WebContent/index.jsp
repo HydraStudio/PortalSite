@@ -66,7 +66,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  <div class="carousel-inner">
 				  	<s:iterator value="portals" status="u">
 						<div class="item">
-					      <img src="${imageUrl}" alt="..."  onclick="window.open('${url}','_blank')" >
+					      <!-- <img src="${imageUrl}" alt="..."  onclick="window.open('${url}','_blank')" > -->
+					      <img src="${imageUrl}" alt="..." data-toggle="modal" data-target="#detailModal-${u.index}" >
 					    </div>
 					</s:iterator>
 				    <!-- <div class="item">
@@ -94,7 +95,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 
-		<div id="course-service"></div>
+
+		<!-- News Detail Model -->
+		<s:iterator value="portals" status="u">
+			<div class="modal fade" id="detailModal-${u.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			    <div class="modal-dialog" style="width:800px;">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				        <h4 class="modal-title" id="myModalLabel-${u.index}"></h4>
+				      </div>
+				      <div class="modal-body">
+				        
+				      </div>
+				      <!-- <div class="modal-footer">
+				        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
+				      </div> -->
+				    </div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</s:iterator>
+
 	</div><!-- site-content -->
 	
 	<%@include file="/footer.jsp" %>
