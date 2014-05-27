@@ -219,7 +219,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</form>
 		</div>
 
-		<div id="activity-service" class="col-md-1" onclick="window.open('joinus.jsp','_blank')">
+		<div id="activity-service" class="col-md-1"  onclick="window.open('indexAddInputOrder.action','_blank')">
 			<h1>&nbsp;</h1><br/>
 		</div>
 
