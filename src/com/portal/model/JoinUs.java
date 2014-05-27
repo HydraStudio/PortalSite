@@ -14,8 +14,11 @@ public class JoinUs {
 	@GeneratedValue
 	private Long id;
 	
-	@Column(name="detail",length=20000)
-	private String detail;
+	@Column(name="image_url")
+	private String imageUrl;
+	
+	@Column(name="image_name")
+	private String imageName;
 
 	public Long getId() {
 		return id;
@@ -25,12 +28,20 @@ public class JoinUs {
 		this.id = id;
 	}
 
-	public String getDetail() {
-		return detail;
+	public String getImageUrl() {
+		return imageUrl;
 	}
 
-	public void setDetail(String detail) {
-		this.detail = detail;
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public String getImageName() {
+		return imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
 	}
 	
 }

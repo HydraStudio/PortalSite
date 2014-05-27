@@ -1,9 +1,6 @@
 package com.portal.action;
 
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -17,7 +14,6 @@ import com.opensymphony.xwork2.ActionContext;
 import com.portal.base.BaseAction;
 import com.portal.model.PageBean;
 import com.portal.model.Portal;
-import com.portal.service.ActivityInfoService;
 import com.portal.service.PortalService;
 import com.portal.util.QueryHelper;
 
@@ -29,8 +25,6 @@ public class PortalAction extends BaseAction<Portal> {
 
 	@Resource
 	private PortalService portalService;
-	@Resource
-	private ActivityInfoService activityInfoService;
 	
 	public String listPortal(){
 		QueryHelper queryHelper = new QueryHelper(Portal.class, "p");
@@ -119,21 +113,21 @@ public class PortalAction extends BaseAction<Portal> {
 		return "index_show_portal";
 	}
 	
-	public static void main(String []args){
-		try {  
-            Runtime rt = Runtime.getRuntime();  
-                        String cmd ="mysqldump -h localhost -uroot -proot oa user> sql\\asdfgaaaf.sql"; //一定要加 -h localhost(或是服务器IP地址)  
-            Process process =rt.exec("cmd /c " + cmd);  
-            InputStreamReader isr = new InputStreamReader(process.getErrorStream(),"GBK");  
-            LineNumberReader input = new LineNumberReader(isr);  
-            String line;  
-            while((line = input.readLine())!= null){  
-                System.out.println(line+"~~~~~~~~~~");  
-            }  
-            System.out.println("备份成功!");  
-        } catch (IOException e) {  
-            System.out.println("备份失败!");  
-            e.printStackTrace();  
-        } 
-	}
+//	public static void main(String []args){
+//		try {  
+//            Runtime rt = Runtime.getRuntime();  
+//                        String cmd ="mysqldump -h localhost -uroot -proot oa user> sql\\asdfgaaaf.sql"; //一定要加 -h localhost(或是服务器IP地址)  
+//            Process process =rt.exec("cmd /c " + cmd);  
+//            InputStreamReader isr = new InputStreamReader(process.getErrorStream(),"GBK");  
+//            LineNumberReader input = new LineNumberReader(isr);  
+//            String line;  
+//            while((line = input.readLine())!= null){  
+//                System.out.println(line+"~~~~~~~~~~");  
+//            }  
+//            System.out.println("备份成功!");  
+//        } catch (IOException e) {  
+//            System.out.println("备份失败!");  
+//            e.printStackTrace();  
+//        } 
+//	}
 }
