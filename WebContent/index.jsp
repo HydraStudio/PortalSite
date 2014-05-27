@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  	<s:iterator value="portals" status="u">
 						<div class="item">
 					      <!-- <img src="${imageUrl}" alt="..."  onclick="window.open('${url}','_blank')" > -->
-					      <img src="${imageUrl}" alt="..." data-toggle="modal" data-target="#detailModal-${u.index}" >
+					      <img src="${imageUrl}" alt="${url}" data-toggle="modal" data-target="#detailModal-${u.index}" >
 					    </div>
 					</s:iterator>
 				    <!-- <div class="item">
@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				        <h4 class="modal-title" id="myModalLabel-${u.index}"></h4>
 				      </div>
-				      <div class="modal-body">
+				      <div class="modal-body" id="myModalDetail-${u.index}">
 				        
 				      </div>
 				      <!-- <div class="modal-footer">
@@ -138,6 +138,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$($("#activity-news-dashboard div")[0]).addClass("active");
 			$($("#activity-news-dashboard div")[0]).show("slow");
 		});
+
+
+		//Ajax Get Activity
+		var imgs = $("#index-carousel .carousel-inner img");
+		for(var i in imgs){
+			var dataAddr = $(imgs[i]).attr("alt");
+			if(!dataAddr or dataAddr!=""){
+				$.get(dataAddr,function(data){
+					var dataObj = eval("("+data+")");
+					//Push Data
+					$("#myModalLabel-"+i).html(dataObj['title']);
+					$("#myModalDetail-"+i).html(dataObj['detail']);
+				});
+			}else{
+				$("#detailModal-"+i).remove();
+			}
+		}
+		
 
     </script>
     <!-- Flat-UI Components -->
