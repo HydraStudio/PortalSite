@@ -111,23 +111,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 						
-						<!-- News Detail Model -->
-						<div class="modal fade" id="detailModal-${u.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<!-- News Detail Model -->
+							<div class="modal fade" id="detailModal-${u.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" style="width:800px;">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						        <h4 class="modal-title" id="myModalLabel-${u.index}">${title}</h4>
-						      </div>
-						      <div class="modal-body">
-						        ${detail}
-						      </div>
-						      <!-- <div class="modal-footer">
-						        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
-						      </div> -->
-						    </div><!-- /.modal-content -->
-						  </div><!-- /.modal-dialog -->
-						</div><!-- /.modal -->
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							        <h4 class="modal-title" id="myModalLabel-${u.index}">${title}</h4>
+							      </div>
+							      <div class="modal-body">
+							        ${detail}
+							      </div>
+							      <!-- <div class="modal-footer">
+							        <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button>
+							      </div> -->
+							    </div><!-- /.modal-content -->
+							  </div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
 						
 					</s:iterator>
 
@@ -135,7 +135,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			</div>
 		</div>
-
+		<div id="activity-service" class="col-md-1"  onclick="window.open('indexAddInputOrder.action','_blank')">
+			<h1>&nbsp;</h1><br/>
+		</div>
 	</div><!-- site-content -->
 	
 	<%@include file="/footer.jsp" %>

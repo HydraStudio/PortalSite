@@ -89,7 +89,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </a>
 				</div>
 			</div>
-			<div id="activity-service" class="col-md-1"  onclick="window.open('joinus.html','_blank')">
+			<!-- Reserve Box-->
+			<div id="activity-service" class="col-md-1"  onclick="window.open('indexAddInputOrder.action','_blank')">
 				<h1>&nbsp;</h1><br/>
 			</div>
 		</div>

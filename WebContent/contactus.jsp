@@ -74,6 +74,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 
+		<!-- Reserve Box-->
+		<div id="activity-service" class="col-md-1"  onclick="window.open('indexAddInputOrder.action','_blank')">
+			<h1>&nbsp;</h1><br/>
+		</div>
 	</div><!-- site-content -->
 	
 	<%@include file="/footer.jsp" %>
