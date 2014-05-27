@@ -122,10 +122,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				          	<fieldset>
 							    <label for="selectGPA" class="col-md-4 control-label">GPA成绩</label>
 							    <div class="col-md-8">
-							        <select name="gpa" class="selectpicker text-left" id="selectGPA">
-								        <option>是</option>
-									    <option>否</option>
-								    </select>
+							    	 <input type="text" name="gpa" class="form-control" id="inputName" placeholder="">
 							    </div>
 						    </fieldset>
 				        </div>
@@ -134,10 +131,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				          	<fieldset>
 							    <label for="selectGRE" class="col-md-4 control-label">GRE成绩</label>
 							    <div class="col-md-8">
-							        <select name="gre" class="selectpicker text-left" id="selectGRE">
-								        <option>是</option>
-									    <option>否</option>
-								    </select>
+							    	<input type="text" name="gre" class="form-control" id="inputName" placeholder="">
 							    </div>
 						    </fieldset>
 				        </div>
@@ -146,10 +140,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				          	<fieldset>
 							    <label for="selectGMAT" class="col-md-4 control-label">GMAT成绩</label>
 							    <div class="col-md-8">
-							        <select name="gmat" class="selectpicker text-left" id="selectGMAT">
-								        <option>是</option>
-									    <option>否</option>
-								    </select>
+							    	<input type="text" name="gmat" class="form-control" id="inputName" placeholder="">
 							    </div>
 						    </fieldset>
 				        </div>
@@ -158,10 +149,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				          	<fieldset>
 							    <label for="selectTOFEL" class="col-md-4 control-label">TOFEL成绩</label>
 							    <div class="col-md-8">
-							        <select name="toefl" class="selectpicker text-left" id="selectTOFEL">
-								        <option>是</option>
-									    <option>否</option>
-								    </select>
+							    	<input type="text" name="toefl" class="form-control" id="inputName" placeholder="">
 							    </div>
 						    </fieldset>
 				        </div>
@@ -170,10 +158,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				          	<fieldset>
 							    <label for="selectIELTS" class="col-md-4 control-label">IELTS成绩</label>
 							    <div class="col-md-8">
-							        <select name="ielts" class="selectpicker text-left" id="selectIELTS">
-								        <option>是</option>
-									    <option>否</option>
-								    </select>
+							    	<input type="text" name="ielts" class="form-control" id="inputName" placeholder="">
 							    </div>
 						    </fieldset>
 				        </div>
@@ -197,6 +182,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								    <option>其他</option>
 							    </select>
 						    </div>
+						    <!-- <input type="text" name="selectWayKnownOthers" class="form-control" id="inputName" placeholder=""> -->
 					    </fieldset>
 			        </div>
 

@@ -37,13 +37,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<script type="text/javascript">
 	
-		window.onload = function(){
-			alert("预约成功！我们将在24小时内联系您！");
-		};
 	</script>
   </head>
   
   <body>
     	<%@include file="/header.jsp" %>
+    	<center style="padding-top:300px;">
+    		<label id="order-prompt">预约成功！我们将在3个工作日内通过电话，短信或者邮件的方式与您联系，请保持联络通畅。</label>
+		   	<form action="indexShowPortal.action">
+				<input type="submit" class="join-us-form-confirm-btn" value="返回首页"></input>
+			</form>
+		</center>
   </body>
 </html>

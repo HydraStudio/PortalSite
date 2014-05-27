@@ -26,7 +26,7 @@
 		<table cellpadding="0" cellspacing="0" class="mainForm">
 			<tr>
 				<td>图片：</td>
-				<td><s:file name="upload" id="file"></s:file></td>
+				<td><s:file name="upload" id="file"></s:file><span>(建议图片像素大小为980*600)</span></td>
 			</tr>
 			<tr>
 				<td>图片名字：</td>

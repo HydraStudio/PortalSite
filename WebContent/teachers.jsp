@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div class=""></div>
 		<div class="container">
 			<div class="col-md-12">
-				<img src="${imgUrl}"/>
+				<img src="${imageUrl}"/>
 			</div>
 
 			<!-- Reserve Box-->

@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<div class="container site-content-wrapper">
 			<div class="col-md-12">
-				<img src="${imgUrl}"/>
+				<img src="${imageUrl}"/>
 			</div>
 		</div>
 

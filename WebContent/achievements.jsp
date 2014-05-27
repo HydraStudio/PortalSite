@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div class=""></div>
 		<div class="container">
 			<div class="col-md-12">
-				<img src="${imgUrl}"/>
+				<img src="${imageUrl}"/>
 			</div>
 			<div id="activity-service" class="col-md-1"  onclick="window.open('indexAddInputOrder.action','_blank')">
 				<h1>&nbsp;</h1><br/>

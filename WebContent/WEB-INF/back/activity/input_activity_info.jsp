@@ -38,7 +38,7 @@
 			</tr>
 			<tr>
 				<td>封面：</td>
-				<td><s:file name="upload" onchange="changeSmallImage(this)" id="file"></s:file></td>
+				<td><s:file name="upload" onchange="changeSmallImage(this)" id="file"></s:file><span>(建议图片像素大小为980*600)</span></td>
 			</tr>
 			<tr>
 				<td>缩略图：</td>
@@ -46,7 +46,7 @@
 			</tr>
 			<tr>
 				<td>简介：</td>
-				<td><s:textarea name="description" rows="10" cols="80" ></s:textarea></td>
+				<td><s:textarea name="description" rows="5" cols="60" onkeyup="calculateChar()" id="dsp"></s:textarea><span id="span">（还可输入58个字符）</span></td>
 			</tr>
 			<tr>
 				<td>活动日期：</td>
