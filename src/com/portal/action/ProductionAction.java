@@ -1,5 +1,7 @@
 package com.portal.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
 import com.portal.base.BaseAction;
 import com.portal.model.Achievement;
+import com.portal.model.JoinUs;
 import com.portal.model.PageBean;
 import com.portal.model.Production;
 import com.portal.service.ProductionService;
@@ -70,5 +73,13 @@ public class ProductionAction extends BaseAction<Production> {
 		}
 		productionService.modifyProduction(production);
 		return "modify";
+	}
+	
+	public String indexGetProduction(){
+		List<Production> productions = productionService.findAllProductions();
+		if(productions !=null && productions.size()>0){
+			ActionContext.getContext().getValueStack().push(productions.get(0));
+		}
+		return "index_get_production";
 	}
 }

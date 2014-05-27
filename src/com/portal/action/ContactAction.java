@@ -1,5 +1,7 @@
 package com.portal.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -70,5 +72,13 @@ public class ContactAction extends BaseAction<Contact> {
 		}
 		contactService.modifyContact(contact);
 		return "modify";
+	}
+	
+	public String indexGetContact(){
+		List<Contact> contacts = contactService.findAllContacts();
+		if(contacts !=null && contacts.size()>0){
+			ActionContext.getContext().getValueStack().push(contacts.get(0));
+		}
+		return "index_get_contact";
 	}
 }

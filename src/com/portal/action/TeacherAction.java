@@ -1,5 +1,7 @@
 package com.portal.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,6 +13,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.portal.base.BaseAction;
 import com.portal.model.Achievement;
 import com.portal.model.PageBean;
+import com.portal.model.Production;
 import com.portal.model.Teacher;
 import com.portal.service.TeacherService;
 import com.portal.util.QueryHelper;
@@ -70,5 +73,13 @@ public class TeacherAction extends BaseAction<Teacher> {
 		}
 		teacherService.modifyTeacher(teacher);
 		return "modify";
+	}
+	
+	public String indexGetTeacher(){
+		List<Teacher> teachers = teacherService.findAllTeachers();
+		if(teachers !=null && teachers.size()>0){
+			ActionContext.getContext().getValueStack().push(teachers.get(0));
+		}
+		return "index_get_teacher";
 	}
 }

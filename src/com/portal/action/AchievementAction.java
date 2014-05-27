@@ -1,5 +1,7 @@
 package com.portal.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -69,5 +71,13 @@ public class AchievementAction extends BaseAction<Achievement> {
 		}
 		achievementService.modifyAchievement(achievement);
 		return "modify";
+	}
+	
+	public String indexGetAchievement(){
+		List<Achievement> achievements = achievementService.findAllAchievements();
+		if(achievements !=null && achievements.size()>0){
+			ActionContext.getContext().getValueStack().push(achievements.get(0));
+		}
+		return "index_get_achievement";
 	}
 }

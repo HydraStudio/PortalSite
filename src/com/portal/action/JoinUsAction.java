@@ -1,5 +1,7 @@
 package com.portal.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -70,5 +72,13 @@ public class JoinUsAction extends BaseAction<JoinUs> {
 		}
 		joinUsService.modifyJoinUs(joinUs);
 		return "modify";
+	}
+	
+	public String indexGetJoinUs(){
+		List<JoinUs> joinUs = joinUsService.findAllJoinUs();
+		if(joinUs !=null && joinUs.size()>0){
+			ActionContext.getContext().getValueStack().push(joinUs.get(0));
+		}
+		return "index_get_join_us";
 	}
 }
