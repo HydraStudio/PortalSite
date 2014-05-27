@@ -8,6 +8,7 @@
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <script language="javascript" src="${pageContext.request.contextPath}/js/pageCommon.js" charset="utf-8"></script>
 <script language="javascript" src="${pageContext.request.contextPath}/js/PageUtils.js" charset="utf-8"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/common.js" charset="utf-8"></script>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
 <title>List Order</title>
 </head>
@@ -95,20 +96,24 @@
 					</s:else>
 					<td>
 						<s:a action="modifyInputOrder?id=%{id}">修改</s:a>
-						<s:a action="deleteOrder?id=%{id}">删除</s:a>
+						<s:a action="deleteOrder?id=%{id}" id="delete" onclick="confirmDel()">删除</s:a>
 					</td>
 				</tr>
 			</s:iterator>
 	</table>
 	<div id="TableTail">
         <div id="TableTail_inside">
-            <a href="addInputOrder.action"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a>
+        	<div align="center">
+			<%@ include file="/WEB-INF/public/pageView.jsp" %>
+			<s:form action="listOrder"></s:form>
+		</div>
+            <%-- <a href="addInputOrder.action"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a> --%>
         </div>
     </div>
-	<div align="center">
+	<%-- <div align="center">
 		<%@ include file="/WEB-INF/public/pageView.jsp" %>
 		<s:form action="listOrder"></s:form>
-	</div>
+	</div> --%>
 	
 </body>
 </html>

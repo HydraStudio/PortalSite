@@ -8,6 +8,7 @@
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <script language="javascript" src="${pageContext.request.contextPath}/js/pageCommon.js" charset="utf-8"></script>
 <script language="javascript" src="${pageContext.request.contextPath}/js/PageUtils.js" charset="utf-8"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/common.js" charset="utf-8"></script>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
 <title>联系我们界面管理</title>
 </head>
@@ -41,7 +42,7 @@
 					<td>${imageUrl}</td>
 					<td>
 						<s:a action="modifyInputContact?id=%{id}">修改</s:a>
-						<s:a action="deleteContact?id=%{id}">删除</s:a>
+						<s:a action="deleteContact?id=%{id}" id="delete" onclick="confirmDel()">删除</s:a>
 					</td>
 				</tr>
 			</s:iterator>

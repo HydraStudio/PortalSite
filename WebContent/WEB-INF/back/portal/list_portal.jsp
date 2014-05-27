@@ -8,6 +8,7 @@
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <script language="javascript" src="${pageContext.request.contextPath}/js/pageCommon.js" charset="utf-8"></script>
 <script language="javascript" src="${pageContext.request.contextPath}/js/PageUtils.js" charset="utf-8"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/common.js" charset="utf-8"></script>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
 <title>List Index</title>
 <script type="text/javascript">
@@ -87,7 +88,7 @@ function checkIndexCount(a){
 								<s:a action="setToIndexPortal?id=%{id}" onclick="checkIndexCount(this)" id="%{#s.index}">设为首页图片</s:a>
 							</s:else>
 							<s:hidden name="useFlag"></s:hidden>
-							<s:a action="deletePortal?id=%{id}">删除</s:a>
+							<s:a action="deletePortal?id=%{id}" id="delete" onclick="confirmDel()">删除</s:a>
 						</td>
 					</tr>
 				</s:iterator>

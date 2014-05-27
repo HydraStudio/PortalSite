@@ -54,6 +54,15 @@ function checkSqlFile(){
 }
 
 
+
+
+function confirmDel(){
+	if(!window.confirm("确定要删除此条记录吗？")){
+		$("#delete").attr("href","#");
+	}
+}
+
+
 /*! jQuery Timepicker Addon 
 * http://trentrichardson.com/examples/timepicker
 * Copyright (c) 2014 Trent Richardson; Licensed MIT */
