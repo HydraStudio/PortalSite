@@ -184,11 +184,15 @@
 
 /* ActivityList */
 #activity-news-tasklist{
+	color: #FFF;
 	width: 220px;
 	margin-top: 10px;
 	margin-left: 15px;
-	background-color: #FFF;
+	background-color: #C41512;
 	padding: 0px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 #activity-news-tasklist table{
@@ -208,6 +212,13 @@
 	vertical-align: middle;
 	text-align: left;
 	padding-left: 5px;
+}
+
+#activity-header{
+	#background: url("../images/activity-header.jpg");
+	border: 2px solid #B30000;
+	background-image: -moz-linear-gradient(center bottom , #e60000 25%, #ff1a1a 63%);
+	box-shadow:0px 5px 8px -5px rgba(0, 0, 0, 0.5), 0px 5px 25px rgba(255, 0, 0, 0.5)
 }
 
 #activity-day{
