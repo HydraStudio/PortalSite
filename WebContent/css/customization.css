@@ -170,6 +170,12 @@
 /* Calendar */
 #activity-news-calender .datepicker{
 	background-color: #FFF;
+	padding: 0px;
+	border: 5px solid #B42A09;
+}
+
+#activity-news-calender .datepicker .day{
+	border: 1px solid #ccc;
 }
 
 #calendar-title{
@@ -181,6 +187,22 @@
 	color: white;
 }
 
+#activity-news-calender thead tr:first-child{
+	background-image: -moz-linear-gradient(center bottom , #B42A09 25%, #CD2F0C 63%);
+	background-image:linear-gradient(center bottom , #B42A09 25%, #CD2F0C 63%);
+	background-image:-o-linear-gradient(center bottom , #B42A09 25%, #CD2F0C 63%);
+	background-image:-webkit-linear-gradient(center bottom , #B42A09 25%, #CD2F0C 63%);
+	background-image:-ms-linear-gradient(center bottom , #B42A09 25%, #CD2F0C 63%);
+	color: white;
+}
+
+#activity-news-calender thead th:hover{
+	background-image:linear-gradient(bottom, #ff0000 25%, #ff3333 63%);
+	background-image:-o-linear-gradient(bottom, #ff0000 25%, #ff3333 63%);
+	background-image:-moz-linear-gradient(bottom, #ff0000 25%, #ff3333 63%);
+	background-image:-webkit-linear-gradient(bottom, #ff0000 25%, #ff3333 63%);
+	background-image:-ms-linear-gradient(bottom, #ff0000 25%, #ff3333 63%);
+}
 
 /* ActivityList */
 #activity-news-tasklist{
@@ -218,6 +240,10 @@
 	#background: url("../images/activity-header.jpg");
 	border: 2px solid #B30000;
 	background-image: -moz-linear-gradient(center bottom , #e60000 25%, #ff1a1a 63%);
+	background-image:linear-gradient(center bottom , #e60000 25%, #ff1a1a 63%);
+	background-image:-o-linear-gradient(center bottom , #e60000 25%, #ff1a1a 63%);
+	background-image:-webkit-linear-gradient(center bottom , #e60000 25%, #ff1a1a 63%);
+	background-image:-ms-linear-gradient(center bottom , #e60000 25%, #ff1a1a 63%);
 	box-shadow:0px 5px 8px -5px rgba(0, 0, 0, 0.5), 0px 5px 25px rgba(255, 0, 0, 0.5)
 }
 
