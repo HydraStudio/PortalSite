@@ -63,8 +63,8 @@ function changeSmallImage(file){
 
 
 function calculateChar(){
-	$("#span").html("（您还可以输入"+(58-$("#dsp")[0].value.length)+"个字符）");
-	if($("#dsp")[0].value.length>58){
+	$("#span").html("（您还可以输入"+(48-$("#dsp")[0].value.length)+"个字符）");
+	if($("#dsp")[0].value.length>48){
 		alert("字符超过最大限制！");
 	}
 }
