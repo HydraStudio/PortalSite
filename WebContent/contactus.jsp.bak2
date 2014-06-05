@@ -50,27 +50,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="site-content">
 
 		<div class="container site-content-wrapper">
-			<div class="row">
-				
-				<div class="col-md-6">
-					
-					<div class="well" id="contact-information-block">
-						<div id="phone-block">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div id="location-block">
-							<i class="fa fa-home"></i>
-						</div>
-						<div id="mail-block">
-							<i class="fa fa-envelope"></i>
-						</div>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-					<img src="images/contact_us.png">
-				</div>
-
+			<div class="col-md-12">
+				<img src="${imageUrl}"/>
 			</div>
 		</div>
 

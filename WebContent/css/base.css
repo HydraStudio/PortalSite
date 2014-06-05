@@ -556,6 +556,14 @@ a.menu-toggle-btn {
   padding-top: 10px;
 }
 
+#contact-information-block{
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 100px;
+}
+
+
 /*------------------------------------------------------
   RESPONSIVE STYLING 
 --------------------------------------------------------*/

@@ -33,7 +33,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/customization.css">
 
-
 </head>
   
   <body>
