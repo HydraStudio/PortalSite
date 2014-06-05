@@ -46,7 +46,7 @@
 			</tr>
 			<tr>
 				<td>简介：</td>
-				<td><s:textarea name="description" rows="5" cols="60" onkeyup="calculateChar()" id="dsp"></s:textarea><span id="span">（还可输入58个字符）</span></td>
+				<td><s:textarea name="description" rows="5" cols="60" onkeyup="calculateChar()" id="dsp"></s:textarea><span id="span">（还可输入48个字符）</span></td>
 			</tr>
 			<tr>
 				<td>活动日期：</td>
