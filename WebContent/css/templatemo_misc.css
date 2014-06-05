@@ -407,8 +407,8 @@ body.blurred > * {
 * covers the arrows, and most of the settings can be
 * applied above.
 *******************************************************/
-.ls-responsive .liquid-slider {
-  /* Do not edit below this line */
+/* .ls-responsive .liquid-slider {
+  Do not edit below this line
   width: 100%;
   margin: 0;
 }
@@ -418,87 +418,87 @@ body.blurred > * {
 }
 
 .ls-responsive .ls-nav-left {
-  /* Left non-graphical arrows */
-  /* Do not edit below this line */
+  Left non-graphical arrows
+  Do not edit below this line
   position: absolute;
   left: 0;
   z-index: 2;
 }
 
 .ls-responsive .ls-nav-left a {
-  /* Left non-graphical arrows */
+  Left non-graphical arrows
   background: #9A9A9A;
   width: 80px;
 }
 
 .ls-responsive .ls-nav-left a:hover {
-  /* Left non-graphical hover */
+  Left non-graphical hover
   background: #747474;
 }
 
 .ls-responsive .ls-nav-right {
-  /* Right non-graphical arrows */
-  /* Do not edit below this line */
+  Right non-graphical arrows
+  Do not edit below this line
   position: absolute;
   right: 0;
   z-index: 2;
 }
 
 .ls-responsive .ls-nav-right a {
-  /* Right non-graphical arrows */
+  Right non-graphical arrows
   background: #9A9A9A;
   width: 80px;
 }
 
 .ls-responsive .ls-nav-right a:hover {
-  /* Right non-graphical arrows hover */
+  Right non-graphical arrows hover
   background: #747474;
 }
 
 .ls-responsive .ls-nav-left-arrow {
-  /* Do not edit below this line */
+  Do not edit below this line
   position: absolute;
   left: 0;
   z-index: 2;
 }
 
 .ls-responsive .ls-nav-right-arrow {
-  /* Do not edit below this line */
+  Do not edit below this line
   position: absolute;
   right: 0;
   z-index: 2;
 }
-
+ */
 /******************************************************************
 * Larger Mobile Devices
 * This is for devices like the Galaxy Note or something that's 
 * larger than an iPhone but smaller than a tablet. 
 ******************************************************************/
-@media only screen and (min-width: 481px) {
+/* @media only screen and (min-width: 481px) {
   .ls-wrapper .liquid-slider .panel img {
-    /* Example */
-    /*
+    Example
+    
     width:24%;
     margin:2px;
-    */
+   
   }
-}
+} */
 /******************************************************************
 * Tablet & Smaller Laptops
 * This will include tablets and some netbooks.
 ******************************************************************/
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .ls-wrapper .liquid-slider .panel img {
-    /* Example */
-    /*
+    Example
+    
     width:24%;
-    */
+   
   }
 
   .ls-responsive .liquid-slider .panel .panel-wrapper {
     padding: 20px 35px;
   }
-}
+} */
 /******************************************************************
 * DESKTOP 
 * This is the average viewing window. So Desktops, Laptops, and 

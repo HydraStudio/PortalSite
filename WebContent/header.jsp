@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <div class="site-header">
 	<div class="main-navigation">
-		<div class="responsive_menu">
+		<!-- <div class="responsive_menu">
 			<ul>
 				<li><a class="show-1 templatemo_home" href="indexGetProduction.action">产品介绍</a></li>
 				<li><a class="show-2 templatemo_page2" href="indexGetTeacher.action">师资介绍</a></li>
@@ -11,7 +11,7 @@
 				<li><a class="show-5 templatemo_page5" href="indexGetJoinUs.action">加入我们</a></li>
 				<li><a class="show-6 templatemo_page6" href="indexGetContact.action">联系我们</a></li>     
 			</ul>
-		</div><!-- /.responsive_menu -->
+		</div>/.responsive_menu -->
 
 		<div class="container">
 			<div class="row">
