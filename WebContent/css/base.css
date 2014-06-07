@@ -129,60 +129,6 @@ input, textarea {
   overflow:hidden;
 }
 
-.site-header .main-navigation {
-  display: block;
-  background-color: #66CC99;
-  text-align: center;
-  padding: 15px 0;
-  position:relative;
-}
-
-.site-header .banner{
-  background-color: #339966;
-  height: 12px;
-}
-
-.site-header .main-navigation ul li {
-  display: inline-block;
-  margin-right: 0px;
-}
-.site-header .main-navigation ul li:last-child {
-  margin-right: 0px !important;
-}
-.site-header .main-navigation ul li a {
-  padding: 10px 16px;
-  display: inline-block;
-  color: white;
-  font-size: 14px;
-  font-weight: bolder;
-}
-.site-header .main-navigation ul li a.active {
-  background-color: #eeeeee;
-  color: #2a2a2a;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
-}
-
-.site-header .main_menu{
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.site-header .logo {
-  height: 60px;
-  line-height: 2;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  right: 8s0px;
-  font-size: 36px;
-  padding-right: 350px;
-  background-repeat: no-repeat;
-  background-image: url('../images/index-logo.jpg')
-}
-
 .navigation-bg {
   position:absolute;
   left:0;
@@ -504,44 +450,6 @@ a.menu-toggle-btn {
 
 .search-box .search-btn-usr:hover{
   color: #66CC99
-}
-
-/*------------------------------------------------------
-  Site Content Styles 
---------------------------------------------------------*/
-.site-content{
-  height: 860px;
-  margin-left：0 auto;
-  margin-right：0 auto;
-  text-align: center;
-  background-image: url('../images/index-background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.blank{
-  height: 60px;
-}
-
-/*------------------------------------------------------
-  Footer Styles 
---------------------------------------------------------*/
-#site-footer {
- 
-  border-top: 1px solid #343535;
-  padding: 20px 0;
-  position: relative;
-  background-color: #343535;
-  color: #FFF;
-}
-
-#site-footer #footer_focus_us{
-  border-right: 1px solid white;
-  padding-left: 60px;
-}
-
-#site-footer #footer_about_us{
-  
 }
 
 

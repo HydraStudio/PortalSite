@@ -22,7 +22,7 @@
 				</div> <!-- /.col-md-12 -->
 				<div class="col-md-12 main_menu">
 					<ul>
-					    <li class="logo" onclick="openPortal()">&nbsp;</li>
+					    <li class="logo" onclick="openPortal()"><img src="images/index-logo-2.png"></li>
 						<li><a class="show-1 templatemo_page1" href="indexGetProduction.action">产品介绍</a></li>
 						<li><a class="show-2 templatemo_page2" href="indexGetTeacher.action">师资介绍</a></li>
 						<li><a class="show-3 templatemo_page3" href="indexGetAchievement.action">成绩展示</a></li>
@@ -41,9 +41,7 @@
 		</div><!-- /.container --> 
         <!-- <a class="navigation-bg" href="#" title=""  target="_blank"><img src="images/header.png" alt=""  /></a> -->
 	</div> <!-- /.main-navigation -->
-	<div class="banner">
-    	
-    </div>
+	<!-- <div class="banner"></div> -->
 </div> <!-- /.site-header -->
 <form action="indexShowPortal.action" id="indexForm"></form>
 <script type="text/javascript">

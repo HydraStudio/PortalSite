@@ -90,6 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </a>
 				</div>
 			</div>
+			<div class="blank"></div>
 			<div id="activity-service" class="col-md-1"  onclick="window.location.href='indexAddInputOrder.action'">
 				<h1>&nbsp;</h1><br/>
 			</div>

@@ -1,12 +1,135 @@
 /*------------------------------------------------------
+  Body Styles 
+--------------------------------------------------------*/
+body{
+  background-image: url('../images/index-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*------------------------------------------------------
+  Site Header Styles 
+--------------------------------------------------------*/
+.site-header{
+	opacity: 0.8;
+	background-image: url('../images/site_header.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.site-header .main-navigation {
+  display: block;
+  #background-color: #66CC99;
+  text-align: center;
+  padding: 0 0 15px 0;
+  position:relative;
+}
+
+.site-header .banner{
+  background-color: #339966;
+  height: 12px;
+}
+
+.site-header .main-navigation ul li {
+  display: inline-block;
+  margin-right: 0px;
+}
+.site-header .main-navigation ul li:last-child {
+  margin-right: 0px !important;
+}
+.site-header .main-navigation ul li a {
+  padding: 10px 16px;
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+  font-weight: bolder;
+  position: relative;
+  bottom: 20px;
+}
+.site-header .main-navigation ul li a.active {
+  background-color: #eeeeee;
+  color: #2a2a2a;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.site-header .main_menu{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.site-header .logo {
+  height: 60px;
+  line-height: 2;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  #right: 80px;
+  top:20px;
+  font-size: 36px;
+  padding-right: 350px;
+  #background-repeat: no-repeat;
+  #background-image: url('../images/index-logo.jpg')
+}
+
+.site-header .logo img{
+	width: 120px;
+}
+
+
+/*------------------------------------------------------
+  Site Content Styles 
+--------------------------------------------------------*/
+.site-content{
+  #height: 860px;
+  margin-left：0 auto;
+  margin-right：0 auto;
+  text-align: center;
+}
+
+.blank{
+  height: 30px;
+}
+
+/*------------------------------------------------------
+  Footer Styles 
+--------------------------------------------------------*/
+#site-footer {
+ 
+  border-top: 1px solid #343535;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  background-color: #343535;
+  color: #FFF;
+}
+
+#site-footer #footer_focus_us{
+  border-right: 1px solid white;
+  padding-left: 60px;
+}
+
+#site-footer #footer_about_us{
+  
+}
+
+/*------------------------------------------------------
   Index: Photo Galary - Styles 
 --------------------------------------------------------*/
+#photo-galary-wrapper{
+	padding-left: 12%;
+}
+
 #index-carousel{
 	border: 20px solid;
 	border-color: #FFFFFF;
 	-webkit-border-radius: 14px;
     -moz-border-radius: 14px;
     border-radius: 14px;
+    width: 80%;
 }
 
 #index-carousel img{
@@ -25,7 +148,7 @@
 	height: 100px;
 	background-color: #FF6633;
 	position: absolute;
-	left: 0px;
+	left: 12%;
 	top: 300px;
 	z-index:1;
 	opacity: 0.7; 

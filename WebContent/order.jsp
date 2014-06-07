@@ -112,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							    <div class="col-md-8">
 							        <select name="isWork" class="selectpicker text-left" id="selectWorked">
 								        <option value="1">是</option>
-									    <option value="0">否</option>
+									    <option value="0" selected>否</option>
 								    </select>
 							    </div>
 						    </fieldset>
