@@ -47,14 +47,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   	<%@include file="/header.jsp" %>
 
-	<div class="site-content">
-
-		<div class="container site-content-wrapper">
-			<div class="col-md-12">
-				<img src="${imageUrl}"/>
+	<div class="site-content" id="join-us-mail">
+	    <div class=""></div>
+		<div id="join-us-form-wrapper" class="container">
+			<!-- <div class="col-md-1"></div> -->
+			<div id="join-us-form-text">
+				<h2>致XXX的一封信</h2><br/>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
 			</div>
+			<div id="join-us-form-welcome">
+				<h2>Wait for your coming!</h2>
+			</div>
+			<div id="join-us-form-join">
+				<h2 style="color:#68CD9A">想要成为METALL的一员？</h2><br/>
+				<div id="mail-block">
+					<i class="fa fa-envelope"></i>
+					<span>hello@website.com</span>
+				</div>
+			</div>
+			<div id="join-mail-photo"></div>
 		</div>
 
+		<div id="activity-service" class="col-md-1" onclick="window.open('joinus.html','_blank')">
+			<h1>&nbsp;</h1><br/>
+		</div>
 	</div><!-- site-content -->
 	
 	<%@include file="/footer.jsp" %>
