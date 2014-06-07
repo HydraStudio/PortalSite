@@ -11,7 +11,7 @@ function openPage(html){
 $(function(){
 	$('.icon-wechat').popover({
 		placement: "top",
-		trigger: "click",
+		trigger: "hover",
 		html:true,
 		content:"<img style='width:200px;' src='images/weixin.png'>"
 	});
