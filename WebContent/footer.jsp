@@ -8,11 +8,11 @@
 			</div> <!-- /.col-md-6 -->
 			<div class="col-md-2 text-left">
 			</div> <!-- /.col-md-4 -->
-			<div id="footer_focus_us" class="col-md-2 text-center">
+			<div id="footer_focus_us" class="col-md-2 text-center" onclick>
 				<div>
 					<p>关注我们</p>
 					<div class="share-box">
-						<div class="icon-weibo">&nbsp;</div>
+						<div class="icon-weibo" onclick="openPage('http://weibo.com/wqh15')">&nbsp;</div>
 						<div class="icon-wechat">&nbsp;</div>
 					</div>
 				</div>

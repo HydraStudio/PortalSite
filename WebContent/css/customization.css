@@ -183,7 +183,7 @@ body{
 	height: 41px;
 	z-index: 1;
 	display:block;
-	bottom:0px;
+	bottom:89px;
 	right:1px!important;
 	right:18px;
 	position:fixed;
@@ -415,8 +415,16 @@ body{
 
 }
 
-.share-box div{
+.share-box .icon-weibo{
 	width: 30px;
+}
+
+.share-box .icon-wechat{
+	width: 30px;
+}
+
+.share-box .popover{
+	margin-top: -210px;
 }
 
 .icon-weibo{
@@ -424,6 +432,7 @@ body{
 	background-repeat: no-repeat;
 	background-position: -40px -42px;
 	display: inline-block;
+	cursor: pointer;
 }
 
 .icon-wechat{
@@ -431,6 +440,7 @@ body{
 	background-repeat: no-repeat;
 	background-position: -65px -42px;
 	display: inline-block;
+	cursor: pointer;
 }
 
 .checkbox-green{
