@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/flat-ui.css" rel="stylesheet">
 
 	<!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'> -->
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
 
@@ -112,11 +112,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				      <div class="modal-footer">
 				      	<!-- JiaThis Button BEGIN -->
 					    <div id="ckepop">
-							<span class="jiathis_txt">分享到：</span>
+							<%-- <span class="jiathis_txt">分享到：</span>
 							<a class="jiathis_button_weixin">微信</a> 
 							<a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
 							<a class="jiathis_counter_style"></a> 
-							<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
+							<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script> --%>
 						</div> <!-- JiaThis Button END -->
 				       <!--  <button type="button" class="btn btn-metall"  data-dismiss="modal">关闭</button> -->
 				      </div>
@@ -138,8 +138,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script type='text/javascript' src='js/logging.js'></script>
-    <script type='text/javascript' src='js/customization.js'></script>
-
+    <script src="js/customization.js"></script>
     <script type="text/javascript">
 		//Make photo&news active
 		$(function(){
@@ -150,6 +149,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		});
 
 
+		/* $('.icon-wechat').popover({
+			placement: "top",
+			trigger: "hover",
+			html:true,
+			content:"<img style='width:200px;' src='images/weixin.png'>"
+		}); */
+		
 		//Ajax Get Activity
 		var imgs = $("#index-carousel .carousel-inner img");
 		for(var i=0;i<imgs.length;i++){
@@ -177,10 +183,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}else{
 				$("#detailModal-"+i).remove();
 			}
-		}
-
-		
-		
+		} 
 
     </script>
     <!-- Flat-UI Components -->

@@ -12,6 +12,7 @@ body{
 --------------------------------------------------------*/
 .site-header{
 	opacity: 0.8;
+	height: 110px;
 	background-image: url('../images/site_header.png');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -67,7 +68,7 @@ body{
   position: relative;
   cursor: pointer;
   #right: 80px;
-  top:20px;
+  top:0px;
   font-size: 36px;
   padding-right: 350px;
   #background-repeat: no-repeat;
@@ -424,7 +425,7 @@ body{
 }
 
 .share-box .popover{
-	margin-top: -210px;
+	#margin-top: -210px;
 }
 
 .icon-weibo{

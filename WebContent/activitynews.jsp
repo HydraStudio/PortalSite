@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/datepicker3.css" rel="stylesheet">
 
 	<!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'> -->
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
 
