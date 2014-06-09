@@ -108,6 +108,10 @@ body{
   color: #FFF;
 }
 
+#site-footer div{
+  float: left;
+}
+
 #site-footer #footer_focus_us{
   border-right: 1px solid white;
   padding-left: 60px;
