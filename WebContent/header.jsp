@@ -13,8 +13,7 @@
 			</ul>
 		</div>/.responsive_menu -->
 
-		<div class="container">
-			<div class="row">
+
 				<div class="col-md-12 responsive-menu">
 					<a href="#" class="menu-toggle-btn">
 			            <i class="fa fa-bars"></i>
@@ -37,8 +36,7 @@
 						</li> -->
 					</ul>
 				</div> <!-- /.col-md-12 -->
-			</div> <!-- /.row -->
-		</div><!-- /.container --> 
+
         <!-- <a class="navigation-bg" href="#" title=""  target="_blank"><img src="images/header.png" alt=""  /></a> -->
 	</div> <!-- /.main-navigation -->
 	<!-- <div class="banner"></div> -->

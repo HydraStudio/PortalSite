@@ -4,7 +4,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"> 
 <html>
   <head>
 
@@ -68,9 +68,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="join-mail-photo"></div>
 		</div>
 
-		<div id="activity-service" class="col-md-1" onclick="window.open('joinus.html','_blank')">
+		<div id="activity-service" onclick="window.open('joinus.html','_blank')">
 			<h1>&nbsp;</h1><br/>
 		</div>
+		
+		<div class="blank-down"></div>
 	</div><!-- site-content -->
 	
 	<%@include file="/footer.jsp" %>

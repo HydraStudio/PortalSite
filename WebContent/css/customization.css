@@ -13,26 +13,27 @@ body{
 .site-header{
 	opacity: 0.8;
 	height: 110px;
+	height: 110px\9;
 	background-image: url('../images/site_header.png');
+	background-position:center\9;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 .site-header .main-navigation {
   display: block;
-  #background-color: #66CC99;
   text-align: center;
   padding: 0 0 15px 0;
   position:relative;
 }
 
 .site-header .banner{
-  background-color: #339966;
   height: 12px;
 }
 
 .site-header .main-navigation ul li {
   display: inline-block;
+  display: inline\9;
   margin-right: 0px;
 }
 .site-header .main-navigation ul li:last-child {
@@ -59,6 +60,7 @@ body{
 .site-header .main_menu{
   padding-left: 0px;
   padding-right: 0px;
+  padding-top: 0px;
 }
 
 .site-header .logo {
@@ -67,12 +69,9 @@ body{
   display: inline-block;
   position: relative;
   cursor: pointer;
-  #right: 80px;
   top:0px;
   font-size: 36px;
   padding-right: 350px;
-  #background-repeat: no-repeat;
-  #background-image: url('../images/index-logo.jpg')
 }
 
 .site-header .logo img{
@@ -94,6 +93,15 @@ body{
   height: 30px;
 }
 
+.blank-up{
+  height: 30px;
+}
+
+.blank-down{
+  height: 49px;
+  height: 49px;
+}
+
 /*------------------------------------------------------
   Footer Styles 
 --------------------------------------------------------*/
@@ -112,13 +120,23 @@ body{
   float: left;
 }
 
+#site-footer #footer_copyright{
+  padding-left: 10%;
+  padding-top: 16px;
+  padding-top: 20px\9;
+}
+
 #site-footer #footer_focus_us{
   border-right: 1px solid white;
-  padding-left: 60px;
+  padding-left: 40%;
+  padding-right: 5%;
+  padding-left: 40%\9;
+  padding-right: 5%\9;
 }
 
 #site-footer #footer_about_us{
-  
+  padding-left: 5%;
+  padding-left: 5%\9;
 }
 
 /*------------------------------------------------------
@@ -189,8 +207,8 @@ body{
 	z-index: 1;
 	display:block;
 	bottom:89px;
-	right:1px!important;
-	right:18px;
+	right:1px\9;
+	right:0px;
 	position:fixed;
 }
 
@@ -430,6 +448,7 @@ body{
 
 .share-box .popover{
 	#margin-top: -210px;
+	margin-top: -210px\9;
 }
 
 .icon-weibo{
