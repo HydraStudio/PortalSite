@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 				<div  class="col-md-1 col-sm-12"></div>
 
-				<div  class="col-md-3 col-sm-12">
+				<div id="activity-news-calender-wrapper" class="col-md-3 col-sm-12">
 					
 					<div id="activity-news-calender" class="col-md-3 col-sm-12 text-center">
 					

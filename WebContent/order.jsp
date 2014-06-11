@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="row" >
 					  <div class="col-md-1">&nbsp;</div>
 
-				      <div class="col-md-5">
+				      <div class="col-md-5 form-group-left">
 				          <div class="form-group join-us-form-unit">
 				          	<fieldset>
 							    <label for="inputName" class="col-md-4 control-label">姓名<span style="color:red">*</span></label>
@@ -104,7 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </div>
 				      </div>
 
-				      <div class="col-md-5">
+				      <div class="col-md-5 form-group-right">
 
 				        <div class="form-group join-us-form-unit">
 				          	<fieldset>
