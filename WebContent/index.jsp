@@ -173,8 +173,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var myTitle = res.substring(0,splitPls);
 				var myDetail = res.substring(splitPls+1,res.length);
 				//res = split("_");
-				/* $("#myModalLabel-"+i).html(myTitle);
-				$("#myModalDetail-"+i).html(myDetail);  */
+				$("#myModalLabel-"+i).html(myTitle);
+				$("#myModalDetail-"+i).html(myDetail); 
 			
 				/* $.get(dataAddr,function(data){
 					var dataObj = eval("("+data+")");
