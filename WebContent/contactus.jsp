@@ -70,13 +70,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6" id="contact-information-img">
 					<img src="images/contact_us.png">
 				</div>
 
 			</div>
 		</div>
-
+		<div class="blank-down"></div>
+		<div class="blank-down"></div>
 		<!-- Reserve Box-->
 		<div id="activity-service" class="col-md-1"  onclick="window.open('indexAddInputOrder.action','_blank')">
 			<h1>&nbsp;</h1><br/>

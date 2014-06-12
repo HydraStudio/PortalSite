@@ -10,7 +10,7 @@
 		<div>
 			<p>关注我们</p>
 			<div class="share-box">
-				<div class="icon-weibo" onclick="openPage('http://weibo.com/wqh15')" >&nbsp;</div>
+				<div class="icon-weibo" onclick="openPage('http://weibo.com/u/5173805101?from=profile&wvr=5&loc=infdomain')" >&nbsp;</div>
 				<div class="icon-wechat">&nbsp;</div>
 			</div>
 		</div>

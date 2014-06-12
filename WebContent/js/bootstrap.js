@@ -310,13 +310,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   Carousel.prototype.to = function (pos) {
     var that        = this
     var activeIndex = this.getActiveIndex()
-
     if (pos > (this.$items.length - 1) || pos < 0) return
 
     if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) })
     if (activeIndex == pos) return this.pause().cycle()
 
-    return this.slide(pos > activeIndex ? 'next' : 'prev', $(this.$items[pos]))
+    return this.slide(pos > activeIndex ? 'next' : 'prev', $(this.$items[pos]), pos)
   }
 
   Carousel.prototype.pause = function (e) {
@@ -342,7 +341,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     return this.slide('prev')
   }
 
-  Carousel.prototype.slide = function (type, next) {
+  Carousel.prototype.slide = function (type, next,pos) {
     var $active   = this.$element.find('.item.active')
     var $next     = next || $active[type]()
     var isCycling = this.interval
@@ -369,6 +368,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       if(act_no<0){
         act_no=act_no+slide_count;
       }
+    }
+    //If click the indicator point
+    if(pos!=null && pos!="undefined"){
+    	act_no = pos;
     }
     var act_nxt_id = "activity-news-dashboard-"+act_no;
     $($("#activity-news-dashboard .active")[0]).hide("fast",function(){
@@ -413,6 +416,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       this.sliding = false
       this.$element.trigger('slid.bs.carousel')
     }
+
 
     isCycling && this.cycle()
 

@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  	<s:iterator value="portals" status="u">
 						<div class="item">
 					      <!-- <img src="${imageUrl}" alt="..."  onclick="window.open('${url}','_blank')" > -->
-					      <img src="${imageUrl}" alt="${url}" data-toggle="modal" data-target="#detailModal-${u.index}" >
+					      <img src="${imageUrl}" data-link="${url}" data-toggle="modal" data-target="#detailModal-${u.index}" >
 					    </div>
 					</s:iterator>
 				    <!-- <div class="item">
@@ -90,12 +90,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </a>
 				</div>
 			</div>
-			<div class="blank"></div>
-			<div id="activity-service" class="col-md-1"  onclick="window.location.href='indexAddInputOrder.action'">
-				<h1>&nbsp;</h1><br/>
-			</div>
 		</div>
 
+		<div class="blank-down"></div>
+		<div class="blank-down"></div>
+		<div class="blank-down"></div>
+		<div id="activity-service" class="col-md-1"  onclick="window.location.href='indexAddInputOrder.action'">
+			<h1>&nbsp;</h1><br/>
+		</div>
 
 		<!-- News Detail Model -->
 		<s:iterator value="portals" status="u">
@@ -159,7 +161,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		//Ajax Get Activity
 		var imgs = $("#index-carousel .carousel-inner img");
 		for(var i=0;i<imgs.length;i++){
-			var dataAddr = $(imgs[i]).attr("alt");
+			var dataAddr = $(imgs[i]).attr("data-link");
 			if(dataAddr && dataAddr!=""){
 				var myRequest = new XMLHttpRequest();; 
 				myRequest.open("GET",dataAddr,false); 
@@ -171,8 +173,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var myTitle = res.substring(0,splitPls);
 				var myDetail = res.substring(splitPls+1,res.length);
 				//res = split("_");
-				$("#myModalLabel-"+i).html(myTitle);
-				$("#myModalDetail-"+i).html(myDetail);
+				/* $("#myModalLabel-"+i).html(myTitle);
+				$("#myModalDetail-"+i).html(myDetail);  */
 			
 				/* $.get(dataAddr,function(data){
 					var dataObj = eval("("+data+")");
@@ -189,9 +191,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Flat-UI Components -->
     <script src="js/flatui-checkbox.js"></script>
     <script src="js/flatui-radio.js"></script>
-    <div style="display:none;">
-		<script language="javascript" type="text/javascript" src="http://js.users.51.la/17059421.js"></script>
-		<noscript><a href="http://www.51.la/?17059421" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/17059421.asp" style="border:none" /></a></noscript>
-	</div>
+
   </body>
 </html>

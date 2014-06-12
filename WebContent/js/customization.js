@@ -13,6 +13,6 @@ $(function(){
 		placement: "top",
 		trigger: "hover",
 		html:true,
-		content:"<img style='width:200px;' src='images/weixin.png'>"
+		content:"<img style='width:200px;' src='images/wechat_code.jpg'>"
 	});
 });
