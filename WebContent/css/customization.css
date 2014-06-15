@@ -154,7 +154,8 @@ body{
 	-webkit-border-radius: 14px;
     -moz-border-radius: 14px;
     border-radius: 14px;
-    width: 80%;
+    width: 100%;
+    width: 80%\9;
 }
 
 #index-carousel img{
@@ -257,6 +258,7 @@ body{
 
 .form-group-left .join-us-form-unit label{
 	float: left\9;
+	line-height: 1.6;
 }
 
 .form-group-left .join-us-form-unit input{
