@@ -1,14 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"> 
 <html>
   <head>
 
-  	<base href="<%=basePath%>">
 	<title>Metall</title>
     <meta name="keywords" content="Teaching" />
 	<meta name="description" content="Metall" />
