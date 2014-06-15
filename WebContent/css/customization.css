@@ -3,6 +3,7 @@
 --------------------------------------------------------*/
 body{
   background-image: url('../images/index-background.jpg');
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -137,6 +138,7 @@ body{
 #site-footer #footer_about_us{
   padding-left: 5%;
   padding-left: 5%\9;
+  cursor: pointer;
 }
 
 /*------------------------------------------------------
@@ -511,6 +513,34 @@ body{
 	float: left\9;
 	margin-left:200px;
 }
+
+
+/*------------------------------------------------------
+  About Us - Styles 
+--------------------------------------------------------*/
+
+#about-us-block{
+	background-image: url('../images/aboutus_bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 600px;
+	text-align: center;
+	padding-top: 80px;
+}
+
+#about-us-block h1{
+	width: 860px;
+	text-align: left;
+	font-size: 200%;
+	font-weight: bolder;
+}
+
+#about-us-block p{
+	width: 860px;
+	padding-right: 240px;
+	text-align: left;
+}
+
 
 /*------------------------------------------------------
   Framework - Styles 

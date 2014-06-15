@@ -15,7 +15,7 @@
 			</div>
 		</div>
 	</div> <!-- /.col-md-2 -->
-	<div id="footer_about_us" class="text-center">
+	<div id="footer_about_us" class="text-center" onclick="openPage('aboutus.jsp')">
 		<div>
 			<p>关于我们</p>
 			<p>Always More Than.</p>
