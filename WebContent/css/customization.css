@@ -6,6 +6,7 @@ body{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height:600px;
 }
 
 /*------------------------------------------------------
@@ -210,7 +211,7 @@ body{
 	height: 41px;
 	z-index: 1;
 	display:block;
-	bottom:89px;
+	bottom:59px;
 	right:1px\9;
 	right:0px;
 	position:fixed;
@@ -219,13 +220,18 @@ body{
 /*------------------------------------------------------
   Join Us: Form - Styles 
 --------------------------------------------------------*/
+#join-us-form-div{
+	text-align:center;
+	padding-left:12%\9;
+}
+
 #join-us-form{
 	padding-bottom: 100px;
 	-webkit-border-radius: 14px;
     -moz-border-radius: 14px;
     border-radius: 14px;
 	background-color: #FFF;
-	width: 900px\9;
+	width: 1000px\9;
 }
 
 #join-us-form-frame{
@@ -295,7 +301,7 @@ body{
 }
 
 .form-group-right{
-	width: 400px\9;
+	width: 500px\9;
 	float: left;
 }
 
@@ -521,7 +527,7 @@ body{
 
 #contact-information-img{
 	float: left\9;
-	margin-left:200px;
+	margin-left:200px\9;
 }
 
 
@@ -536,6 +542,8 @@ body{
 	height: 600px;
 	text-align: center;
 	padding-top: 80px;
+	padding-left:150px;
+	padding-left:240px\9;
 }
 
 #about-us-block h1{
@@ -556,7 +564,7 @@ body{
   Framework - Styles 
 --------------------------------------------------------*/
 .site-content-wrapper{
-	padding-top: 100px;
+	bak.padding-top: 100px;
 }
 
 

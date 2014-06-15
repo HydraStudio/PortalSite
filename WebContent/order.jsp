@@ -40,7 +40,7 @@
 	<div class="site-content">
 	    <div class="blank"></div>
 	    <div class=""></div>
-		<div id="" class="container">
+		<div id="join-us-form-div" class="container">
 			<!-- <div class="col-md-1"></div> -->
 
 			<form id="join-us-form" class="col-md-12 col-sm-12" action="indexAddOrder.action" method="post">
