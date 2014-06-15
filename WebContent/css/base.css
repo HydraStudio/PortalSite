@@ -458,24 +458,27 @@ a.menu-toggle-btn {
 --------------------------------------------------------*/
 #join-us-form-wrapper{
   background-image: url('../images/mail.png');
+  background-position: 0px -100px;
+  background-repeat: no-repeat;
   width: 933px;
-  height: 712px;
+  height: 612px;
 }
 
 #join-us-mail{
-  height: 712px;
+  height: 612px;
 }
 
 #join-mail-photo{
   background-image: url('../images/mail_photo.png');
+  background-position: 0px -100px;
   width: 933px;
-  height: 712px;
+  height: 612px;
 }
 
 #join-us-form-text{
   width: 500px;
   margin-left: 200px;
-  top: 260px;
+  top: 160px;
   position: absolute;
 }
 
@@ -487,7 +490,7 @@ a.menu-toggle-btn {
 #join-us-form-welcome{
   width: 500px;
   margin-left: 60px;
-  top: 540px;
+  top: 440px;
   position: absolute;
   font-size: 180%;
   font-weight: bold;
@@ -496,7 +499,7 @@ a.menu-toggle-btn {
 #join-us-form-join{
   width: 500px;
   margin-left: 200px;
-  top: 670px;
+  top: 570px;
   position: absolute;
   font-size: 140%;
   font-weight: bold;

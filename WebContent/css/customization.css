@@ -16,9 +16,9 @@ body{
 	height: 110px;
 	height: 110px\9;
 	background-image: url('../images/site_header.png');
-	background-position:center\9;
+	background-position:top\9;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-position: top;
 }
 
 .site-header .main-navigation {
@@ -41,7 +41,7 @@ body{
   margin-right: 0px !important;
 }
 .site-header .main-navigation ul li a {
-  padding: 10px 16px;
+  padding: 30px 13px;
   display: inline-block;
   color: white;
   font-size: 14px;
@@ -109,7 +109,7 @@ body{
 #site-footer {
  
   border-top: 1px solid #343535;
-  padding: 20px 0;
+  padding: 5px 0;
   position: fixed;
   width: 100%;
   bottom: 0px;
@@ -224,12 +224,20 @@ body{
     -moz-border-radius: 14px;
     border-radius: 14px;
 	background-color: #FFF;
+	width: 900px\9;
+}
+
+#join-us-form-frame{
+  width: 933px;
+  height: 712px;
 }
 
 #join-us-form-content{
 	padding-top: 60px;
 	padding-bottom: 30px;
 	border-bottom: 3px solid #CDECDD;
+	height: 500px\9;
+	text-align: center;
 }
 
 #join-us-form-agreement{
@@ -285,7 +293,7 @@ body{
 }
 
 .form-group-right{
-	width: 500px\9;
+	width: 400px\9;
 	float: left;
 }
 

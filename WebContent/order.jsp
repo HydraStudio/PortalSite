@@ -40,15 +40,13 @@
 	<div class="site-content">
 	    <div class="blank"></div>
 	    <div class=""></div>
-		<div id="join-us-form-wrapper" class="container">
+		<div id="" class="container">
 			<!-- <div class="col-md-1"></div> -->
 
 			<form id="join-us-form" class="col-md-12 col-sm-12" action="indexAddOrder.action" method="post">
 				<div id="join-us-form-content" >
 					<div class="row" >
-					  <div class="col-md-1">&nbsp;</div>
-
-				      <div class="col-md-5 form-group-left">
+				      <div class="col-md-6 form-group-left">
 				          <div class="form-group join-us-form-unit">
 				          	<fieldset>
 							    <label for="inputName" class="col-md-4 control-label">姓名<span style="color:red">*</span></label>
@@ -199,7 +197,7 @@
 				
 			</form>
 		</div>
-
+		<div class="blank-down"></div>
 		<div id="activity-service" class="col-md-1"  onclick="window.open('indexAddInputOrder.action','_blank')">
 			<h1>&nbsp;</h1><br/>
 		</div>
