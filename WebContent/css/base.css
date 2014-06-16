@@ -478,7 +478,7 @@ a.menu-toggle-btn {
 #join-us-form-text{
   width: 500px;
   margin-left: 200px;
-  top: 160px;
+  top: 110px;
   position: absolute;
 }
 
@@ -490,7 +490,7 @@ a.menu-toggle-btn {
 #join-us-form-welcome{
   width: 500px;
   margin-left: 60px;
-  top: 440px;
+  top: 390px;
   position: absolute;
   font-size: 180%;
   font-weight: bold;
@@ -499,7 +499,7 @@ a.menu-toggle-btn {
 #join-us-form-join{
   width: 500px;
   margin-left: 200px;
-  top: 570px;
+  top: 520px;
   position: absolute;
   font-size: 140%;
   font-weight: bold;

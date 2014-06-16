@@ -146,6 +146,7 @@ body{
   Index: Photo Galary - Styles 
 --------------------------------------------------------*/
 #photo-galary-wrapper{
+	padding-left: 20%\9;
 	padding-left: 12%;
 }
 
@@ -155,8 +156,8 @@ body{
 	-webkit-border-radius: 14px;
     -moz-border-radius: 14px;
     border-radius: 14px;
-    width: 100%;
-    width: 80%\9;
+    width: 80%;
+    width: 65%\9;
 }
 
 #index-carousel img{
@@ -519,6 +520,7 @@ body{
 
 #contact-information-block{
 	float: left\9;
+	padding-left:80px\9;
 }
 
 #contact-information-block div{
@@ -527,7 +529,7 @@ body{
 
 #contact-information-img{
 	float: left\9;
-	margin-left:200px\9;
+	margin-left:30px\9;
 }
 
 

@@ -42,7 +42,7 @@
 
   	<%@include file="/header.jsp" %>
 
-	<div class="site-content">
+	<div class="site-content" style="padding-top:30px">
 
 		<div class="container site-content-wrapper">
 			<div class="row">
