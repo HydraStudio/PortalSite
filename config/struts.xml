@@ -6,7 +6,7 @@
 <struts>
 
 	<!-- 配置为开发模式 -->
-	<constant name="struts.devMode" value="true"></constant>
+	<!-- <constant name="struts.devMode" value="true"></constant>  -->
 	<!-- 配置扩展名为action，访问时必须写出.action才能找到，不配这个，就不用写扩展名 -->
 	<constant name="struts.action.extension" value="action"></constant>
 	<!-- 主题配置为simple -->
@@ -36,13 +36,13 @@
 			<result name="toList" type="redirectAction">role_list</result>
 		</action>
 		
-		<action name="*Module" class="moduleAction" method="{1}Module">
+	<!-- 	<action name="*Module" class="moduleAction" method="{1}Module">
 			<result name="list_module">/WEB-INF/back/module/list_module.jsp</result>
 			<result name="input_module">/WEB-INF/back/module/input_module.jsp</result>
 			<result name="add_module" type="redirectAction">listModule</result>
 			<result name="modify_module" type="redirectAction">listModule</result>
 			<result name="delete_module" type="redirectAction">listModule</result>
-		</action>
+		</action> -->
 		
 		<action name="*ActivityInfo" class="activityInfoAction" method="{1}ActivityInfo">
 			<result name="list_activity_info">/WEB-INF/back/activity/list_activity_info.jsp</result>
