@@ -71,10 +71,9 @@ body{
   line-height: 2;
   display: inline-block;
   position: relative;
-  cursor: pointer;
   top:0px;
   font-size: 36px;
-  padding-right: 350px;
+  padding-right: 450px;
 }
 
 .site-header .logo img{
