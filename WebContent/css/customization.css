@@ -38,6 +38,8 @@ body{
   display: inline-block;
   display: inline\9;
   margin-right: 0px;
+  position:relative;
+  left:150px;
 }
 .site-header .main-navigation ul li:last-child {
   margin-right: 0px !important;
@@ -66,15 +68,17 @@ body{
   padding-top: 0px;
 }
 
-.site-header .logo {
+.site-header #logo {
   height: 60px;
   line-height: 2;
   display: inline-block;
   position: relative;
   top:0px;
-  right:100px;
+  width:100px;
+  height:50px;
+  cursor:pointer;
+  right:200px;
   font-size: 36px;
-  padding-right: 400px;
 }
 
 .site-header .logo img{

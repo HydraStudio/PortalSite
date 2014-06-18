@@ -20,9 +20,10 @@
 			        </a>
 				</div> <!-- /.col-md-12 -->
 				<div class="col-md-12 main_menu">
+					<div onclick="openPortal()" style="cursor:pointer;position:absolute;width:40%;height:50px;left:0px;">&nbsp;</div>
 					<ul>
-					    <li onclick="openPortal()" style="width:150px;height:50px;cursor:pointer;position:relative;top:-30px">&nbsp;</li>
-					    <li class="logo">&nbsp;</li>
+					    <!-- <li  style="width:150px;height:50px;cursor:pointer;position:relative;top:-30px">&nbsp;</li> -->
+					    <!-- <li id="logo" onclick="openPortal()">&nbsp;</li> -->
 						<li><a class="show-1 templatemo_page1" href="indexGetProduction.action">产品介绍</a></li>
 						<li><a class="show-2 templatemo_page2" href="indexGetTeacher.action">师资介绍</a></li>
 						<li><a class="show-3 templatemo_page3" href="indexGetAchievement.action">成绩展示</a></li>
