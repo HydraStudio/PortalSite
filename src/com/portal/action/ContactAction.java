@@ -40,8 +40,10 @@ public class ContactAction extends BaseAction<Contact> {
 	}
 	
 	public String addContact() throws Exception{
+//		HttpServletRequest request = ServletActionContext.getRequest();
 		String fileName = uploadCommon();
-		String imageUrl = "upload/" + fileName;
+//		String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
+        String imageUrl =  "upload/" + fileName;
         model.setImageUrl(imageUrl);
         contactService.saveContact(model);
 		return "add";
@@ -67,7 +69,8 @@ public class ContactAction extends BaseAction<Contact> {
 		//check if change the picture
 		if(changeFlag != null && !changeFlag.equals("")){
 			String fileName = uploadCommon();
-	        String imageUrl = "upload/" + fileName;
+//			String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
+	        String imageUrl =  "upload/" + fileName;
 	        contact.setImageUrl(imageUrl);
 		}
 		contactService.modifyContact(contact);

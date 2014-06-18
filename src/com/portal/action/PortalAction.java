@@ -42,7 +42,8 @@ public class PortalAction extends BaseAction<Portal> {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String fileName = uploadCommon();
 //		String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-        String imageUrl = "upload/" + fileName;
+//		String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
+        String imageUrl =  "upload/" + fileName;
         model.setImageUrl(imageUrl);
         
         model.setUseFlag(false);
@@ -83,7 +84,7 @@ public class PortalAction extends BaseAction<Portal> {
 		//check if change the picture
 		if(changeFlag != null && !changeFlag.equals("")){
 			String fileName = uploadCommon();
-//			String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
+//			String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
 	        String imageUrl = "upload/" + fileName;
 	        portal.setImageUrl(imageUrl);
 		}

@@ -41,8 +41,10 @@ public class ProductionAction extends BaseAction<Production> {
 	}
 	
 	public String addProduction() throws Exception{
+//		HttpServletRequest request = ServletActionContext.getRequest();
 		String fileName = uploadCommon();
-		String imageUrl = "upload/" + fileName;
+//		String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
+        String imageUrl = "upload/" + fileName;
         model.setImageUrl(imageUrl);
         productionService.saveProduction(model);
 		return "add";
@@ -68,6 +70,7 @@ public class ProductionAction extends BaseAction<Production> {
 		//check if change the picture
 		if(changeFlag != null && !changeFlag.equals("")){
 			String fileName = uploadCommon();
+//			String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
 	        String imageUrl = "upload/" + fileName;
 	        production.setImageUrl(imageUrl);
 		}

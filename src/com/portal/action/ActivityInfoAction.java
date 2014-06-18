@@ -52,7 +52,8 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 //		HttpServletRequest request = ServletActionContext.getRequest();
 		String fileName = uploadCommon();
 //        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-        String imageUrl = "upload/" + fileName;
+//		String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
+        String imageUrl =  "upload/" + fileName;
         model.setImageUrl(imageUrl);
 		activityInfoService.saveActivityInfo(model);
 		return "add_activity_info";
@@ -85,7 +86,8 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
 		if(changeFlag != null && !changeFlag.equals("")){
 			String fileName = uploadCommon();
 //	        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-	        String imageUrl = "upload/" + fileName;
+//			String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
+	        String imageUrl =  "upload/" + fileName;
 	        activityInfo.setImageUrl(imageUrl);
 		}
 		
@@ -140,10 +142,10 @@ public class ActivityInfoAction extends BaseAction<ActivityInfo> {
         String fileName = uploadCommon();
         
 //        String URL=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath()+"/";
-        
+//        String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
         //设置返回“图像”选项卡  
         out.println("<script type=\"text/javascript\">");    
-        out.println("window.parent.CKEDITOR.tools.callFunction("+ callback + ",\'" +"upload/"+fileName+ "\',\'\');");
+        out.println("window.parent.CKEDITOR.tools.callFunction("+ callback + ",\'" + "upload/"+fileName+ "\',\'\');");
 //        out.println("window.parent.CKEDITOR.tools.callFunction(" + callback + ",'" + "upload/" + fileName + "','')");    
         out.println("</script>");
 		

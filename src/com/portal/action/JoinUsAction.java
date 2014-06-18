@@ -40,8 +40,10 @@ public class JoinUsAction extends BaseAction<JoinUs> {
 	}
 	
 	public String addJoinUs() throws Exception{
+//		HttpServletRequest request = ServletActionContext.getRequest();
 		String fileName = uploadCommon();
-		String imageUrl = "upload/" + fileName;
+//		String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
+        String imageUrl =  "upload/" + fileName;
         model.setImageUrl(imageUrl);
         joinUsService.saveJoinUs(model);
 		return "add";
@@ -67,7 +69,8 @@ public class JoinUsAction extends BaseAction<JoinUs> {
 		//check if change the picture
 		if(changeFlag != null && !changeFlag.equals("")){
 			String fileName = uploadCommon();
-	        String imageUrl = "upload/" + fileName;
+//			String URL=request.getScheme()+"://"+request.getServerName()+ request.getContextPath()+"/";
+	        String imageUrl =  "upload/" + fileName;
 	        joinUs.setImageUrl(imageUrl);
 		}
 		joinUsService.modifyJoinUs(joinUs);
