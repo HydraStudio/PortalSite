@@ -66,7 +66,7 @@
     <script type='text/javascript' src='js/customization.js'></script>
     <script type="text/javascript">
     	function openPage(html){
-		  alert("click");
+		  //alert("click");
 		  window.open(html,'_self');
 		}
 		
